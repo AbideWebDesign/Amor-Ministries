@@ -1,0 +1,176 @@
+//Add your own editor styles here or comment out the next line if you want to pull in the whole Bootstrap stuff
+@import "theme"; 
+
+body {
+	.components-editor-notices__dismissible,.components-editor-notices__dismissible .components-notice, .components-editor-notices__pinned .components-notice {
+		display: none !important;
+	}
+	
+	.editor-styles-wrapper {
+		background-color: #ccc;
+		
+		.btn:hover {
+			text-decoration: none;
+		}
+	}
+	
+	.editor-styles-wrapper > * {
+		font-family: $font-family-base;
+		color: $body-color;
+	}
+	
+	.edit-post-visual-editor {
+		padding-top: 30px;
+	}
+	
+	.editor-post-title {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+	
+	.block-editor-default-block-appender textarea.block-editor-default-block-appender__content {
+		color: inherit;
+		font-family: inherit;
+		font-size: inherit;
+	}
+	
+	.block-editor-block-list__empty-block-inserter .block-editor-inserter__toggle:not(:hover):not(:focus),
+	.block-editor-default-block-appender .block-editor-inserter .block-editor-inserter__toggle:not(:hover):not(:focus) {
+		color: inherit;
+	}
+	
+	/* Structure --------------------------------- */
+	
+	.wp-block {
+		max-width: 100%;
+	}
+	
+	.editor-styles-wrapper [data-block] {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	
+	.block-editor-block-toolbar {
+		.components-toolbar:first-child {
+ 			display: none;
+		}
+	}
+	
+	/* Font Families ------------------------------ */
+	
+	.editor-styles-wrapper p,
+	.editor-styles-wrapper p.wp-block-paragraph,
+	.editor-styles-wrapper ol,
+	.editor-styles-wrapper ul,
+	.editor-styles-wrapper li,
+	.editor-styles-wrapper dl,
+	.editor-styles-wrapper dt {
+		font-family: $font-family-base;
+		letter-spacing: normal;
+		font-size: $font-size-base;
+		line-height: $line-height-base;
+	}
+	
+	.editor-styles-wrapper .lead, 
+	.editor-styles-wrapper .lead p {
+		@extend .lead;
+	}
+	
+	.editor-styles-wrapper p,
+	.editor-styles-wrapper p.wp-block-paragraph {
+		margin-top: 0;
+		margin-bottom: $paragraph-margin-bottom;
+	}
+	
+	.editor-post-title__block .editor-post-title__input,
+	.editor-styles-wrapper .wp-block h1,
+	.editor-styles-wrapper .wp-block h2,
+	.editor-styles-wrapper .wp-block h3,
+	.editor-styles-wrapper .wp-block h4,
+	.editor-styles-wrapper .wp-block h5,
+	.editor-styles-wrapper .wp-block h6,
+	.editor-styles-wrapper .has-drop-cap:not(:focus)::first-letter,
+	.editor-styles-wrapper cite,
+	.editor-styles-wrapper figcaption,
+	.editor-styles-wrapper .wp-caption-text {
+		font-family: $font-family-base;
+	}
+	
+	/* Typography -------------------------------- */
+	
+	.editor-styles-wrapper .editor-block-list__layout a {
+// 		@extend a;
+	}
+	
+	.editor-styles-wrapper a:focus,
+	.editor-styles-wrapper a:hover {
+		text-decoration: $link-hover-decoration;
+	}
+	
+	.editor-post-title__block .editor-post-title__input,
+	.editor-styles-wrapper .wp-block h1,
+	.editor-styles-wrapper .wp-block h2,
+	.editor-styles-wrapper .wp-block h3,
+	.editor-styles-wrapper .wp-block h4,
+	.editor-styles-wrapper .wp-block h5,
+	.editor-styles-wrapper .wp-block h6 {
+		font-weight: $headings-font-weight;
+		letter-spacing: normal;
+		line-height: $headings-line-height;
+		margin: 0 0 $headings-margin-bottom 0;
+	}
+	
+	.editor-styles-wrapper {
+		.wp-block {
+			h1 {
+				font-size: $h1-font-size;
+				font-weight: $h1-font-weight;
+				line-height: $h1-line-height;
+			}
+			h2 {
+				font-size: $h2-font-size;
+			}
+			h3 {
+				font-size: $h3-font-size;
+			}
+			h4 {
+				font-size: $h4-font-size;
+			}
+			h5 {
+				font-size: $h5-font-size;
+			}
+			h6 {
+				font-size: $h6-font-size;
+			}
+		}
+	}
+	
+	/* POST TITLE */
+	
+	.editor-styles-wrapper .editor-post-title__block .editor-post-title__input {
+		margin: 0;
+		text-align: left;
+		font-size: 20px;
+		background-color: white;
+	}
+	
+	/* GUTENBERG SIDEBAR */
+	.edit-post-sidebar {
+		ol, ul, dl {
+			margin-bottom: inherit;
+		}
+		.edit-post-sidebar__panel-tab,
+		.edit-post-post-link__preview-link-container,
+		.components-panel__row,
+		.components-panel__body p,
+		.block-editor-block-card__title {
+			font-size: 14px;
+		}
+		.editor-page-attributes__order {
+			display: none;
+		}
+	}
+	.block-editor__container img.icon {
+		max-width: 120px;
+	}
+}
