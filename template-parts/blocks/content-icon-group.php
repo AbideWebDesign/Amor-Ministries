@@ -54,7 +54,7 @@ $group_content = get_field('icon_group_content');
 					</div>
 					
 					<div class="w-100 d-lg-none"></div>
-					this is a test
+				
 				<?php endwhile; ?>
 			
 			<?php endwhile; ?>
