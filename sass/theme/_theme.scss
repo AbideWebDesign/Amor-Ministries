@@ -297,8 +297,7 @@ button, .btn {
 	background-repeat: repeat;
 	background-color: #72c6a6;
 	background-image: url('http://amor.local/wp-content/uploads/2020/01/background-texture.png');
-	padding: 5em 0;
-	text-align: center;
+	padding: 100px 0;
 }
 
 /* Page Block: Image Feature */
@@ -348,4 +347,13 @@ button, .btn {
 /* Page Block: Icon Group */
 .icon {
 	max-width: 120px;
+}
+
+/* Gravity Forms */
+.gform_heading {
+	@extend .h4;
+}
+.gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit], .gform_wrapper .gform_page_footer input.button, .gform_wrapper .gform_page_footer input[type=submit] {
+	@extend .btn;
+	@extend .btn-primary;
 }
