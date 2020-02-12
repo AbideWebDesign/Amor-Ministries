@@ -82,4 +82,35 @@ if ( $group_settings['type'] == 'text-sidebar' ): // Text with Sidebar
 				
 	</div>
 
+
+<?php else: ?>
+	
+	<div class="wrapper wrapper-default-text">
+		
+		<div class="container">
+			
+			<div class="row justify-content-center">
+				
+				<div class="col-lg-9 col-xl-7">
+					
+					<?php echo $group_content['content']; ?>
+					
+					<?php if ( $group_content['include_button'] ): ?>
+					
+						<div class="mt-4">
+						
+							<?php echo get_button( $group_content ); ?>
+							
+						</div>
+					
+					<?php endif; ?>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+	
 <?php endif; ?>

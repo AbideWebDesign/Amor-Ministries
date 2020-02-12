@@ -32,8 +32,7 @@
                     },
                     "choices": {
                         "text": "Text",
-                        "text-sidebar": "Text & Sidebar",
-                        "text-bg": "Text & Background"
+                        "text-sidebar": "Text & Sidebar"
                     },
                     "default_value": [],
                     "allow_null": 0,
@@ -154,38 +153,6 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_5e25dcf51ce63",
-                    "label": "Background Image",
-                    "name": "background_image",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5e25da7d6c68e",
-                                "operator": "==",
-                                "value": "text-bg"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": 3400,
-                    "min_height": 2000,
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
                     "key": "field_5e3b0a16e7df6",
                     "label": "Include Button",
                     "name": "include_button",
@@ -253,5 +220,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1581092573
+    "modified": 1581546428
 }
