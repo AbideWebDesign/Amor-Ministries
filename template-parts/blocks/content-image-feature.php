@@ -37,11 +37,16 @@ if ( $text_position == 'Right' ) {
 }
 
 ?>
+
 <div class="container-fluid bg-<?php echo $bg_color_class; ?> <?php echo $text_color_class; ?>">
+
 	<div class="image-feature row justify-content-between <?php echo $postion_class; ?>">
+
 		<div class="side col-lg-6 col-xl-5 align-self-center <?php echo $col_classes; ?>">
+
 			<div class="inner text-center <?php echo $text_align_class; ?>">
-				<h2><?php echo $title ?></h2>
+
+				<h2 class="<?php echo $text_color_class; ?>"><?php echo $title ?></h2>
 				
 				<div class="lead">
 				
@@ -56,7 +61,11 @@ if ( $text_position == 'Right' ) {
 				<?php endif; ?>
 				
 			</div>
+	
 		</div>
+	
 		<div class="side col-lg-6 cover-image" style="background-image: url(<?php echo $image[0]; ?> );"></div>
+	
 	</div>
+	
 </div>

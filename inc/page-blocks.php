@@ -8,6 +8,16 @@ function amor_acf_init() {
 	// check function exists
 	if( function_exists('acf_register_block') ) {
 
+		// register a default text block
+		acf_register_block(array(
+			'name'				=> 'default-text',
+			'title'				=> __('Default Text'),
+			'description'		=> __('Default text content block.'),
+			'render_callback'	=> 'amor_acf_block_render_callback',
+			'category'			=> 'layout',
+			'icon'				=> 'text',
+		));
+		
 		// register a hero banner block
 		acf_register_block(array(
 			'name'				=> 'hero-banner',
@@ -47,6 +57,26 @@ function amor_acf_init() {
 			'category'			=> 'layout',
 			'icon'				=> 'megaphone',
 		));
+		
+		// register a divider block
+		acf_register_block(array(
+			'name'				=> 'divider',
+			'title'				=> __('Divider block'),
+			'description'		=> __('Divider block.'),
+			'render_callback'	=> 'amor_acf_block_render_callback',
+			'category'			=> 'layout',
+			'icon'				=> 'editor-insertmore',
+		));
+		
+		// register a card block
+		acf_register_block(array(
+			'name'				=> 'cards',
+			'title'				=> __('Cards block'),
+			'description'		=> __('Cards block.'),
+			'render_callback'	=> 'amor_acf_block_render_callback',
+			'category'			=> 'layout',
+			'icon'				=> 'excerpt-view',
+		));		
 	}
 }
 

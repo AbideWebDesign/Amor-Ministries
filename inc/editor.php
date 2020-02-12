@@ -54,6 +54,7 @@ function get_color_class( $color_picker_value ) {
 		'primary'	=> '#0f71b6',
 		'secondary'	=> '#72c6a6',
 		'accent' 	=> '#fbd402',
+		'secondary-accent' => '#fb6263',
 		'black'		=> '#1d1d2c',
 		'white'     => '#ffffff',
 		'light'		=> '#f8f8f8',
@@ -77,7 +78,7 @@ function get_color_class( $color_picker_value ) {
 */
 function get_color_text_class( $bg_color_class ) {
 	
-	$dark_colors = array('primary', 'secondary', 'black');
+	$dark_colors = array('primary', 'secondary', 'secondary-accent', 'black');
 	
 	if ( in_array( $bg_color_class, $dark_colors ) ) {
 		
@@ -99,7 +100,7 @@ function get_color_text_class( $bg_color_class ) {
 */
 function get_button( $group_content ) {
 
-// dd($group_content);
+		
 	$button = array (
 		'link' 			=> $group_content['button']['button_link'],
 		'class_size' 	=> $group_content['button']['button_size'],

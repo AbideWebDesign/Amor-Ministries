@@ -13,12 +13,12 @@
 		if ( $field[0].dataset.name == 'background_color' ) {
 		
 		// Limit to colors appropriate for backgrounds 
-		 args.palettes = ['#0f71b6', '#72c6a6', '#ffffff', '#f8f8f8']; 
+		 args.palettes = ['#0f71b6', '#72c6a6', '#fb6263', '#ffffff', '#f8f8f8']; 
 		
 		} else {
 		
 			// Display full color options
-			args.palettes = ['#0f71b6', '#72c6a6', '#fbd402', '#1d1d2c', '#ffffff', '#f8f8f8'];
+			args.palettes = ['#0f71b6', '#72c6a6', '#fbd402', '#fb6263', '#1d1d2c', '#ffffff', '#f8f8f8'];
 		  
 		}
 		

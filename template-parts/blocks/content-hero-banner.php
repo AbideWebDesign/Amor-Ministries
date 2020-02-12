@@ -20,13 +20,21 @@ $image_mobile = wp_get_attachment_image_src( $banner_content['image_mobile']['id
 		}	
 	}
 </style>
+
 <div class="container-hero">
+
 	<div class="hero-banner" style="background-image: url( <?php echo $image[0]; ?> )">
+
 		<div class="container">
+
 			<div class="row <?php echo $banner_settings['text_position']; ?>">
+
 				<div class="col-md-8 col-lg-6">
+
 					<div class="hero-header <?php echo $banner_settings['text_color']; ?> <?php echo $text_align; ?>">
+
 						<h1><?php echo $banner_content['title']; ?></h1>
+
 						<p class="lead"><?php echo $banner_content['text']; ?></p>
 						
 						<?php if ( $banner_content['include_button'] ): ?>
@@ -36,8 +44,13 @@ $image_mobile = wp_get_attachment_image_src( $banner_content['image_mobile']['id
 						<?php endif; ?>
 						
 					</div>
+
 				</div>
+
 			</div>
+
 		</div>
+
 	</div>
+
 </div>

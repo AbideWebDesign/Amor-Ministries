@@ -1,13 +1,11 @@
 //Add your own editor styles here or comment out the next line if you want to pull in the whole Bootstrap stuff
 @import "theme"; 
-
-body {
 	.components-editor-notices__dismissible,.components-editor-notices__dismissible .components-notice, .components-editor-notices__pinned .components-notice {
 		display: none !important;
 	}
 	
 	.editor-styles-wrapper {
-		background-color: #ccc;
+		background-color: #fff;
 		
 		.btn:hover {
 			text-decoration: none;
@@ -120,30 +118,34 @@ body {
 		margin: 0 0 $headings-margin-bottom 0;
 	}
 	
-	.editor-styles-wrapper {
-		.wp-block {
-			h1 {
-				font-size: $h1-font-size;
-				font-weight: $h1-font-weight;
-				line-height: $h1-line-height;
-			}
-			h2 {
-				font-size: $h2-font-size;
-			}
-			h3 {
-				font-size: $h3-font-size;
-			}
-			h4 {
-				font-size: $h4-font-size;
-			}
-			h5 {
-				font-size: $h5-font-size;
-			}
-			h6 {
-				font-size: $h6-font-size;
-			}
+	body .editor-styles-wrapper {
+		h1 {
+			font-size: $h1-font-size;
+			font-weight: $h1-font-weight;
+			line-height: $h1-line-height;
+		}
+		h2 {
+			font-size: $h2-font-size;
+			color: $blue;
+		}
+		h3 {
+			font-size: $h3-font-size;
+		}
+		h4 {
+			font-size: $h4-font-size;
+		}
+		h5 {
+			font-size: $h5-font-size;
+		}
+		h6 {
+			font-size: $h6-font-size;
 		}
 	}
+	
+	body .editor-styles-wrapper .card-group-top h2 {
+		color: white;
+	}
+	
 	
 	/* POST TITLE */
 	
@@ -173,4 +175,3 @@ body {
 	.block-editor__container img.icon {
 		max-width: 120px;
 	}
-}

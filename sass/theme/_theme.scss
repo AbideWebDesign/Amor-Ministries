@@ -2,10 +2,17 @@ h1 {
 	font-weight: $h1-font-weight;
 	line-height: $h1-line-height;
 	margin-bottom: 40px;
+	color: $blue;
 }
 h2 {
 	font-family: $h1-font-weight;
 	margin-bottom: 40px;
+	color: $blue;
+}
+@include media-breakpoint-down(lg) {
+	h2 {
+		margin-bottom: 25px;
+	}
 }
 p {
 	font-size: $font-size-base;
@@ -15,6 +22,9 @@ p {
 }
 .lead p {
 	@extend .lead;
+}
+.bg-secondary-accent {
+	background-color: $pink;
 }
 button, .btn {
 	&:focus {
@@ -38,7 +48,11 @@ button, .btn {
 	background-color: $yellow;
 	border-color: $yellow;
 }
-.btn-secondary, .btn-secondary:hover, .btn-secondary:focus {
+.btn-secondary-accent {
+	background-color: $pink;
+	border-color: $pink;
+}
+.btn-secondary, .btn-secondary:hover, .btn-secondary:focus, .btn-secondary-accent, .btn-secondary-accent:hover, .btn-secondary-accent:focus {
 	color: white;
 }
 .btn-text {
@@ -52,11 +66,14 @@ button, .btn {
 .wrapper {
 	padding: 100px 0;
 }
-.divider {
-	
+
+@include media-breakpoint-down(md) {
+	h2 {
+		font-size: $h2-font-size-sm;
+	}
 }
 /* Global Header */
-#wrapper-navbar {
+#wrapper-navbar {	
 	position: absolute;
     width: 100%;
     top: 0;
@@ -258,6 +275,9 @@ button, .btn {
 		.justify-content-center, .justify-content-end {
 			text-align: center;
 		}
+		h1 {
+			color: white;
+		}
 	}
 }
 @include media-breakpoint-up(xl) {
@@ -298,6 +318,10 @@ button, .btn {
 	background-color: #72c6a6;
 	background-image: url('http://amor.local/wp-content/uploads/2020/01/background-texture.png');
 	padding: 100px 0;
+	
+	h2 {
+		color: $body-color;
+	}
 }
 
 /* Page Block: Image Feature */
@@ -328,7 +352,7 @@ button, .btn {
 		overflow: hidden;
 		
 		.inner {
-			padding: 80px 0;
+			padding: 80px 40px;
 			
 		}
 		.side:first-child {
@@ -347,6 +371,103 @@ button, .btn {
 /* Page Block: Icon Group */
 .icon {
 	max-width: 120px;
+}
+
+/* Page Block: Default Text */
+.wrapper-default-text {
+	padding: 100px 0;
+	position: relative;
+	z-index: 1;
+	
+	&:last-child {
+		padding-bottom: 100px;
+	}
+	@include media-breakpoint-up(lg) {
+		
+		.container {
+			max-width: 1500px;
+			z-index: 1;
+		}	
+	}
+	@include media-breakpoint-down(lg) {
+		padding: 40px 0px;
+	}
+}
+
+/* Page Block: Divider */
+
+.divider-pattern-section {
+	width: 100%;
+    height: 340px;
+    background-repeat: repeat-x;
+    background-position: center;
+    background-size: contain;
+    z-index: -1;
+    margin: -170px 0;
+}
+@include media-breakpoint-down(md) {
+	.divider-pattern-section {
+		display: none;
+	}
+}
+
+/* Page Block: Cards */
+.card-group-top {
+	position: relative;
+	margin-bottom: 6em;
+}
+.card-group-header {
+	position: absolute;
+	margin-top: -70px;
+	padding: 2em 5em;
+	
+	h2, p {
+		color: white;
+	}
+	h2 {
+		text-transform: uppercase;
+		margin-bottom: .3em;
+	}
+	p.lead {
+		margin: 0;
+	}
+}
+.card-group-header.card-has-button {
+	padding-bottom: 3em;
+}
+.card-group-button {
+	position: absolute;
+	margin-top: 62px;
+	
+	.btn {
+		@extend .btn-lg;
+	}
+}
+.card-group-link:hover {
+	text-decoration: none;
+}
+.card-group-content {
+	border-bottom-right-radius: $border-radius;
+	border-bottom-left-radius: $border-radius;
+}
+
+@include media-breakpoint-down(sm) {
+	.card-group-top {
+		margin-bottom: 0;
+	}
+	.card-group.wrapper {
+		padding: 50px 0;
+	}
+	.card-group-header {
+		position: relative;
+		margin-top: 0;
+		padding: 2em 1em;
+	}
+	.card-group-button {
+		position: relative;
+		margin: -30px auto 0;
+		z-index: 1;
+	}
 }
 
 /* Gravity Forms */
