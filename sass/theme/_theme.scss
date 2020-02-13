@@ -349,7 +349,7 @@ button, .btn {
 @include media-breakpoint-down(md) {
 	.image-feature {
 		position: relative;
-		overflow: hidden;
+		overflow: hidden; 
 		
 		.inner {
 			padding: 80px 40px;
