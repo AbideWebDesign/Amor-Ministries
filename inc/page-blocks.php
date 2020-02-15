@@ -77,6 +77,15 @@ function amor_acf_init() {
 			'category'			=> 'layout',
 			'icon'				=> 'excerpt-view',
 		));		
+		// register a form block
+		acf_register_block(array(
+			'name'				=> 'form',
+			'title'				=> __('Form block'),
+			'description'		=> __('Form block.'),
+			'render_callback'	=> 'amor_acf_block_render_callback',
+			'category'			=> 'layout',
+			'icon'				=> 'welcome-write-blog',
+		));	
 	}
 }
 

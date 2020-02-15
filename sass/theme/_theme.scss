@@ -2,7 +2,6 @@ h1 {
 	font-weight: $h1-font-weight;
 	line-height: $h1-line-height;
 	margin-bottom: 40px;
-	color: $blue;
 }
 h2 {
 	font-family: $h1-font-weight;
@@ -13,7 +12,7 @@ h2 {
 	h2 {
 		margin-bottom: 25px;
 	}
-}
+} 
 p {
 	font-size: $font-size-base;
 }
@@ -66,7 +65,9 @@ button, .btn {
 .wrapper {
 	padding: 100px 0;
 }
-
+.wrapper-sm {
+	padding: 50px 0;
+}
 @include media-breakpoint-down(md) {
 	h2 {
 		font-size: $h2-font-size-sm;
@@ -164,9 +165,14 @@ button, .btn {
 	}
 	&.header-white {
 		position: inherit;
-		
+		height: 110px;
 		.navbar, .navbar.affix {
 			background-color: white;
+		}
+		.navbar {
+			.logo {
+				max-width: 70px;
+			}
 		}
 	}	
 	@include media-breakpoint-down(lg) {
@@ -225,6 +231,13 @@ button, .btn {
 				}
 			}
 		}	
+		.header-white {
+			.navbar {
+				.shiftnav-toggle-button {
+					color: $body-color;
+				}
+			}
+		}
 		.shiftnav {
 			width: 175px;
 			
@@ -471,10 +484,29 @@ button, .btn {
 }
 
 /* Gravity Forms */
-.gform_heading {
-	@extend .h4;
-}
-.gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit], .gform_wrapper .gform_page_footer input.button, .gform_wrapper .gform_page_footer input[type=submit] {
-	@extend .btn;
-	@extend .btn-primary;
+body {
+	.gform_wrapper {
+		margin: 0;
+		
+		ul li.gfield:first-child {
+			margin-top: 0;
+		}
+		input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+			border: none;
+		}
+		.gform_footer {
+			padding-bottom: 0;
+			
+			input.button {
+			 margin-bottom: 0;
+			}
+		}
+	}
+	.gform_heading {
+		@extend .h4;
+	}
+	.gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit], .gform_wrapper .gform_page_footer input.button, .gform_wrapper .gform_page_footer input[type=submit] {
+		@extend .btn;
+		@extend .btn-primary;
+	}
 }

@@ -81,7 +81,7 @@ if ( get_field('header_type') == 'Transparent' ) {
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'amor' ); ?></a>
 
-		<nav id="main-nav" class="navbar navbar-expand-xl fixed-top <?php echo $navbar_color; ?>" aria-labelledby="main-nav-label">
+		<nav id="main-nav" class="navbar navbar-expand-lg fixed-top <?php echo $navbar_color; ?>" aria-labelledby="main-nav-label">
 
 			<h2 id="main-nav-label" class="sr-only">
 				<?php esc_html_e( 'Main Navigation', 'amor' ); ?>
@@ -93,10 +93,10 @@ if ( get_field('header_type') == 'Transparent' ) {
 				<a class="navbar-brand" href="<?php echo home_url(); ?>"><img id="header-logo" src="<?php echo $logo_src[0]; ?>" class="img-fluid logo" width="300" alt="Amor Ministries" /></a>
 				
 				<div class="d-flex">		
-					<div class="d-xl-none mr-2">
+					<div class="d-lg-none mr-2">
 						<a href="<?php echo home_url('/donate'); ?>" class="btn btn-sm btn-yellow">Donate</a>
 					</div>		
-					<div class="col-auto d-xl-none align-self-center">
+					<div class="col-auto d-lg-none align-self-center">
 					
 						<?php shiftnav_toggle( 'shiftnav-main' , '' , array( 'icon' => 'bars' , 'class' => 'shiftnav-toggle-button') ); ?>
 					
@@ -106,7 +106,7 @@ if ( get_field('header_type') == 'Transparent' ) {
 				<?php wp_nav_menu(
 					array(
 						'theme_location'  => 'primary',
-						'container_class' => 'd-none d-xl-block',
+						'container_class' => 'd-none d-lg-block',
 						'container_id'    => 'navbarNavXL',
 						'menu_class'      => 'navbar-nav ml-auto',
 						'fallback_cb'     => '',

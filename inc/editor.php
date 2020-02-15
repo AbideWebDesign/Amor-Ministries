@@ -48,7 +48,7 @@ add_action( 'acf/input/admin_enqueue_scripts', 'amor_acf_extension_enqueue' );
  * Function to return color class based on ACF color selection
 */
 function get_color_class( $color_picker_value ) {
-	
+
 	$wd_block_colors = [
 		// Change these to match theme color classes 
 		'primary'	=> '#0f71b6',
