@@ -10,21 +10,29 @@ $group_content = get_field('icon_group_content');
 
 ?>
 
-<div class="icon-group wrapper bg-white">
+<div class="icon-group wrapper wrapper-sm bg-white">
 
 	<div class="container">
 		
-		<?php if ( $group_content['include_text'] ): ?>
-		
+		<?php if ( $group_content['include_title'] || $group_content['include_text'] ): ?>
+			
 			<div class="row justify-content-center mb-4">
 				<div class="col-lg-8 text-center">
-					<div class="featured mb-4">
-						<?php echo $group_content['text']; ?>
-					</div>
+										
+					<?php if ( $group_content['include_title'] ): ?>
 					
-					<?php echo get_divider(); ?>
+						<h2 class="mb-3"><?php echo $group_content['title']; ?></h2>
+						
+					<?php endif; ?>
 					
-					<h1 class="pt-4 mt-5 mb-3"><?php echo $group_content['title']; ?></h1>
+					<?php if ( $group_content['include_text'] ): ?>
+					
+						<div class="lead mb-0">
+							<?php echo $group_content['text']; ?>
+						</div>
+						
+					<?php endif; ?>
+					
 				</div>
 			</div>
 				
@@ -38,7 +46,7 @@ $group_content = get_field('icon_group_content');
 				
 					<?php $icon = get_sub_field('icon'); ?>
 				
-					<div class="col-10 col-sm-8 col-md-6 col-lg text-center mb-5 mb-lg-0">
+					<div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-3 text-center mb-4">
 						
 						<?php echo wp_get_attachment_image( $icon['id'], 'Icon', false, array('class'=>'icon img-fluid mb-4') ); ?>
 						

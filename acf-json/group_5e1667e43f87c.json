@@ -130,7 +130,7 @@
                     "label": "Image",
                     "name": "image",
                     "type": "image",
-                    "instructions": "",
+                    "instructions": "2880px x 800px",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -154,7 +154,7 @@
                     "label": "Image - Mobile",
                     "name": "image_mobile",
                     "type": "image",
-                    "instructions": "",
+                    "instructions": "1280px x 491px",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -241,5 +241,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1579215929
+    "modified": 1582139266
 }

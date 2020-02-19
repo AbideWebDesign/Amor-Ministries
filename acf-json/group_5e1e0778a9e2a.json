@@ -18,9 +18,9 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5e1e079c656a8",
-                    "label": "Include Text",
-                    "name": "include_text",
+                    "key": "field_5e4d88c3d325d",
+                    "label": "Include Title",
+                    "name": "include_title",
                     "type": "true_false",
                     "instructions": "",
                     "required": 0,
@@ -46,7 +46,7 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_5e1e079c656a8",
+                                "field": "field_5e4d88c3d325d",
                                 "operator": "==",
                                 "value": "1"
                             }
@@ -62,6 +62,25 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_5e1e079c656a8",
+                    "label": "Include Text",
+                    "name": "include_text",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
                 },
                 {
                     "key": "field_5e1e07bf656aa",
@@ -105,7 +124,7 @@
                     },
                     "collapsed": "field_5e1e0810656ad",
                     "min": 0,
-                    "max": 4,
+                    "max": 0,
                     "layout": "block",
                     "button_label": "Add Icon",
                     "sub_fields": [
@@ -266,5 +285,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1579215935
+    "modified": 1582139724
 }
