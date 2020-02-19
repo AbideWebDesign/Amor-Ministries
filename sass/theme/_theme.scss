@@ -104,12 +104,15 @@ button, .btn {
 			-o-transition:padding 0.2s linear;         
 			transition:padding 0.2s linear;
 			
+			.logo {
+				max-width: 100px;
+			}
 			.nav-link {
 				color: $body-color;
 			}
 		}
 		.logo {
-			max-width: 100px;
+			max-width: 70px;
 		}
 		.menu-item {
 			padding: 0 2.5rem;
@@ -172,6 +175,7 @@ button, .btn {
 	&.header-white {
 		position: inherit;
 		height: 110px;
+		
 		.navbar, .navbar.affix {
 			background-color: white;
 		}
@@ -179,9 +183,6 @@ button, .btn {
 			.navbar-brand {
 				padding-top: .75rem;
 				padding-bottom: .75rem;
-			}
-			.logo {
-				max-width: 70px;
 			}
 		}
 	}	
