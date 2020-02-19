@@ -10,13 +10,14 @@ $group_content = get_field('icon_group_content');
 
 ?>
 
-<div class="icon-group wrapper wrapper-sm bg-white">
+<div class="icon-group wrapper<?php echo ($group_content['padding'] == 'Small' ? ' wrapper-sm' : ''); ?> bg-white">
 
 	<div class="container">
 		
 		<?php if ( $group_content['include_title'] || $group_content['include_text'] ): ?>
 			
 			<div class="row justify-content-center mb-4">
+				
 				<div class="col-lg-8 text-center">
 										
 					<?php if ( $group_content['include_title'] ): ?>
@@ -28,12 +29,15 @@ $group_content = get_field('icon_group_content');
 					<?php if ( $group_content['include_text'] ): ?>
 					
 						<div class="lead mb-0">
+						
 							<?php echo $group_content['text']; ?>
+						
 						</div>
 						
 					<?php endif; ?>
 					
 				</div>
+				
 			</div>
 				
 		<?php endif; ?>
@@ -51,6 +55,7 @@ $group_content = get_field('icon_group_content');
 						<?php echo wp_get_attachment_image( $icon['id'], 'Icon', false, array('class'=>'icon img-fluid mb-4') ); ?>
 						
 						<h3><?php the_sub_field('icon_title'); ?></h3>
+						
 						<p class="mb-3"><?php the_sub_field('icon_text'); ?></p>
 						
 						<?php if ( get_sub_field('include_link') ): ?>

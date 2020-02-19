@@ -290,6 +290,11 @@ button, .btn {
 		h1 {
 			color: white;
 		}
+		.text-body {
+			h1 {
+				color: $body-color;
+			}
+		}
 	}
 }
 @include media-breakpoint-up(xl) {

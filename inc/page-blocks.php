@@ -61,8 +61,18 @@ function amor_acf_init() {
 		// register a divider block
 		acf_register_block(array(
 			'name'				=> 'divider',
-			'title'				=> __('Divider block'),
-			'description'		=> __('Divider block.'),
+			'title'				=> __('Divider Pattern'),
+			'description'		=> __(''),
+			'render_callback'	=> 'amor_acf_block_render_callback',
+			'category'			=> 'layout',
+			'icon'				=> 'editor-insertmore',
+		));
+		
+		// register a divider block
+		acf_register_block(array(
+			'name'				=> 'divider-alt',
+			'title'				=> __('Divider House'),
+			'description'		=> __(''),
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'editor-insertmore',
