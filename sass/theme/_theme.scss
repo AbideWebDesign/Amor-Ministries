@@ -6,6 +6,7 @@ h1 {
 h2 {
 	font-family: $h1-font-weight;
 	margin-bottom: 40px;
+	color: $blue;
 }
 @include media-breakpoint-down(lg) {
 	h2 {
