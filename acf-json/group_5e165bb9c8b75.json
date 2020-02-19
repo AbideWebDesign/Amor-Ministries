@@ -3,11 +3,36 @@
     "title": "Page Settings",
     "fields": [
         {
+            "key": "field_5e4dc0c0827c5",
+            "label": "Page Type",
+            "name": "page_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Default": "Default",
+                "Form": "Form"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
             "key": "field_5e165bbeebb12",
             "label": "Header Type",
             "name": "header_type",
             "type": "select",
-            "instructions": "",
+            "instructions": "Use \"White\" when not using hero banner.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -80,5 +105,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1579215980
+    "modified": 1582153962
 }

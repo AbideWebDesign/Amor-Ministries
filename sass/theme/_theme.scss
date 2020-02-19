@@ -67,6 +67,12 @@ button, .btn {
 .wrapper-sm {
 	padding: 50px 0;
 }
+.page-wrapper-pattern {
+	background-repeat: repeat;
+    background-color: #72c6a6;
+    background-image: url(/wp-content/uploads/2020/01/background-texture.png);
+    padding: 25px 0;
+}
 @include media-breakpoint-down(md) {
 	h2 {
 		font-size: $h2-font-size-sm;
@@ -169,6 +175,10 @@ button, .btn {
 			background-color: white;
 		}
 		.navbar {
+			.navbar-brand {
+				padding-top: .75rem;
+				padding-bottom: .75rem;
+			}
 			.logo {
 				max-width: 70px;
 			}
@@ -190,6 +200,7 @@ button, .btn {
 /* Global Footer */
 #wrapper-footer {
 	padding: 3em 0;
+	border-top: 1px solid #ECE8E7;
 	
 	p {
 		font-size: $font-size-sm;

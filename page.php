@@ -17,13 +17,19 @@ get_header();
 
 ?>
 
-<div id="page-wrapper">
+<div class="page-wrapper">
 
-		<?php while ( have_posts() ) : the_post(); ?>
+	<?php if ( get_field('header_type') == 'White' && get_field('page_type') != 'Form' ): ?>
+	
+		<div class="page-wrapper-pattern"></div>
+	
+	<?php endif; ?>
 
-			<?php get_template_part( 'loop-templates/content', 'page' ); ?>
+	<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php endwhile; // end of the loop. ?>
+		<?php get_template_part( 'loop-templates/content', 'page' ); ?>
+
+	<?php endwhile; // end of the loop. ?>
 
 </div><!-- #page-wrapper -->
 

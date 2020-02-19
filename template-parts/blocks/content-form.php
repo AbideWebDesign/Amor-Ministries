@@ -24,7 +24,7 @@ if ( $group_content['small_form'] ) {
 
 <?php if ( $group_content['title'] ): ?>
 	
-	<div class="wrapper-sm text-center">
+	<div class="wrapper-sm pb-0 text-center">
 		
 		<div class="container">
 			
