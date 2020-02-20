@@ -602,10 +602,6 @@ body {
 				@extend .custom-control-label;
 			}
 		}
-		.input-group-text {
-			background-color: $blue;
-			color: white;
-		}
 		.input-group > .custom-select:not(:first-child), .input-group > .form-control:not(:first-child), .input-group .ginput_amount {
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
