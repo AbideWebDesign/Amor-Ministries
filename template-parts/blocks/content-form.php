@@ -12,7 +12,7 @@ $form_id = $group_content['form'];
 
 if ( $group_content['small_form'] ) {
 	
-	$form_col_classes = 'col-md-8 col-lg-6 col-xl-5 form form-sm';
+	$form_col_classes = 'col-md-8 col-lg-5 col-xl-4 form form-sm';
 
 } else {
 	
@@ -24,31 +24,33 @@ if ( $group_content['small_form'] ) {
 
 <?php if ( $group_content['title'] ): ?>
 	
-	<div class="wrapper-sm pb-0 text-center">
+<div class="wrapper-sm pb-0 text-center">
+	
+	<div class="container">
 		
-		<div class="container">
+		<div class="row justify-content-center">
 			
-			<div class="row justify-content-center">
+			<div class="col-md-10 col-lg-8">			
+	
+				<h1><?php echo $group_content['title']; ?></h1>
 				
-				<div class="col-md-10 col-lg-8">			
-		
-					<h1><?php echo $group_content['title']; ?></h1>
-					
-					<?php if ( $group_content['text'] ): ?>
-					
-						<div class="lead">
-							
-							<?php echo $group_content['text']; ?>
-							
-						</div>
-					
-					<?php endif; ?>
-					
-				</div>
-			
+				<?php if ( $group_content['text'] ): ?>
+				
+					<div class="lead">
+						
+						<?php echo $group_content['text']; ?>
+						
+					</div>
+				
+				<?php endif; ?>
+				
 			</div>
 		
 		</div>
+	
+	</div>
+
+</div>
 
 <?php endif; ?>
 

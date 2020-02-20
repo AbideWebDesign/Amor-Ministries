@@ -505,17 +505,118 @@ body {
 	.gform_wrapper {
 		margin: 0;
 		
-		ul li.gfield:first-child {
-			margin-top: 0;
+		form {
+			margin-bottom: 0;
 		}
-		input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
-			border: none;
+		ul {
+			@extend .list-unstyled;
+			
+			li {
+				@extend .form-group;
+				
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+		}
+		.gform_title {
+			margin-bottom: 1em;
+		}
+		.gfield_label {
+			font-weight: bold;
+		}
+		.ginput_complex {
+			label {
+				font-size: .7rem;
+				text-transform: uppercase;
+			}
+		}
+		.ginput_container_textarea {
+			.ginput_counter {
+				font-size: .7rem;
+				text-transform: uppercase;
+			}
+		}
+		.form-group .gfield_description {
+			font-size: $font-size-sm;
+			line-height: $line-height-sm;
+			margin-bottom: .5rem;
+		}
+		.gfield_required {
+			padding-left: 1px;
+			color: $danger;
 		}
 		.gform_footer {
 			padding-bottom: 0;
 			
 			input.button {
 			 margin-bottom: 0;
+			}
+		}
+		input[type="email"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="week"], input[type="url"] {
+			@extend .form-control;
+			@extend .form-control-lg;
+			width: 100%;
+		}
+		.gfield_error {
+			.gfield_label {
+				@extend .alert-danger;
+			}
+			input, select, textarea {
+				@extend .alert-danger;
+			}
+		}
+		.validation_error {
+			@extend .alert;
+			@extend .alert-danger;
+		}
+		.validation_message, .hidden_label .gfield_label, .hidden_label .custom_control > .custom_control_label {
+			display: none;
+		}
+		.small {
+			.form-check label {
+				font-size: $font-size-sm;
+			}
+		}
+		.strong {
+			.form-check label {
+				font-weight: bold;
+			}
+		}
+		.custom-control {
+			padding-left: 5px;
+		}
+		.custom-select {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+		}
+		.form-check {
+			margin-bottom: .3em;
+			
+			&:last-child {
+				margin-bottom: 1em;
+			}
+			label {
+				@extend .custom-control-label;
+			}
+		}
+		.input-group > .custom-select:not(:first-child), .input-group > .form-control:not(:first-child), .input-group .ginput_amount {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+		.address_country select {
+			@extend .custom-select;
+			@extend .custom-select-lg;
+		}
+		.gfield_date_dropdown_day, .gfield_date_dropdown_month, .gfield_date_dropdown_year {
+			margin-right: 6px;
+			vertical-align: top;
+			display: -moz-inline-stack;
+			display: inline-block;
+			
+			select {
+				@extend .custom-select;
+				@extend .custom-select-lg;
 			}
 		}
 	}
@@ -526,13 +627,15 @@ body {
 		@extend .btn;
 		@extend .btn-primary;
 	}
-	.form {
-		.gform_wrapper {
-			.gfield_select, input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
-				@extend .form-control;
-				@extend .form-control-lg;
-				width: 100%;
-			}
+	
+	/* Form Sizes */
+	.form-sm {
+		.gform_title {
+			text-align: center;
+		}
+		button {
+			@extend .btn-block;
+			@extend .btn-secondary;
 		}
 	}
 }
