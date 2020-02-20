@@ -528,12 +528,14 @@ body {
 		.ginput_complex {
 			label {
 				font-size: .7rem;
+				line-height: $line-height-sm;
 				text-transform: uppercase;
 			}
 		}
 		.ginput_container_textarea {
 			.ginput_counter {
 				font-size: .7rem;
+				line-height: $line-height-sm;
 				text-transform: uppercase;
 			}
 		}
@@ -570,7 +572,7 @@ body {
 			@extend .alert;
 			@extend .alert-danger;
 		}
-		.validation_message, .hidden_label .gfield_label, .hidden_label .custom_control > .custom_control_label {
+		.validation_message, .hidden_label .gfield_label, .hidden_label .custom_control > .custom_control_label, .gform_validation_container {
 			display: none;
 		}
 		.small {
@@ -599,6 +601,10 @@ body {
 			label {
 				@extend .custom-control-label;
 			}
+		}
+		.input-group-text {
+			background-color: $yellow;
+			color: $body-color;
 		}
 		.input-group > .custom-select:not(:first-child), .input-group > .form-control:not(:first-child), .input-group .ginput_amount {
 			border-top-left-radius: 0;
