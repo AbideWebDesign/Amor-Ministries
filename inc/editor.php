@@ -210,8 +210,8 @@ function add_bootstrap_container_class( $field_container, $field, $form, $css_cl
 	
 	if ( !is_admin() ) {
 
-		if ( $field->type == 'product' ) {
-			
+		if ( $field->type == 'product' && $field->inputType != 'calculation' ) {
+
 			return '<li id="' . $field_id . '" class="' . $css_class . '"><div id="' . $field_id . '" class="' . $css_class . ' input-group input-group-lg"><div class="input-group-prepend"><span class="input-group-text">$</span></div>{FIELD_CONTENT}</div></li>';
 			
 		} else if ( $field->type == 'checkbox' ) {
@@ -229,4 +229,13 @@ function add_bootstrap_container_class( $field_container, $field, $form, $css_cl
 		return '<li id="' . $field_id . '" class="' . $css_class . ' form-group">{FIELD_CONTENT}</li>';
 		
 	}
+}
+
+// Edit gravity form fee product label
+add_filter( 'gform_product_price_4', 'set_price_label', 10, 2 );
+
+function set_price_label( $sublabel, $form_id ) {
+	
+	return 'Fee';
+
 }

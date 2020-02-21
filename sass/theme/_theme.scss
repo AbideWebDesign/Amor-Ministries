@@ -576,7 +576,7 @@ body {
 				}
 			}
 		}
-		.validation_message, .hidden_label .gfield_label, .hidden_label .custom_control > .custom_control_label, .gform_validation_container, .validation_error {
+		.validation_message, .hidden_label .gfield_label, .hidden_label .custom_control > .custom_control_label, .gform_validation_container, .validation_error, img.gform_ajax_spinner {
 			display: none;
 		}
 		.small {
