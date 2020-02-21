@@ -555,24 +555,28 @@ body {
 			 margin-bottom: 0;
 			}
 		}
-		input[type="email"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="week"], input[type="url"] {
+		.StripeElement, input[type="email"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="week"], input[type="url"] {
 			@extend .form-control;
 			@extend .form-control-lg;
 			width: 100%;
 		}
+		.StripeElement {
+			padding-top: 13px;
+		}
 		.gfield_error {
-			.gfield_label {
-				@extend .alert-danger;
-			}
 			input, select, textarea {
-				@extend .alert-danger;
+				border-color: $danger;
+			}
+			.custom-checkbox {
+				.validation_message {
+					display: block;
+					color: $danger;
+					font-weight: bold;
+					margin-left: -5px;
+				}
 			}
 		}
-		.validation_error {
-			@extend .alert;
-			@extend .alert-danger;
-		}
-		.validation_message, .hidden_label .gfield_label, .hidden_label .custom_control > .custom_control_label, .gform_validation_container {
+		.validation_message, .hidden_label .gfield_label, .hidden_label .custom_control > .custom_control_label, .gform_validation_container, .validation_error {
 			display: none;
 		}
 		.small {
