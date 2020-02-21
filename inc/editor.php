@@ -129,17 +129,6 @@ function get_divider() {
 
 /**
  * Gravity Forms Bootstrap Styles
- *
- * Applies bootstrap classes to various common field types.
- * Requires Bootstrap to be in use by the theme.
- *
- * Using this function allows use of Gravity Forms default CSS
- * in conjuction with Bootstrap (benefit for fields types such as Address).
- *
- * @see  gform_field_content
- * @link http://www.gravityhelp.com/documentation/page/Gform_field_content
- *
- * @return string Modified field content
  */
 add_filter("gform_field_content", "bootstrap_styles_for_gravityforms_fields", 10, 5);
 function bootstrap_styles_for_gravityforms_fields($content, $field, $value, $lead_id, $form_id){
@@ -190,7 +179,9 @@ function bootstrap_styles_for_gravityforms_fields($content, $field, $value, $lea
 
 } 
 
-// End bootstrap_styles_for_gravityforms_fields()
+/**
+ * End bootstrap_styles_for_gravityforms_fields()
+ */
 add_filter("gform_submit_button", "form_submit_button", 10, 2);
 
 function form_submit_button($button, $form){
@@ -199,7 +190,9 @@ function form_submit_button($button, $form){
 
 }
 
-// Edit gravity form field containers
+/**
+ * Edit gravity form field containers
+ */
 add_filter( 'gform_field_container', 'add_bootstrap_container_class', 10, 6 );
 
 function add_bootstrap_container_class( $field_container, $field, $form, $css_class, $style, $field_content ) {
@@ -231,11 +224,27 @@ function add_bootstrap_container_class( $field_container, $field, $form, $css_cl
 	}
 }
 
-// Edit gravity form fee product label on payment form
+/**
+ * Edit gravity form fee product label on payment form
+ */
 add_filter( 'gform_product_price_2', 'set_price_label', 10, 2 );
 
 function set_price_label( $sublabel, $form_id ) {
 	
 	return 'Fee';
+
+}
+
+/**
+ * Change the stripe description
+ */
+add_filter( 'gform_stripe_charge_description', 'change_stripe_description', 10, 3 );
+
+function change_stripe_description( $description, $strings, $entry ) {
+    
+    $form_id = rgar( $entry, 'form_id' );
+	$form = GFAPI::get_form( $form_id );
+	$description = $form['title'];
+	return $description;
 
 }
