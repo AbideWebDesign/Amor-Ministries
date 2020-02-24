@@ -128,6 +128,13 @@
 			font-size: $h2-font-size;
 			color: $blue;
 		}
+		.gsection_title {
+			font-size: 1.2rem;
+			text-transform: uppercase;
+			margin: 1.95em 0 1em 0;
+			border-bottom: 1px solid $blue;
+			padding-bottom: .5rem;
+		}
 		h3 {
 			font-size: $h3-font-size;
 		}

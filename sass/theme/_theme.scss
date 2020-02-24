@@ -4,7 +4,6 @@ h1 {
 	margin-bottom: 40px;
 }
 h2 {
-	font-family: $h1-font-weight;
 	margin-bottom: 40px;
 	color: $blue;
 }
@@ -540,7 +539,7 @@ body {
 			}
 		}
 		.form-group .gfield_description {
-			font-size: $font-size-sm;
+			font-size: $font-size-base;
 			line-height: $line-height-sm;
 			margin-bottom: .5rem;
 		}
@@ -590,7 +589,11 @@ body {
 			}
 		}
 		.custom-control {
-			padding-left: 5px;
+			padding-left: 0;
+			
+			.ginput_container_checkbox {
+				padding-left: 5px;
+			}
 		}
 		.custom-select {
 			-webkit-appearance: none;
@@ -629,11 +632,28 @@ body {
 	.gform_heading {
 		@extend .h4;
 	}
+	.gsection_title {
+		font-size: 1.2rem;
+		text-transform: uppercase;
+		margin: 1.95em 0 1em 0;
+		border-bottom: 1px solid $blue;
+		padding-bottom: .5rem;
+	}
+	.bg-secondary {
+		.gsection_title {
+			color: $body-color;
+			border-bottom-color: $gray-500;
+		}
+	}
 	.gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit], .gform_wrapper .gform_page_footer input.button, .gform_wrapper .gform_page_footer input[type=submit] {
 		@extend .btn;
 		@extend .btn-primary;
 	}
-	
+	.gfield_creditcard_warning_message {
+		@extend .alert;
+		background-color: $danger;
+		color: white;
+	}
 	/* Form Sizes */
 	.form-sm {
 		.gform_title {

@@ -203,7 +203,7 @@ function add_bootstrap_container_class( $field_container, $field, $form, $css_cl
 	
 	if ( !is_admin() ) {
 
-		if ( $field->type == 'product' && $field->inputType != 'calculation' ) {
+		if ( $field->type == 'product' && $field->inputType != 'calculation' && $field->inputType != 'singleproduct' ) {
 
 			return '<li id="' . $field_id . '" class="' . $css_class . '"><div id="' . $field_id . '" class="' . $css_class . ' input-group input-group-lg"><div class="input-group-prepend"><span class="input-group-text">$</span></div>{FIELD_CONTENT}</div></li>';
 			
@@ -228,6 +228,7 @@ function add_bootstrap_container_class( $field_container, $field, $form, $css_cl
  * Edit gravity form fee product label on payment form
  */
 add_filter( 'gform_product_price_2', 'set_price_label', 10, 2 );
+add_filter( 'gform_product_price_3', 'set_price_label', 10, 2 );
 
 function set_price_label( $sublabel, $form_id ) {
 	
