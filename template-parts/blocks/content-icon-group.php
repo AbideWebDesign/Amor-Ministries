@@ -66,7 +66,7 @@ $group_content = get_field('icon_group_content');
 						
 					</div>
 					
-					<div class="w-100 d-lg-none"></div>
+					<div class="w-100 d-md-none d-lg-none"></div>
 				
 				<?php endwhile; ?>
 			

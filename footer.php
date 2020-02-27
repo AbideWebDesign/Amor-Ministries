@@ -22,9 +22,9 @@ $social_links = get_field('social_section', 'options');
 		
 		<div class="container">
 	
-			<div class="row">
+			<div class="row justify-content-center justify-content-md-between">
 	
-				<div class="col-6">
+				<div class="col-auto col-md-6 col-lg-3 col-xl-3 order-1 order-md-0">
 					
 					<div class="mb-3">
 						
@@ -38,7 +38,7 @@ $social_links = get_field('social_section', 'options');
 					
 					</div>
 					
-					<div class="mb-2 mb-lg-0">
+					<div class="mb-0">
 					
 						<ul class="list-inline">
 							<li class="list-inline-item"><a href="<?php echo $social_links['facebook']; ?>"><i class="fa fa-facebook"></i></a></li>
@@ -51,28 +51,35 @@ $social_links = get_field('social_section', 'options');
 	
 				</div><!--col-lg-6 end -->
 				
-				<div class="col-6">
+				<div class="col-md-6 col-lg-9 col-xl-8 order-0 order-md-1 mb-4 mb-md-0">
 					
 					<div class="row mb-2">
 					
-						<div class="col-lg-4">
+						<div class="col-6 col-lg-3">
 							
 							<h6><?php echo $links_section['column_1_title']; ?></h6>
 							<?php wp_nav_menu( array( 'theme_location'  => 'footer1' ) ); ?>
 							
 						</div>
 					
-						<div class="col-lg-4">
+						<div class="col-6 col-lg-3">
 							
 							<h6><?php echo $links_section['column_2_title']; ?></h6>
 							<?php wp_nav_menu( array( 'theme_location'  => 'footer2' ) ); ?>
 							
 						</div>
 					
-						<div class="col-lg-4">
+						<div class="col-6 col-lg-3">
 							
 							<h6><?php echo $links_section['column_3_title']; ?></h6>
 							<?php wp_nav_menu( array( 'theme_location'  => 'footer3' ) ); ?>
+							
+						</div>
+						
+						<div class="col-6 col-lg-3">
+							
+							<h6><?php echo $links_section['column_4_title']; ?></h6>
+							<?php wp_nav_menu( array( 'theme_location'  => 'footer4' ) ); ?>
 							
 						</div>
 						

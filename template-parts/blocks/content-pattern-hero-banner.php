@@ -11,8 +11,8 @@ $type = $banner_content['type'];
 
 if ( $type == 'Form' ) {
 	
-	$row_class = 'row';
-	$col_class = 'col-lg-8 align-self-center';
+	$row_class = 'row justify-content-center justify-content-lg-between';
+	$col_class = 'col-md-8 col-lg-7 col-xl-7 align-self-center';
 	
 } else {
 	
@@ -46,7 +46,7 @@ if ( $type == 'Form' ) {
 				
 				<?php if ( $type == 'Form' ): ?>
 				
-					<div class="col-lg-4">
+					<div class="col-md-8 col-lg-5 col-xl-4">
 						<div class="bg-light p-4">
 							
 							<?php if ( $banner_content['form_title'] ): ?>

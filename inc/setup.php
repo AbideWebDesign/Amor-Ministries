@@ -38,6 +38,7 @@ if ( ! function_exists( 'amor_setup' ) ) {
 			'footer1' => __( 'Footer Column 1', 'amor' ),
 			'footer2' => __( 'Footer Column 2', 'amor' ),
 			'footer3' => __( 'Footer Column 3', 'amor' ),
+			'footer4' => __( 'Footer Column 4', 'amor' ),
 		) );
 
 		/*
