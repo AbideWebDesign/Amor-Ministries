@@ -368,6 +368,17 @@ button, .btn {
 				}
 			}
 		}
+		.gform_confirmation_wrapper  {
+			background-color: white;
+			padding: 2em;
+			border-radius: 3px;
+			font-weight: bold;
+			text-align: center;
+			
+			h3 {
+				color: $blue;
+			}
+		}
 	}
 }
 @include media-breakpoint-up(xl) {
