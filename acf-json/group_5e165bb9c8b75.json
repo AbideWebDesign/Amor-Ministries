@@ -17,7 +17,8 @@
             },
             "choices": {
                 "Default": "Default",
-                "Form": "Form"
+                "Form": "Form",
+                "Donation": "Donation"
             },
             "default_value": [],
             "allow_null": 0,
@@ -105,5 +106,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1582153962
+    "modified": 1582824737
 }

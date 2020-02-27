@@ -77,6 +77,31 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_5e545ee18dc9b",
+                    "label": "Content Type",
+                    "name": "content_type",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Regular": "Regular",
+                        "Form": "Form"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
                     "key": "field_5dfbb6827e09a",
                     "label": "Title",
                     "name": "title",
@@ -145,7 +170,15 @@
                     "type": "true_false",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e545ee18dc9b",
+                                "operator": "==",
+                                "value": "Regular"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -185,6 +218,31 @@
                     "layout": "block",
                     "prefix_label": 0,
                     "prefix_name": 0
+                },
+                {
+                    "key": "field_5e545f308dc9d",
+                    "label": "Form",
+                    "name": "form",
+                    "type": "forms",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e545ee18dc9b",
+                                "operator": "==",
+                                "value": "Form"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "allow_null": 0,
+                    "multiple": 0
                 }
             ]
         }
@@ -206,5 +264,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1579215941
+    "modified": 1582587719
 }

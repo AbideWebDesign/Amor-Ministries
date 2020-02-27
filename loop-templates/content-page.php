@@ -11,8 +11,3 @@ defined( 'ABSPATH' ) || exit;
 
 <?php the_content(); ?>
 
-<footer class="entry-footer">
-
-
-</footer><!-- .entry-footer -->
-

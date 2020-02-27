@@ -18,13 +18,46 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_5e55680448ae7",
+                    "label": "Banner Type",
+                    "name": "banner_type",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Default": "Default",
+                        "Donation": "Donation"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
                     "key": "field_5e1667e449264",
                     "label": "Text Position",
                     "name": "text_position",
                     "type": "select",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e55680448ae7",
+                                "operator": "==",
+                                "value": "Default"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "10",
                         "class": "",
@@ -34,6 +67,41 @@
                         "justify-content-start": "Left",
                         "justify-content-center": "Center",
                         "justify-content-end": "Right"
+                    },
+                    "default_value": [
+                        "Left"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5e556a39b8177",
+                    "label": "Text Position",
+                    "name": "text_position_donation",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e55680448ae7",
+                                "operator": "==",
+                                "value": "Donation"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "10",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "order-0": "Left",
+                        "order-lg-1": "Right"
                     },
                     "default_value": [
                         "Left"
@@ -180,7 +248,15 @@
                     "type": "true_false",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e55680448ae7",
+                                "operator": "==",
+                                "value": "Default"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -220,6 +296,31 @@
                     "layout": "block",
                     "prefix_label": 0,
                     "prefix_name": 0
+                },
+                {
+                    "key": "field_5e55683b48ae8",
+                    "label": "Form",
+                    "name": "form",
+                    "type": "forms",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e55680448ae7",
+                                "operator": "==",
+                                "value": "Donation"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "allow_null": 0,
+                    "multiple": 0
                 }
             ]
         }
@@ -241,5 +342,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1582139266
+    "modified": 1582657071
 }

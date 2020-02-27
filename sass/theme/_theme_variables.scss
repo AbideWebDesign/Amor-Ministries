@@ -13,6 +13,7 @@ $pink:		#fb6263;
 $secondary:	$teal;
 $secondary-accent: $pink;
 $light:  	#e9ecef;
+$gray-400: #ced4da;
 
 /* Typography */
 $font-size-base: 1rem;
@@ -45,3 +46,7 @@ $navbar-dark-color: 		rgba($white, 1);
 $navbar-dark-hover-color:	rgba($white, 1);
 $navbar-light-color:		rgba($black, 1);
 $navbar-light-hover-color:	rgba($black, 1);
+
+/* Forms */
+$input-focus-border-color: $gray-400;
+$input-focus-box-shadow: none;

@@ -54,7 +54,13 @@ if ( $text_position == 'Right' ) {
 					
 				</div>
 				
-				<?php if ( $group_content['include_button'] ): ?>
+				<?php if ( $group_content['content_type'] == 'Form' ): ?>
+				
+					<?php $form_id = $group_content['form']; ?>
+					
+					<?php echo do_shortcode('[gravityform id="' . $form_id . '" title="false" description="false" ajax="true" tabindex="49"]'); ?>
+					
+				<?php elseif ( $group_content['include_button'] ): ?>
 				
 					<?php echo get_button( $group_content ); ?>
 				

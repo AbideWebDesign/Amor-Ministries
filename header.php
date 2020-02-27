@@ -92,10 +92,16 @@ if ( get_field('header_type') == 'Transparent' ) {
 			
 				<a class="navbar-brand" href="<?php echo home_url(); ?>"><img id="header-logo" src="<?php echo $logo_src[0]; ?>" class="img-fluid logo" width="300" alt="Amor Ministries" /></a>
 				
-				<div class="d-flex">		
-					<div class="d-lg-none mr-2">
-						<a href="<?php echo home_url('/donate'); ?>" class="btn btn-sm btn-yellow">Donate</a>
-					</div>		
+				<div class="d-flex">
+					
+					<?php if ( get_field('page_type') != 'Donation' ): ?>
+							
+						<div class="d-lg-none mr-2">
+							<a href="<?php echo home_url('/donate'); ?>" class="btn btn-sm btn-yellow">Donate</a>
+						</div>		
+						
+					<?php endif; ?>
+					
 					<div class="col-auto d-lg-none align-self-center">
 					
 						<?php shiftnav_toggle( 'shiftnav-main' , '' , array( 'icon' => 'bars' , 'class' => 'shiftnav-toggle-button') ); ?>

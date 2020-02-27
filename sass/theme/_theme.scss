@@ -45,6 +45,13 @@ button, .btn {
 .btn-accent, .btn-yellow {
 	background-color: $yellow;
 	border-color: $yellow;
+	color: $body-color;
+	
+	&:hover {
+		color: $body-color;
+		background-color: lighten($yellow, 10);
+		border-color: lighten($yellow, 10);
+	}
 }
 .btn-secondary-accent {
 	background-color: $pink;
@@ -200,6 +207,7 @@ button, .btn {
 
 /* Global Footer */
 #wrapper-footer {
+	background-color: white;
 	padding: 3em 0;
 	border-top: 1px solid #ECE8E7;
 	
@@ -308,21 +316,80 @@ button, .btn {
 			}
 		}
 	}
+	.hero-banner-donation {
+		min-height: inherit;
+		height: 750px;
+		
+		.gform_heading {
+			background-color: $blue;
+			color: white;
+			border-radius: 4px 4px 0 0;
+			padding: 20px;
+			text-align: center;
+			font-size: 16px;
+			font-weight: 700;
+			border-bottom: 1px solid #dfdfd7;
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+			margin: 0;
+			
+			h3 {
+				margin-bottom: 0;
+				text-align: center;
+				font-size: 16px;
+				font-weight: 700;
+			}
+		}
+		.gform_body {
+			padding: 20px;
+			background-color: white;
+			border: 1px solid #dfdfd7;
+			border-top: 0;
+			border-top-left-radius: 0px;
+			border-top-right-radius: 0px;
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+			
+			.ginput_amount {
+				font-weight: 500;
+			    color: $blue;
+			    font-size: 24px;
+			}
+			.button {
+				@extend .btn-accent;
+			}
+			.form-check label {
+				font-weight: bold;
+				font-size: .9em;
+				line-height: 1.375;
+				
+				&:before {
+					top: 0;
+				}
+			}
+		}
+	}
 }
 @include media-breakpoint-up(xl) {
-	.hero-banner { 
-		.row {
-    		padding: 200px 0;
+	.container-hero {
+		.hero-banner { 
+			.row {
+	    		padding: 200px 0;
+			}
+		}
+		.hero-banner-donation {
+			.row {
+				padding: 0;
+			}
 		}
 	}
 }
 @include media-breakpoint-down(lg) {
 	.container-hero {
-	
 		.hero-banner {
+			padding-top: 13em;
 			display: block;
 			background-image: none !important;
-			padding: 230px 0 0 0;
 			min-height: auto;
 			
 			&:after {
@@ -338,6 +405,43 @@ button, .btn {
 				text-align: center;
 				justify-content: center !important;
 			}
+		}
+		.hero-banner-donation {
+			height: auto;
+			
+			.row {
+				.hero-header, .gform_body {
+					text-align: left;
+				}
+			}
+		}
+	}
+}
+@include media-breakpoint-down(md) {
+	.container-hero {
+		.hero-banner {
+			padding-top: 9em;
+		}
+		.hero-banner-donation {
+			
+			.row {
+				.hero-header {
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+@include media-breakpoint-down(sm) {
+	.container-hero {
+		.hero-banner-donation {
+			h1 {
+				font-size: 26px;
+				margin-bottom: 20px;
+			}	
+			p {
+				display: none;
+			}	
 		}
 	}
 }
@@ -598,6 +702,10 @@ body {
 		.custom-select {
 			-webkit-appearance: none;
 			-moz-appearance: none;
+			&:focus {
+				box-shadow: none;
+				border-color: $gray-400;
+			}
 		}
 		.form-check {
 			margin-bottom: .3em;
@@ -654,6 +762,10 @@ body {
 		background-color: $danger;
 		color: white;
 	}
+	.ginput_container_select {
+		outline: none;
+	}
+	
 	/* Form Sizes */
 	.form-sm {
 		.gform_title {

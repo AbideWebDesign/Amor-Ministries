@@ -23,19 +23,19 @@ $image_mobile = wp_get_attachment_image_src( $banner_content['image_mobile']['id
 
 <div class="container-hero">
 
-	<div class="hero-banner" style="background-image: url( <?php echo $image[0]; ?> )">
+	<div class="hero-banner <?php echo ($banner_settings['banner_type'] == 'Donation' ? 'hero-banner-donation' : ''); ?>" style="background-image: url( <?php echo $image[0]; ?> )">
 
 		<div class="container">
 
-			<div class="row <?php echo $banner_settings['text_position']; ?>">
+			<div class="row <?php echo ($banner_settings['banner_type'] == 'Default' ? $banner_settings['text_position'] : 'justify-content-between'); ?>">
 
-				<div class="col-md-8 col-lg-6">
+				<div class="col-md-10 col-lg-7 col-xl-7 <?php echo ($banner_settings['banner_type'] == 'Donation' ? 'align-self-center ' . $banner_settings['text_position_donation'] : ''); ?>">
 
-					<div class="hero-header <?php echo $banner_settings['text_color']; ?> <?php echo $text_align; ?>">
+					<div class="hero-header <?php echo $banner_settings['text_color']; ?>">
 
 						<h1><?php echo $banner_content['title']; ?></h1>
 
-						<p class="lead"><?php echo $banner_content['text']; ?></p>
+						<p class="lead mb-0"><?php echo $banner_content['text']; ?></p>
 						
 						<?php if ( $banner_content['include_button'] ): ?>
 						
@@ -46,6 +46,18 @@ $image_mobile = wp_get_attachment_image_src( $banner_content['image_mobile']['id
 					</div>
 
 				</div>
+				
+				<?php if ( $banner_settings['banner_type'] == 'Donation' ): ?>
+				
+					<?php $form_id = $banner_content['form']; ?>
+					
+					<div class="col-md-8 col-lg-5 col-xl-4 mt-4 mt-lg-0">
+						
+						<?php echo do_shortcode('[gravityform id="' . $form_id . '" title="true" description="false" ajax="true" tabindex="49"]'); ?>
+
+					</div>
+				
+				<?php endif; ?>
 
 			</div>
 

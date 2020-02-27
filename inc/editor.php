@@ -249,3 +249,5 @@ function change_stripe_description( $description, $strings, $entry ) {
 	return $description;
 
 }
+
+add_filter( 'gform_confirmation_anchor', '__return_false' );
