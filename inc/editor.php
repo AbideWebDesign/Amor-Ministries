@@ -250,4 +250,22 @@ function change_stripe_description( $description, $strings, $entry ) {
 
 }
 
+// Remove scroll to top functionality on multi-page forms.
 add_filter( 'gform_confirmation_anchor', '__return_false' );
+
+// Remove dollar symbol
+add_filter( 'gform_currencies', 'modify_currencies' );
+function modify_currencies( $currencies ) {
+
+	$currencies['USD'] = array(
+		'name'               => esc_html__( 'USD', 'gravityforms' ),
+		'symbol_left'        => '',
+		'symbol_right'       => '',
+		'symbol_padding'     => ' ',
+		'thousand_separator' => ',',
+		'decimal_separator'  => '.',
+		'decimals'           => 2
+	);
+
+	return $currencies;
+}
