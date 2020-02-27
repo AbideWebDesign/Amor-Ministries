@@ -12,7 +12,7 @@ function amor_acf_init() {
 		acf_register_block(array(
 			'name'				=> 'default-text',
 			'title'				=> __('Default Text'),
-			'description'		=> __('Default text content block.'),
+			'description'		=> __(''),
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'text',
@@ -22,7 +22,7 @@ function amor_acf_init() {
 		acf_register_block(array(
 			'name'				=> 'hero-banner',
 			'title'				=> __('Hero Banner'),
-			'description'		=> __('Hero banner content block.'),
+			'description'		=> __(''),
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'format-image',
@@ -32,7 +32,7 @@ function amor_acf_init() {
 		acf_register_block(array(
 			'name'				=> 'pattern-hero-banner',
 			'title'				=> __('Pattern Hero Banner'),
-			'description'		=> __('Pattern Hero banner content block.'),
+			'description'		=> __(''),
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'format-image',
@@ -42,7 +42,7 @@ function amor_acf_init() {
 		acf_register_block(array(
 			'name'				=> 'image-feature',
 			'title'				=> __('Image Feature'),
-			'description'		=> __('Side by side block including a image and text.'),
+			'description'		=> __(''),
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'align-left',
@@ -52,7 +52,7 @@ function amor_acf_init() {
 		acf_register_block(array(
 			'name'				=> 'icon-group',
 			'title'				=> __('Icon Group'),
-			'description'		=> __('Icon group block including a image and text.'),
+			'description'		=> __(''),
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'megaphone',
@@ -82,7 +82,7 @@ function amor_acf_init() {
 		acf_register_block(array(
 			'name'				=> 'cards',
 			'title'				=> __('Cards block'),
-			'description'		=> __('Cards block.'),
+			'description'		=> __(''),
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'excerpt-view',
@@ -91,10 +91,19 @@ function amor_acf_init() {
 		acf_register_block(array(
 			'name'				=> 'form',
 			'title'				=> __('Form block'),
-			'description'		=> __('Form block.'),
+			'description'		=> __(''),
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'welcome-write-blog',
+		));	
+		// register a list group block
+		acf_register_block(array(
+			'name'				=> 'list-group',
+			'title'				=> __('List Group block'),
+			'description'		=> __(''),
+			'render_callback'	=> 'amor_acf_block_render_callback',
+			'category'			=> 'layout',
+			'icon'				=> 'menu-alt3',
 		));	
 	}
 }

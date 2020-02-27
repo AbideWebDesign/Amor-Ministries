@@ -532,6 +532,43 @@ button, .btn {
 	max-width: 120px;
 }
 
+
+/* Page Block: List Group */
+.list-group {
+	@extend .wrapper;
+	
+	.card-header {
+		background-color: white;
+		
+		.btn {
+			text-align: left;
+		}
+	}
+	.card-body {
+		padding: 1.25rem 40px;
+		
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+@include media-breakpoint-down(lg) {
+	.list-group {
+		padding: 50px 0;
+	}
+}	
+@include media-breakpoint-down(sm) {
+	.list-group {
+		.card-header {
+			.btn {
+				padding: 0;
+			}
+		}
+		.card-body {
+			padding: 1.25rem;
+		}
+	}
+}
 /* Page Block: Default Text */
 .wrapper-default-text {
 	padding: 100px 0;
