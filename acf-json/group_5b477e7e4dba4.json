@@ -4,14 +4,14 @@
     "fields": [
         {
             "key": "field_5b478316d974a",
-            "label": "List Group Title",
+            "label": "Title",
             "name": "list_group_title",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "66",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -42,7 +42,7 @@
             "sub_fields": [
                 {
                     "key": "field_5b477ef89682f",
-                    "label": "List Item Title",
+                    "label": "Title",
                     "name": "list_item_title",
                     "type": "text",
                     "instructions": "",
@@ -61,7 +61,7 @@
                 },
                 {
                     "key": "field_5b477f1896830",
-                    "label": "List Item Text",
+                    "label": "Content",
                     "name": "list_item_text",
                     "type": "wysiwyg",
                     "instructions": "",
@@ -74,8 +74,8 @@
                     },
                     "default_value": "",
                     "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
+                    "toolbar": "basic",
+                    "media_upload": 0,
                     "delay": 0
                 }
             ]
@@ -98,5 +98,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1582846721
+    "modified": 1582847265
 }
