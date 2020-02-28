@@ -103,7 +103,7 @@ function amor_acf_init() {
 			'description'		=> __(''),
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
-			'icon'				=> 'menu-alt3',
+			'icon'				=> 'menu',
 		));	
 	}
 }
