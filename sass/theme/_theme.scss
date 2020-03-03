@@ -726,6 +726,13 @@ body {
 			@extend .form-control-lg;
 			width: 100%;
 		}
+		.ginput_container_name {
+			@extend .row;
+			
+			span {
+				@extend .col-6;
+			}
+		}
 		.StripeElement {
 			padding-top: 13px;
 		}
@@ -838,5 +845,52 @@ body {
 			@extend .btn-block;
 			@extend .btn-secondary;
 		}
+	}
+}
+
+/* Login Form */
+#login {
+	background-color: $gray-400;
+}
+#loginform,  {
+	p {
+		@extend .form-group;
+	}
+	label {
+		font-weight: bold;
+		margin-bottom: .5rem;
+	}
+	input[type="text"], input[type="password"] {
+		@extend .form-control;
+		@extend .form-control-lg;		
+	}
+	#wp-submit {
+		@extend .btn;
+		@extend .btn-primary;
+		@extend .btn-lg;
+		@extend .btn-block;
+	}
+	.login-remember {
+		@extend .form-check;
+		
+		label {
+			@extend .custom-control-label;
+			font-weight: bold;
+			font-size: .9em;
+			line-height: 1.375;
+			
+			&:before {
+				top: 0;
+				left: -1.2rem;
+			}
+		}
+	}
+	#rememberme {
+		@extend .custom-control-input;
+	}
+}
+#forgot-password {
+	label {
+		font-weight: bold;
 	}
 }

@@ -1,11 +1,11 @@
 {
-    "key": "group_5dfbb648bbdee",
-    "title": "Block - Image Feature",
+    "key": "group_5e5d5282b8dd1",
+    "title": "Fundraiser Block - Hero Banner",
     "fields": [
         {
-            "key": "field_5dfbb66f7e099",
-            "label": "Side By Side Settings",
-            "name": "side_by_side_settings",
+            "key": "field_5e5d5282bffe3",
+            "label": "Hero Banner Settings",
+            "name": "hero_banner_settings",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -18,21 +18,53 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5dfbbc3a80a45",
+                    "key": "field_5e5d5282c3c8d",
+                    "label": "Banner Type",
+                    "name": "banner_type",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Donation": "Donation"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5e5d5282c3ca4",
                     "label": "Text Position",
-                    "name": "text_position",
+                    "name": "text_position_donation",
                     "type": "select",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e5d5282c3c8d",
+                                "operator": "==",
+                                "value": "Donation"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "10",
                         "class": "",
                         "id": ""
                     },
                     "choices": {
-                        "Left": "Left",
-                        "Right": "Right"
+                        "order-0": "Left",
+                        "order-lg-1": "Right"
                     },
                     "default_value": [
                         "Left"
@@ -41,14 +73,14 @@
                     "multiple": 0,
                     "ui": 1,
                     "ajax": 0,
-                    "return_format": "label",
+                    "return_format": "value",
                     "placeholder": ""
                 },
                 {
-                    "key": "field_5dfd084941fd6",
-                    "label": "Background Color",
-                    "name": "background_color",
-                    "type": "color_picker",
+                    "key": "field_5e5d5282c3caf",
+                    "label": "Text Color",
+                    "name": "text_color",
+                    "type": "select",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -57,14 +89,24 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": ""
+                    "choices": {
+                        "text-body": "Black",
+                        "text-white": "White"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
                 }
             ]
         },
         {
-            "key": "field_5dfd2616b10d0",
-            "label": "Side By Side Content",
-            "name": "side_by_side_content",
+            "key": "field_5e5d5282d3175",
+            "label": "Hero Banner Content",
+            "name": "hero_banner_content",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -77,32 +119,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5e545ee18dc9b",
-                    "label": "Content Type",
-                    "name": "content_type",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "Regular": "Regular",
-                        "Form": "Form"
-                    },
-                    "default_value": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 1,
-                    "ajax": 0,
-                    "return_format": "value",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_5dfbb6827e09a",
+                    "key": "field_5e5d5282d603b",
                     "label": "Title",
                     "name": "title",
                     "type": "text",
@@ -121,42 +138,42 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5dfbb6867e09b",
+                    "key": "field_5e5d5282d604a",
                     "label": "Text",
                     "name": "text",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "85",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "visual",
-                    "toolbar": "basic",
-                    "media_upload": 0,
-                    "delay": 0
-                },
-                {
-                    "key": "field_5dfbb68b7e09c",
-                    "label": "Image",
-                    "name": "image",
-                    "type": "image",
+                    "type": "textarea",
                     "instructions": "",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "15",
+                        "width": "100",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_5e5d5282d6053",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "2880px x 800px",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "65",
                         "class": "",
                         "id": ""
                     },
                     "return_format": "array",
-                    "preview_size": "medium",
+                    "preview_size": "medium_large",
                     "library": "all",
-                    "min_width": 1067,
-                    "min_height": 1600,
+                    "min_width": 2880,
+                    "min_height": 800,
                     "min_size": "",
                     "max_width": "",
                     "max_height": "",
@@ -164,7 +181,31 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_5e1cff981dfdb",
+                    "key": "field_5e5d5282d605e",
+                    "label": "Image - Mobile",
+                    "name": "image_mobile",
+                    "type": "image",
+                    "instructions": "1280px x 491px",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": 1280,
+                    "min_height": 491,
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5e5d5282d6066",
                     "label": "Include Button",
                     "name": "include_button",
                     "type": "true_false",
@@ -173,9 +214,9 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_5e545ee18dc9b",
+                                "field": "field_5e55680448ae7",
                                 "operator": "==",
-                                "value": "Regular"
+                                "value": "Default"
                             }
                         ]
                     ],
@@ -191,7 +232,7 @@
                     "ui_off_text": ""
                 },
                 {
-                    "key": "field_5e1cffa51dfdc",
+                    "key": "field_5e5d5282d6070",
                     "label": "Button",
                     "name": "button",
                     "type": "clone",
@@ -200,7 +241,7 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_5e1cff981dfdb",
+                                "field": "field_5e5d5282d6066",
                                 "operator": "==",
                                 "value": "1"
                             }
@@ -220,7 +261,7 @@
                     "prefix_name": 0
                 },
                 {
-                    "key": "field_5e545f308dc9d",
+                    "key": "field_5e5d5282d607b",
                     "label": "Form",
                     "name": "form",
                     "type": "forms",
@@ -229,9 +270,9 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_5e545ee18dc9b",
+                                "field": "field_5e55680448ae7",
                                 "operator": "==",
-                                "value": "Form"
+                                "value": "Donation"
                             }
                         ]
                     ],
@@ -250,9 +291,16 @@
     "location": [
         [
             {
-                "param": "block",
+                "param": "post_type",
                 "operator": "==",
-                "value": "acf\/image-feature"
+                "value": "fundraiser"
+            }
+        ],
+        [
+            {
+                "param": "user_role",
+                "operator": "==",
+                "value": "fundraiser"
             }
         ]
     ],
@@ -264,5 +312,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1583258369
+    "modified": 1583176873
 }

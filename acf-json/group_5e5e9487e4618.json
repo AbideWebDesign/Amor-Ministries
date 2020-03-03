@@ -1,0 +1,43 @@
+{
+    "key": "group_5e5e9487e4618",
+    "title": "Email Notifications",
+    "fields": [
+        {
+            "key": "field_5e5e94944995d",
+            "label": "Reset Password Email",
+            "name": "reset_password_email",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "We have recently received a request to reset your Amor Ministries password. Your new password is below. Please let us know if you have any questions or concerns!",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-general-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1583256869
+}

@@ -56,6 +56,12 @@ if ( $group_settings['type'] == 'text-sidebar' ): // Text with Sidebar
 				
 				<div class="<?php echo $text_col_classes; ?>">
 					
+					<?php if ( isset( $group_content['content_title'] ) ): ?>
+					
+						<h2><?php echo $group_content['content_title']; ?></h2>
+					
+					<?php endif; ?>
+					
 					<?php echo $group_content['content']; ?>
 					
 					<?php if ( $group_content['include_button'] ): ?>
@@ -92,6 +98,12 @@ if ( $group_settings['type'] == 'text-sidebar' ): // Text with Sidebar
 			<div class="row justify-content-center">
 				
 				<div class="col-lg-9 col-xl-7">
+					
+					<?php if ( isset( $group_content['content_title'] ) ): ?>
+					
+						<h2><?php echo $group_content['content_title']; ?></h2>
+					
+					<?php endif; ?>
 					
 					<?php echo $group_content['content']; ?>
 					

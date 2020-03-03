@@ -131,3 +131,270 @@ if ( function_exists('acf_add_options_page') ) {
 	));
 	
 }
+
+/*
+ * Admin bar customizations
+ *
+ */
+function admin_bar_render() {
+	
+    global $wp_admin_bar;
+	$wp_admin_bar->remove_menu('customize');
+    $wp_admin_bar->remove_node('wp-logo');
+    $wp_admin_bar->remove_menu('new-post');
+    $wp_admin_bar->remove_menu('search');
+    $wp_admin_bar->remove_menu('themes');
+    $wp_admin_bar->remove_menu('widgets');
+    $wp_admin_bar->remove_node('updates');
+    $wp_admin_bar->remove_menu('searchwp');
+    $wp_admin_bar->remove_menu('delete-cache');
+	$wp_admin_bar->remove_menu('litespeed-menu');
+	
+}
+add_action( 'wp_before_admin_bar_render', 'admin_bar_render' );
+
+/*
+ * Change admin bar labels
+ *
+ */
+function change_admin_labels( $wp_admin_bar ) {
+	
+	if ( check_user_role( array( 'fundraiser' ) ) ) { 
+		
+		$my_account = $wp_admin_bar->get_node('my-account');
+		
+		$newtext = str_replace( 'Howdy,', '<span class="dashicons dashicons-menu"></span>', $my_account->title );
+		
+		$wp_admin_bar->add_node( array(
+			'id' => 'my-account',
+			'title' => $newtext,
+		) );	
+	
+	}
+	
+}
+add_action( 'admin_bar_menu', 'change_admin_labels', 25);
+
+/*
+ * Remove unused dashboard widgets
+ *
+ */
+function remove_dashboard_widgets() {
+	
+	global $wp_meta_boxes;
+
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']); 
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
+
+}
+add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
+
+/*
+ * Hide admin notifications for non-admins
+ *
+ */
+function hide_update_msg_non_admins(){
+	
+	if ( !current_user_can( 'manage_options' ) ) { // non-admin users
+    	
+    	echo '<style>#setting-error-tgmpa>.updated settings-error notice is-dismissible, .update-nag, .updated { display: none; }</style>';
+        
+	}
+}
+add_action( 'admin_head', 'hide_update_msg_non_admins');
+
+/*
+ * Add custom favicon to admin pages
+ *
+ */
+function add_login_favicon() {
+	
+	$favicon_url = get_stylesheet_directory_uri() . '/favicon.png';
+
+	echo '<link rel="shortcut icon" href="' . $favicon_url . '" />';
+	
+}
+add_action('login_head', 'add_login_favicon');
+add_action('admin_head', 'add_login_favicon');
+
+/*
+ * Remove absolute styling on mobile when logged in
+ *
+ */
+function admin_bar_style_override() {
+	
+	if ( is_user_logged_in() ) {
+		
+		?>
+		
+		<style>
+		
+			#wpadminbar {
+				position: fixed;
+			}
+			#directory-categorydiv, .ac-message, #ac-pro-version, #direct-feedback, .installer-plugin-update-tr, .plugins .dashicons, .shortpixel-notice, #emr-news, .wrap.emr_upload_form .option-flex-wrapper, .emr_upload_form #message {
+				display: none;
+			}
+			form#your-profile > h3, form#your-profile .user-profile-picture, form#your-profile .user-description-wrap, form#your-profile .user-display-name-wrap, form#your-profile .user-nickname-wrap, form#your-profile .show-admin-bar, .user-comment-shortcuts-wrap, form#your-profile .yoast-settings, form#your-profile .user-rich-editing-wrap, form#your-profile .user-admin-color-wrap, form#your-profile .user-url-wrap, form#your-profile .user-facebook-wrap, form#your-profile .user-instagram-wrap, form#your-profile .user-linkedin-wrap, form#your-profile .user-myspace-wrap, form#your-profile .user-pinterest-wrap, form#your-profile .user-soundcloud-wrap, form#your-profile .user-tumblr-wrap, form#your-profile .user-twitter-wrap, form#your-profile .user-youtube-wrap, form#your-profile .user-wikipedia-wrap  {
+				display: none;
+			}
+			#your-profile h2 {
+				display: none;
+			}
+	<?php
+		
+		if ( check_user_role ( array( 'fundraiser' ) ) ) {
+		
+			echo ".dashicons{font-family: dashicons !important;}#wpadminbar .ab-top-menu>li.hover>.ab-item, #wpadminbar.nojq .quicklinks .ab-top-menu>li>.ab-item:focus, #wpadminbar:not(.mobile) .ab-top-menu>li:hover>.ab-item, #wpadminbar:not(.mobile) .ab-top-menu>li>.ab-item:focus {background-color: #0f71b6; color: white;} #wpadminbar #wp-admin-bar-my-account.with-avatar #wp-admin-bar-user-actions>li {margin-left: 20px;} #wpadminbar, #wpadminbar .menupop .ab-sub-wrapper, #wpadminbar .shortlink-input {background-color: #0f71b6;} .avatar, #screen-meta-links, .user-sessions-wrap, #adminmenumain, #wp-admin-bar-site-name, #wp-admin-bar-user-info, #wp-admin-bar-edit { display: none !important; } #wpcontent, #wpfooter { margin-left: 0; } #admin-fundraiser-link { background-color: #fbd402; position: absolute; top: 20px; right: 20px; padding: 10px; width: auto;}";
+			
+		}
+		
+	}
+	
+	echo "</style>";
+	
+}
+add_action('wp_head', 'admin_bar_style_override');
+add_action('admin_head', 'admin_bar_style_override');
+
+// Add custom field to fundraiser profile page
+function add_fundraiser_field( $user ) {
+
+	if ( check_user_role( array( 'fundraiser' ) ) ) { 
+
+		?>
+		
+		    <div id="admin-fundraiser-link" class="form-table">
+		    	<strong>Fundraiser Page Link:</strong> <a href="<?php echo home_url(); ?>/fundraiser/<?php echo $user->user_nicename; ?>"><?php echo home_url(); ?>/fundraiser/<?php echo $user->user_nicename; ?></a>
+		    </div>
+		           
+		<?php
+		
+	}
+	
+}
+add_action( 'show_user_profile', 'add_fundraiser_field' );
+add_action( 'edit_user_profile', 'add_fundraiser_field' );
+
+// Change author slug for fundraisers
+function change_author_base() {
+	
+	global $wp_rewrite;
+	
+	$author_slug = 'fundraiser'; // change slug name
+	
+	$wp_rewrite->author_base = $author_slug;
+	
+}
+add_action('init', 'change_author_base');
+
+// Helper function to check user roles
+function check_user_role($roles, $user_id = null) {
+	
+	if ( $user_id ) {
+		
+		$user = get_userdata( $user_id );
+		
+	} else {
+
+		$user = wp_get_current_user();
+
+	}
+
+	if ( empty( $user ) ) {
+		
+		return false;
+		
+	}
+	
+	foreach ( $user->roles as $role ) {
+		
+		if ( in_array($role, $roles) ) {
+			
+			return true;
+		
+		}
+	
+	}
+	
+	return false;
+}
+
+// Custom Login functions
+
+function redirect_login_page() {
+	
+	global $page_id;
+	
+	$login_page = home_url( '/login/' );
+	
+	$page = basename($_SERVER['REQUEST_URI']);
+
+	if ( $page == 'wp-login.php' && $_SERVER['REQUEST_METHOD'] == 'GET') {
+
+		wp_redirect($login_page);
+		
+		exit;
+	
+	}
+	
+}
+add_action('init', 'redirect_login_page');
+
+function redirect_lostpassword_page() {
+    
+    if ( 'GET' == $_SERVER['REQUEST_METHOD'] ) {
+	    
+        if ( is_user_logged_in() ) {
+        
+            $this->redirect_logged_in_user();
+        
+            exit;
+        
+        }
+ 
+        wp_redirect( home_url( 'password-reset' ) );
+        
+        exit;
+        
+    }
+    
+}
+add_action( 'login_form_lostpassword', 'redirect_lostpassword_page');
+
+function login_failed() {
+	
+    $login_page  = home_url( '/login/' );
+    
+    wp_redirect($login_page . "?login=failed");
+    
+    exit;
+
+}
+add_action( 'wp_login_failed', 'login_failed' );
+
+function verify_username_password( $user, $username, $password ) {
+    
+    $login_page  = home_url( '/login/' );
+    
+    if ( $username == "" || $password == "" ) {
+		
+		wp_redirect( $login_page . "?login=empty" );
+        
+		exit;
+    
+    }
+}
+add_filter( 'authenticate', 'verify_username_password', 1, 3);
+
+// Auto login to site after GF User Registration form submission
+function user_registration_autologin( $user_id, $config, $entry, $password ) {
+
+	wp_set_auth_cookie( $user_id, false, '' );
+}
+add_action( 'gform_user_registered','user_registration_autologin', 10, 4 );

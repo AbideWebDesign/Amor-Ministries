@@ -17,7 +17,13 @@ $light_color_check = get_color_text_class($bg_color_class);
 
 // Setup Content Fields
 $title = $group_content['title'];
-$text = $group_content['text'];
+
+if ( isset ( $group_content['text'] ) ) {
+
+	$text = $group_content['text'];
+
+}
+
 $image = wp_get_attachment_image_src( $group_content['image']['id'], 'Side Cover' );
 
 // Setup helper classes
@@ -48,17 +54,25 @@ if ( $text_position == 'Right' ) {
 
 				<h2 class="<?php echo $text_color_class; ?>"><?php echo $title ?></h2>
 				
-				<div class="lead">
+				<?php if ( isset( $text ) ): ?>
 				
-					<?php echo $text; ?>
+					<div class="lead">
 					
-				</div>
+						<?php echo $text; ?>
+						
+					</div>
+					
+				<?php endif; ?>
 				
 				<?php if ( $group_content['content_type'] == 'Form' ): ?>
 				
 					<?php $form_id = $group_content['form']; ?>
 					
-					<?php echo do_shortcode('[gravityform id="' . $form_id . '" title="false" description="false" ajax="true" tabindex="49"]'); ?>
+					<div class="bg-light p-4 text-body">
+						
+						<?php echo do_shortcode('[gravityform id="' . $form_id . '" title="false" description="false" ajax="false" tabindex="49"]'); ?>
+						
+					</div>
 					
 				<?php elseif ( $group_content['include_button'] ): ?>
 				

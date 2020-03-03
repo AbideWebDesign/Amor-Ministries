@@ -136,16 +136,22 @@ function bootstrap_styles_for_gravityforms_fields($content, $field, $value, $lea
 	if ( !is_admin() ) {
 		// Currently only applies to most common field types, but could be expanded.
 	
-		if($field["type"] != 'hidden' && $field["type"] != 'list' && $field["type"] != 'multiselect' && $field["type"] != 'checkbox' && $field["type"] != 'fileupload' && $field["type"] != 'date' && $field["type"] != 'html' && $field["type"] != 'address') {
+		if ( $field["type"] != 'hidden' && $field["type"] != 'list' && $field["type"] != 'multiselect' && $field["type"] != 'checkbox' && $field["type"] != 'fileupload' && $field["type"] != 'date' && $field["type"] != 'html' && $field["type"] != 'address' ) {
+			
 			$content = str_replace('class=\'medium', 'class=\'form-control medium', $content);
+		
 		}
 	
-		if($field["type"] == 'name' || $field["type"] == 'address') {
+		if ( $field["type"] == 'name' || $field["type"] == 'address' ) {
+			
 			$content = str_replace('<input ', '<input class=\'form-control\' ', $content);
+		
 		}
 	
-		if($field["type"] == 'textarea') {
+		if ( $field["type"] == 'textarea' ) {
+			
 			$content = str_replace('class=\'textarea', 'class=\'form-control textarea', $content);
+		
 		}
 	
 		if ( $field["type"] == 'checkbox' ) {
@@ -168,9 +174,17 @@ function bootstrap_styles_for_gravityforms_fields($content, $field, $value, $lea
 			$content = str_replace('</div>', '', $content);
 		}
 		
-		if($field["type"] == 'radio') {
+		if ( $field["type"] == 'radio' ) {
+			
 			$content = str_replace('li class=\'', 'li class=\'radio ', $content);
 			$content = str_replace('<input ', '<input style=\'margin-left:1px;\' ', $content);
+		
+		}
+		
+		if ($field["type"] == 'password' ) {
+
+			$content = str_replace("class='form-control medium'", '', $content);
+			
 		}
 	
 	}
@@ -210,7 +224,7 @@ function add_bootstrap_container_class( $field_container, $field, $form, $css_cl
 		} else if ( $field->type == 'checkbox' ) {
 			
 			return '<li id="' . $field_id . '" class="' . $css_class . '"><div class="custom-control custom-checkbox">{FIELD_CONTENT}</div></li>';
-			
+		
 		} else {
 			
 			return '<li id="' . $field_id . '" class="' . $css_class . ' form-group">{FIELD_CONTENT}</li>';
@@ -262,6 +276,7 @@ add_filter( 'gform_confirmation_anchor', '__return_false' );
 
 // Remove dollar symbol
 add_filter( 'gform_currencies', 'modify_currencies' );
+
 function modify_currencies( $currencies ) {
 
 	$currencies['USD'] = array(
@@ -276,3 +291,4 @@ function modify_currencies( $currencies ) {
 
 	return $currencies;
 }
+

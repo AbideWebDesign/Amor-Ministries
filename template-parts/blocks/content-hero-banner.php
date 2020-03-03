@@ -39,7 +39,11 @@ $image_mobile = wp_get_attachment_image_src( $banner_content['image_mobile']['id
 						
 						<?php if ( $banner_content['include_button'] ): ?>
 						
-							<?php echo get_button( $banner_content ); ?>
+							<div class="mt-3">
+								
+								<?php echo get_button( $banner_content ); ?>
+								
+							</div>
 						
 						<?php endif; ?>
 						
