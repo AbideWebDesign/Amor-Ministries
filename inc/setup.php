@@ -281,18 +281,6 @@ function add_fundraiser_field( $user ) {
 add_action( 'show_user_profile', 'add_fundraiser_field' );
 add_action( 'edit_user_profile', 'add_fundraiser_field' );
 
-// Change author slug for fundraisers
-function change_author_base() {
-	
-	global $wp_rewrite;
-	
-	$author_slug = 'fundraiser'; // change slug name
-	
-	$wp_rewrite->author_base = $author_slug;
-	
-}
-add_action('init', 'change_author_base');
-
 // Helper function to check user roles
 function check_user_role($roles, $user_id = null) {
 	
