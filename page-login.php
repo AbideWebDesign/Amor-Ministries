@@ -81,10 +81,7 @@ get_header(); ?>
 			
 			<div class="col col-lg-4 col-xl-3 offset-xl-1 align-self-center mb-4 mb-lg-0">
 
-				<h4>Need Login Assistance?</h4>
-				<p>We are here to help! Contact Trip Services for login assistance.</p>
-				<i class="fa fa-phone text-secondary"></i> <a href="tel:619.662.1200">619.662.1200</a><br>
-				<i class="fa fa-envelope text-secondary"></i> <a href="mailto:tripservices@amor.org">tripservices@amor.org</a>
+				<?php the_field('login_assistsance_message', 'options'); ?>
 
 			</div>
 			
