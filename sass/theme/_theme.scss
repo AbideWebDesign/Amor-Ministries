@@ -775,6 +775,8 @@ body {
 			border: 0;
 			border-radius: 0;
 			padding: .5em 1.25em 0 1.25em;
+			border-left: 1px solid #dfdfd7;
+			border-right: 1px solid #dfdfd7;
 		}
 		.gfield_error {
 			.ginput_container_email, .ginput_container_password, .ginput_container_text, .ginput_container_select, .ginput_container_date {
@@ -785,6 +787,14 @@ body {
 				@extend .bg-danger;
 				color: white;
 			}
+		}
+		.ginput_container_creditcard {
+			.validation_message {
+				display: none;
+			}
+		}
+		.StripeElement--invalid {
+			border-color: $danger;
 		}
 		.gfield_error {
 			&.input-group .validation_message {
@@ -915,6 +925,7 @@ body {
 			background-color: #f8d7da;
 			padding: .75rem 1.25rem;
 			border-radius: .25rem;
+			border: 1px solid #f5c6cb;
 		}
 	}
 }
