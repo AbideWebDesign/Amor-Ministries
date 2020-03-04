@@ -222,7 +222,7 @@ function add_login_favicon() {
 }
 add_action('login_head', 'add_login_favicon');
 add_action('admin_head', 'add_login_favicon');
-
+add_action('wp_head', 'add_login_favicon');
 /*
  * Remove absolute styling on mobile when logged in
  *

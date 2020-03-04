@@ -758,8 +758,43 @@ body {
 				}
 			}
 		}
-		.validation_message, .hidden_label .gfield_label, .hidden_label .custom_control > .custom_control_label, .gform_validation_container, .validation_error, img.gform_ajax_spinner {
+		.hidden_label .gfield_label, .hidden_label .custom_control > .custom_control_label, .gform_validation_container {
 			display: none;
+		}
+		.validation_error, .gfield_description.validation_message {
+			@extend .alert;
+			@extend .alert-danger;
+			font-size: $font-size-sm;
+		}
+		.gfield_description.validation_message {
+			margin-bottom: 0;
+		}
+		.validation_error {
+			background-color: white;
+			margin-bottom: 0;
+			border: 0;
+			border-radius: 0;
+			padding: .5em 1.25em 0 1.25em;
+		}
+		.gfield_error {
+			.ginput_container_email, .ginput_container_password, .ginput_container_text, .ginput_container_select, .ginput_container_date {
+				padding-bottom: .5em;
+			}
+			.input-group-text {
+				@extend .border-danger;
+				@extend .bg-danger;
+				color: white;
+			}
+		}
+		.gfield_error {
+			&.input-group .validation_message {
+				margin-top: .5em;	
+				width: 100%;
+			}
+		}	
+		.instruction.validation_message {
+			font-size: $font-size-sm;
+			font-weight: bold;
 		}
 		.small {
 			.form-check label {
@@ -855,8 +890,35 @@ body {
 			@extend .btn-secondary;
 		}
 	}
+	/* Spinner */
+	.gform_ajax_spinner {
+		margin-left: 20px;
+		border: 4px solid rgba(255, 255, 255, 0.3);
+		border-left: 4px solid rgba(15, 113, 182, 0.7);
+		animation: spinner 1.1s infinite linear;
+		border-radius: 50%;
+		width: 30px;
+		height: 30px;
+	}
+	@keyframes spinner {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
 }
-
+.bg-light {
+	.gform_wrapper {
+		.validation_error {
+			background-color: #f8d7da;
+			padding: .75rem 1.25rem;
+			border-radius: .25rem;
+		}
+	}
+}
+ 
 /* Login Form */
 #login {
 	background-color: $gray-400;
