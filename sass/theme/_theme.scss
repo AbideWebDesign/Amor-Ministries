@@ -316,7 +316,7 @@ button, .btn {
 			}
 		}
 	}
-	.hero-banner-donation {
+	.hero-banner-donation, .hero-banner-donation-image {
 		min-height: inherit;
 		height: 750px;
 		
@@ -406,7 +406,7 @@ button, .btn {
 	    		padding: 200px 0;
 			}
 		}
-		.hero-banner-donation {
+		.hero-banner-donation, .hero-banner-donation-image {
 			.row {
 				padding: 0;
 			}
@@ -416,9 +416,7 @@ button, .btn {
 @include media-breakpoint-down(lg) {
 	.container-hero {
 		.hero-banner {
-			padding-top: 13em;
 			display: block;
-			background-image: none !important;
 			min-height: auto;
 			
 			&:after {
@@ -435,7 +433,11 @@ button, .btn {
 				justify-content: center !important;
 			}
 		}
-		.hero-banner-donation {
+		.hero-banner-default, .hero-banner-donation {
+			padding-top: 13em;
+			background-image: none !important;
+		}
+		.hero-banner-donation, .hero-banner-donation-image {
 			height: auto;
 			
 			.row {
@@ -444,14 +446,21 @@ button, .btn {
 				}
 			}
 		}
+		.hero-banner-donation-image {
+			padding: 4em 0;
+			
+			&:after {
+				display: none;
+			}
+		}
 	}
 }
 @include media-breakpoint-down(md) {
 	.container-hero {
-		.hero-banner {
+		.hero-banner-default, .hero-banner-donation {
 			padding-top: 9em;
 		}
-		.hero-banner-donation {
+		.hero-banner-donation, .hero-banner-donation-image {
 			
 			.row {
 				.hero-header {
@@ -463,7 +472,7 @@ button, .btn {
 }
 @include media-breakpoint-down(sm) {
 	.container-hero {
-		.hero-banner-donation {
+		.hero-banner-donation, .hero-banner-donation-image {
 			h1 {
 				font-size: 35px;
 				margin-bottom: 20px;
@@ -475,7 +484,7 @@ button, .btn {
 .container-pattern-hero {
 	background-repeat: repeat;
 	background-color: #72c6a6;
-	background-image: url('http://amor.local/wp-content/uploads/2020/01/background-texture.png');
+	background-image: url('/wp-content/uploads/2020/01/background-texture.png');
 	padding: 100px 0;
 	
 	h2 {

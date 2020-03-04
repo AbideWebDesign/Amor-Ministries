@@ -61,6 +61,7 @@ if ( ! function_exists( 'amor_setup' ) ) {
 
 add_image_size('Hero Banner', 2880, 800, true);
 add_image_size('Hero Banner Mobile', 1280, 491, true);
+add_image_size('Hero Banner Foreground', 600, 400, true);
 add_image_size('Side Cover', 1067, 1600, true);
 add_image_size('Icon', 240, 240);
 add_image_size('Side', 1170, 846, true);

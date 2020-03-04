@@ -26,20 +26,21 @@
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "33",
                         "class": "",
                         "id": ""
                     },
                     "choices": {
-                        "Default": "Default",
-                        "Donation": "Donation"
+                        "Default": "Text Only",
+                        "Donation": "Donation w\/Text",
+                        "Donation-Image": "Donation w\/Foreground Image"
                     },
                     "default_value": [],
-                    "allow_null": 0,
+                    "allow_null": 1,
                     "multiple": 0,
-                    "ui": 0,
-                    "return_format": "value",
+                    "ui": 1,
                     "ajax": 0,
+                    "return_format": "value",
                     "placeholder": ""
                 },
                 {
@@ -91,6 +92,13 @@
                                 "field": "field_5e55680448ae7",
                                 "operator": "==",
                                 "value": "Donation"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5e55680448ae7",
+                                "operator": "==",
+                                "value": "Donation-Image"
                             }
                         ]
                     ],
@@ -162,7 +170,15 @@
                     "type": "text",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e55680448ae7",
+                                "operator": "!=",
+                                "value": "Donation-Image"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "100",
                         "class": "",
@@ -173,6 +189,38 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_5e5eec048f875",
+                    "label": "Foreground Image",
+                    "name": "foreground_image",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e55680448ae7",
+                                "operator": "==",
+                                "value": "Donation-Image"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ".png"
                 },
                 {
                     "key": "field_5e1667e455538",
@@ -195,7 +243,7 @@
                 },
                 {
                     "key": "field_5e1667e45551f",
-                    "label": "Image",
+                    "label": "Background Image",
                     "name": "image",
                     "type": "image",
                     "instructions": "2880px x 800px",
@@ -219,7 +267,7 @@
                 },
                 {
                     "key": "field_5e18c011dfbef",
-                    "label": "Image - Mobile",
+                    "label": "Background Image - Mobile",
                     "name": "image_mobile",
                     "type": "image",
                     "instructions": "1280px x 491px",
@@ -311,6 +359,13 @@
                                 "operator": "==",
                                 "value": "Donation"
                             }
+                        ],
+                        [
+                            {
+                                "field": "field_5e55680448ae7",
+                                "operator": "==",
+                                "value": "Donation-Image"
+                            }
                         ]
                     ],
                     "wrapper": {
@@ -332,6 +387,13 @@
                 "operator": "==",
                 "value": "acf\/hero-banner"
             }
+        ],
+        [
+            {
+                "param": "user_role",
+                "operator": "==",
+                "value": "fundraiser"
+            }
         ]
     ],
     "menu_order": 0,
@@ -342,5 +404,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1583174270
+    "modified": 1583281900
 }

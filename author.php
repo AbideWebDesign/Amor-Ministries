@@ -14,18 +14,8 @@ get_header();
 
 <div class="page-wrapper">
 
-	<?php if ( get_field('header_type') == 'White' && get_field('page_type') != 'Form' ): ?>
+	<?php get_template_part( 'loop-templates/content', 'fundraiser' ); ?>
 	
-		<div class="page-wrapper-pattern"></div>
-	
-	<?php endif; ?>
-
-	
-
-		<?php get_template_part( 'loop-templates/content', 'fundraiser' ); ?>
-
-	
-
 </div><!-- #page-wrapper -->
 
 <?php get_footer();
