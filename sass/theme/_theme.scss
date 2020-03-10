@@ -10,9 +10,12 @@ h2 {
 h2, h3, h4, h5 {
 	line-height: 1.6;
 }
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
 	h2 {
 		margin-bottom: 25px;
+	}
+	h2, h3, h4, h5 {
+		line-height: 1.25;
 	}
 } 
 p {
@@ -23,6 +26,10 @@ p {
 }
 .lead p {
 	@extend .lead;
+}
+.bg-accent { 
+	background-color: $yellow;
+	color: $body-color;
 }
 .bg-secondary-accent {
 	background-color: $pink;
@@ -527,7 +534,7 @@ button, .btn {
 		overflow: hidden; 
 		
 		.inner {
-			padding: 80px 40px;
+			padding: 80px 20px;
 			
 		}
 		.side:first-child {
@@ -655,12 +662,24 @@ button, .btn {
 		@extend .btn-lg;
 	}
 }
-.card-group-link:hover {
-	text-decoration: none;
+.card-group-link {
+	color: white;
+	
+	&:hover {
+		text-decoration: none;
+		color: white;
+	}
 }
 .card-group-content {
-	border-bottom-right-radius: $border-radius;
-	border-bottom-left-radius: $border-radius;
+	border-radius: $border-radius;
+
+	p {
+		line-height: $line-height-sm;
+	}
+}
+.card-has-img {
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
 }
 
 @include media-breakpoint-down(sm) {

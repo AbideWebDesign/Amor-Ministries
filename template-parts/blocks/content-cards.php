@@ -47,29 +47,37 @@ $group_content = get_field('card_group_content');
 			
 				<?php while ( have_rows( 'cards_group' ) ): the_row(); ?>
 				
+					<?php $card_content_classes = ( get_sub_field('card_image') ? 'card-group-content card-has-img' : 'card-group-content'); ?>
+					
 					<?php $card_color = get_sub_field('card_color'); ?>
 					
 					<?php $card_color_class = get_color_class($card_color); ?>
-					
-					<?php $card_image = get_sub_field('card_image'); ?>
-					
-					<div class="col-md-8 col-lg-4 mb-4 mb-lg-0">
+										
+					<div class="col-md-8 col-lg mb-4 mb-lg-0">
 						
 						<a class="card-group-link" href="<?php the_sub_field('card_link'); ?>">
 						
-							<div class="card-group-content text-white bg-<?php echo $card_color_class; ?>">
-							
-								<?php echo wp_get_attachment_image( $card_image, 'Card', false, array('class'=>'img-fluid') ); ?>
+							<div class="<?php echo $card_content_classes; ?> bg-<?php echo $card_color_class; ?>">
+						
+								<?php if ( get_sub_field('card_image') ): ?>
+								
+									<?php echo wp_get_attachment_image( get_sub_field('card_image'), 'Card', false, array('class'=>'img-fluid') ); ?>
+									
+								<?php endif; ?>
 							
 								<div class="p-4 text-center">
 							
 									<?php if ( get_sub_field('card_title') ): ?>
 							
-										<h3><?php the_sub_field('card_title'); ?></h3>
+										<h3 <?php echo ( get_sub_field('card_text') ? 'class="mb-2"' : 'class="mb-0"'); ?>><?php the_sub_field('card_title'); ?></h3>
 										
 									<?php endif; ?>
-						
-									<p class="mb-0"><?php the_sub_field('card_text'); ?></p>
+									
+									<?php if ( get_sub_field('card_text') ): ?>
+									
+										<p class="mb-0"><?php the_sub_field('card_text'); ?></p>
+										
+									<?php endif; ?>
 									
 								</div>
 								

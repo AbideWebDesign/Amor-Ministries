@@ -152,12 +152,19 @@
 	body .editor-styles-wrapper .card-group-top h2 {
 		color: white;
 	}
-	
-	.card {
-		max-width: 100%;
-		margin-top: 0;
-		padding: 0;
-		box-shadow: none;
+	body {
+		.card-group-content p {
+			margin-top: 0;
+		}
+		.card-group-link:hover {
+			text-decoration: none;
+		}
+		.card {
+			max-width: 100%;
+			margin-top: 0;
+			padding: 0;
+			box-shadow: none;
+		}
 	}
 	/* POST TITLE */
 	
