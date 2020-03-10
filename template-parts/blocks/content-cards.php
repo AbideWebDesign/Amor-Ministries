@@ -53,7 +53,7 @@ $group_content = get_field('card_group_content');
 					
 					<?php $card_color_class = get_color_class($card_color); ?>
 										
-					<div class="col-md-8 col-lg mb-4 mb-lg-0">
+					<div class="col-md-8 col-lg-6 col-xl mb-4 mb-xl-0">
 						
 						<a class="card-group-link" href="<?php the_sub_field('card_link'); ?>">
 						
