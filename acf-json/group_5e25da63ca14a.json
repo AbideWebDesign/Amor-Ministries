@@ -191,6 +191,40 @@
                     "ui_off_text": ""
                 },
                 {
+                    "key": "field_5e67b6cb92c87",
+                    "label": "Button Position",
+                    "name": "button_position",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e3b0a16e7df6",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "text-left": "Left",
+                        "text-center": "Center",
+                        "text-right": "Right"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
                     "key": "field_5e3b0ac7d27db",
                     "label": "Button",
                     "name": "button",
@@ -239,5 +273,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1583283074
+    "modified": 1583855357
 }

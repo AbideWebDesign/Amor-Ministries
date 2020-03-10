@@ -66,7 +66,7 @@ if ( $group_settings['type'] == 'text-sidebar' ): // Text with Sidebar
 					
 					<?php if ( $group_content['include_button'] ): ?>
 					
-						<div class="mt-4">
+						<div class="mt-4 <?php echo $group_content['button_position']; ?>">
 						
 							<?php echo get_button( $group_content ); ?>
 							
@@ -109,7 +109,7 @@ if ( $group_settings['type'] == 'text-sidebar' ): // Text with Sidebar
 					
 					<?php if ( $group_content['include_button'] ): ?>
 					
-						<div class="mt-4">
+						<div class="mt-4 <?php echo $group_content['button_position']; ?>">
 						
 							<?php echo get_button( $group_content ); ?>
 							

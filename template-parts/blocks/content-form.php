@@ -61,7 +61,31 @@ if ( $group_content['small_form'] ) {
 		<div class="row justify-content-center">
 			
 			<div class="<?php echo $form_col_classes; ?>">
-					
+				
+				<?php if ( $group_content['include_second_button'] ): ?>
+				
+					<div class="d-flex justify-content-center mb-4 text-center bg-light p-3">
+											
+						<?php if ( isset($group_content['second_button_title']) ): ?>
+							
+							<div class="align-self-center mr-3">
+							
+								<p class="mb-0"><strong><?php echo $group_content['second_button_title']; ?></strong></p>
+								
+							</div>
+						
+						<?php endif; ?>
+						
+						<div class="">
+								
+							<?php echo get_button($group_content); ?>
+							
+						</div>
+						
+					</div>
+				
+				<?php endif; ?>
+				
 				<div class="bg-light p-4">
 					
 					<?php echo do_shortcode('[gravityform id="' . $form_id . '" title="true" description="false" ajax="true" tabindex="49"]'); ?>

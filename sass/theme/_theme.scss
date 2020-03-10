@@ -39,6 +39,10 @@ button, .btn {
 .btn-lg {
 	padding: 1.25rem 1.75rem;
 }
+.btn-sm {
+	font-size: $font-size-sm;
+	padding: .5rem .75rem;
+}
 .btn-white {
 	@extend .btn-light;
 }
