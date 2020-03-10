@@ -63,7 +63,11 @@ $group_content = get_field('card_group_content');
 							
 								<div class="p-4 text-center">
 							
-									<h3><?php the_sub_field('card_title'); ?></h3>
+									<?php if ( get_sub_field('card_title') ): ?>
+							
+										<h3><?php the_sub_field('card_title'); ?></h3>
+										
+									<?php endif; ?>
 						
 									<p class="mb-0"><?php the_sub_field('card_text'); ?></p>
 									
