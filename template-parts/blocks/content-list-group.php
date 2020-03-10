@@ -6,7 +6,7 @@
  */
 
 ?>
-<div class="list-group bg-light">
+<div class="list-group <?php the_field('padding_type_0'); ?> bg-light">
 	
 	<div class="container">
 		

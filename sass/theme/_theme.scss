@@ -88,6 +88,12 @@ button, .btn {
 .wrapper-sm {
 	padding: 50px 0;
 }
+.wrapper-sm-bottom {
+	padding: 100px 0 50px 0;
+}
+.wrapper-sm-top {
+	padding: 50px 0 100px 0;
+}
 .page-wrapper-pattern {
 	background-repeat: repeat;
     background-color: #72c6a6;
@@ -558,7 +564,6 @@ button, .btn {
 
 /* Page Block: List Group */
 .list-group {
-	@extend .wrapper;
 	
 	.card-header {
 		background-color: white;
@@ -594,12 +599,13 @@ button, .btn {
 }
 /* Page Block: Default Text */
 .wrapper-default-text {
-	padding: 100px 0;
 	position: relative;
 	z-index: 1;
-	
-	&:last-child {
-		padding-bottom: 100px;
+
+	.lead {
+		p {
+			margin-bottom: 0;
+		}
 	}
 	@include media-breakpoint-up(lg) {
 		
@@ -607,9 +613,6 @@ button, .btn {
 			max-width: 1500px;
 			z-index: 1;
 		}	
-	}
-	@include media-breakpoint-down(lg) {
-		padding: 40px 0px;
 	}
 }
 

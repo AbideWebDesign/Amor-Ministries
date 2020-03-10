@@ -24,33 +24,32 @@ if ( $group_settings['type'] == 'text-sidebar' ) {
 
 ?>
 
+<div class="<?php echo $group_settings['padding_type']; ?> wrapper-default-text">
 
-<?php 
-
-if ( $group_settings['type'] == 'text-sidebar' ): // Text with Sidebar
- 
- 	$text_position = $group_settings['text_position'];
-	$image = wp_get_attachment_image_src( $group_content['image']['id'], 'Side' );
-	$img_col_classes = 'col-md-5 col-lg-6 mb-4 align-self-center';
+	<div class="container">
 	
-	// Setup helper classes
-	if ( $text_position == 'Right' ) {
-
-		$text_col_classes = 'col-md-7 col-lg-5 pl-lg-5 align-self-center order-2';
-		$img_col_classes .= ' order-1';
+		<?php 
 		
-	} else {
+		if ( $group_settings['type'] == 'text-sidebar' ): // Text with Sidebar
+		 
+		 	$text_position = $group_settings['text_position'];
+			$image = wp_get_attachment_image_src( $group_content['image']['id'], 'Side' );
+			$img_col_classes = 'col-md-5 col-lg-6 mb-4 align-self-center';
+			
+			// Setup helper classes
+			if ( $text_position == 'Right' ) {
 		
-		$text_col_classes = 'col-md-8 col-lg-5 offset-lg-1 pr-5 align-self-center order-2 order-lg-1';
-		$img_col_classes .= ' order-1 order-md-2';
-		
-	}
-	
-?>
-
-	<div class="wrapper wrapper-default-text">
-		
-		<div class="container">
+				$text_col_classes = 'col-md-7 col-lg-5 pl-lg-5 align-self-center order-2';
+				$img_col_classes .= ' order-1';
+				
+			} else {
+				
+				$text_col_classes = 'col-md-8 col-lg-5 offset-lg-1 pr-5 align-self-center order-2 order-lg-1';
+				$img_col_classes .= ' order-1 order-md-2';
+				
+			}
+			
+		?>
 			
 			<div class="row">
 				
@@ -83,18 +82,10 @@ if ( $group_settings['type'] == 'text-sidebar' ): // Text with Sidebar
 				</div>
 				
 			</div>
-			
-		</div>
-				
-	</div>
 
 
-<?php else: ?>
+	<?php elseif ( $group_settings['type'] == 'text' ): ?>
 	
-	<div class="wrapper wrapper-default-text">
-		
-		<div class="container">
-			
 			<div class="row justify-content-center">
 				
 				<div class="col-lg-9 col-xl-7">
@@ -120,9 +111,41 @@ if ( $group_settings['type'] == 'text-sidebar' ): // Text with Sidebar
 				</div>
 				
 			</div>
+
+	<?php elseif ( $group_settings['type'] == 'lead' ): ?>	
 			
-		</div>
-		
+			<div class="row justify-content-center">
+				
+				<div class="col-lg-10 text-center">
+					
+					<?php if ( isset( $group_content['content_title'] ) ): ?>
+					
+						<h1><?php echo $group_content['content_title']; ?></h1>
+					
+					<?php endif; ?>
+				
+					<div class="lead mb-0">
+						
+						<?php echo $group_content['content']; ?>
+						
+					</div>
+						
+					<?php if ( $group_content['include_button'] ): ?>
+					
+						<div class="mt-4 <?php echo $group_content['button_position']; ?>">
+						
+							<?php echo get_button( $group_content ); ?>
+							
+						</div>
+					
+					<?php endif; ?>
+					
+				</div>
+				
+			</div>
+
+	<?php endif; ?>
+	
 	</div>
 	
-<?php endif; ?>
+</div>

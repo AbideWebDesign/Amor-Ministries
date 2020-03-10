@@ -3,6 +3,27 @@
     "title": "Block - List Group",
     "fields": [
         {
+            "key": "field_5e68069d76c7a",
+            "label": "Padding Type",
+            "name": "padding_type_0",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5e6803880e152"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
             "key": "field_5b478316d974a",
             "label": "Title",
             "name": "list_group_title",
@@ -98,5 +119,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1582847265
+    "modified": 1583876769
 }

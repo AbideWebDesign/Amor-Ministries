@@ -12,7 +12,7 @@ $group_content = get_field('card_group_content');
 
 <?php if ( $group_content['include_title'] ): ?>
 
-	<div class="card-group-top d-flex flex-column flex-sm-row  justify-content-center">
+	<div class="card-group-top d-flex flex-column flex-sm-row justify-content-center">
 		
 		<div class="card-group-header bg-primary text-white text-center<?php echo ( $group_content['include_button'] ? ' card-has-button' : ''); ?>">
 			
@@ -37,7 +37,7 @@ $group_content = get_field('card_group_content');
 
 <?php endif; ?>
 
-<div class="card-group wrapper bg-white">
+<div class="card-group <?php echo $group_content['padding_type']; ?> bg-white">
 
 	<div class="container">
 			

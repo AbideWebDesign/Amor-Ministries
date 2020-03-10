@@ -7,7 +7,7 @@
  
  ?>
  
- <div class="wrapper-sm divider-house text-center">
+ <div class="<?php the_field('padding_type'); ?> divider-house text-center">
 	 
 	 <?php echo get_divider(); ?>
 	 

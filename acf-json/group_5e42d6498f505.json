@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_5e42d64996230",
-            "label": "Card Group Content",
+            "label": "Content",
             "name": "card_group_content",
             "type": "group",
             "instructions": "",
@@ -17,6 +17,27 @@
             },
             "layout": "block",
             "sub_fields": [
+                {
+                    "key": "field_5e6803c43205e",
+                    "label": "Padding Type",
+                    "name": "padding_type",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_5e6803880e152"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                },
                 {
                     "key": "field_5e42d64999a1d",
                     "label": "Include Title",
@@ -97,14 +118,22 @@
                     "type": "true_false",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e42d64999a1d",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
                     "message": "",
-                    "default_value": 1,
+                    "default_value": 0,
                     "ui": 1,
                     "ui_on_text": "",
                     "ui_off_text": ""
@@ -156,7 +185,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "collapsed": "field_5e1e0810656ad",
+                    "collapsed": "field_5e42d649a660d",
                     "min": 3,
                     "max": 5,
                     "layout": "block",
@@ -288,5 +317,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1583873699
+    "modified": 1583875705
 }

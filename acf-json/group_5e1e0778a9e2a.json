@@ -19,9 +19,9 @@
             "sub_fields": [
                 {
                     "key": "field_5e4db5e9fcd9b",
-                    "label": "Padding Amount",
-                    "name": "padding",
-                    "type": "select",
+                    "label": "Padding Type",
+                    "name": "padding_type",
+                    "type": "clone",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -30,19 +30,13 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": {
-                        "Normal": "Normal",
-                        "Small": "Small"
-                    },
-                    "default_value": [
-                        "Normal"
+                    "clone": [
+                        "group_5e6803880e152"
                     ],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 1,
-                    "ajax": 0,
-                    "return_format": "label",
-                    "placeholder": ""
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
                 },
                 {
                     "key": "field_5e4d88c3d325d",
@@ -312,5 +306,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1582151184
+    "modified": 1583875688
 }

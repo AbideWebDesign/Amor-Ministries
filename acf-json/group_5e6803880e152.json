@@ -1,0 +1,51 @@
+{
+    "key": "group_5e6803880e152",
+    "title": "Field - Padding Type",
+    "fields": [
+        {
+            "key": "field_5e68038fb4046",
+            "label": "Padding Type",
+            "name": "padding_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "wrapper": "Normal",
+                "wrapper-sm": "Small",
+                "wrapper-sm-bottom": "Small Bottom",
+                "wrapper-sm-top": "Small Top"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/divider-alt"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1583876944
+}

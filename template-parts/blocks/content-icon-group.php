@@ -10,7 +10,7 @@ $group_content = get_field('icon_group_content');
 
 ?>
 
-<div class="icon-group wrapper<?php echo ($group_content['padding'] == 'Small' ? ' wrapper-sm' : ''); ?> bg-white">
+<div class="icon-group <?php echo $group_content['padding_type']; ?> bg-white">
 
 	<div class="container">
 		
