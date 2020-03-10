@@ -18,6 +18,11 @@ h2, h3, h4, h5 {
 		line-height: 1.25;
 	}
 } 
+@include media-breakpoint-down(md) {
+	h2 {
+		font-size: $h2-font-size-sm;
+	}
+}
 p {
 	font-size: $font-size-base;
 }
@@ -83,16 +88,30 @@ button, .btn {
 	line-height: 2.25rem;
 }
 .wrapper {
-	padding: 100px 0;
+	padding: 100px 0 !important;
 }
 .wrapper-sm {
-	padding: 50px 0;
+	padding: 50px 0 !important;
 }
 .wrapper-sm-bottom {
-	padding: 100px 0 50px 0;
+	padding: 100px 0 50px 0 !important;
 }
 .wrapper-sm-top {
-	padding: 50px 0 100px 0;
+	padding: 50px 0 100px 0 !important;
+}
+@include media-breakpoint-down(md) {
+	.wrapper {
+		padding: 50px 0 !important;
+	}
+	.wrapper-sm {
+		padding: 25px 0 !important;
+	}
+	.wrapper-sm-bottom {
+		padding: 50px 0 25px 0 !important;
+	}
+	.wrapper-sm-top {
+		padding: 25px 0 50px 0 !important;
+	}
 }
 .page-wrapper-pattern {
 	background-repeat: repeat;
@@ -100,11 +119,7 @@ button, .btn {
     background-image: url(/wp-content/uploads/2020/01/background-texture.png);
     padding: 25px 0;
 }
-@include media-breakpoint-down(md) {
-	h2 {
-		font-size: $h2-font-size-sm;
-	}
-}
+
 /* Global Header */
 #wrapper-navbar {	
 	position: absolute;

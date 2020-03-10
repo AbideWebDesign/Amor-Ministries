@@ -33,18 +33,22 @@ if ( $group_settings['type'] == 'text-sidebar' ) {
 		if ( $group_settings['type'] == 'text-sidebar' ): // Text with Sidebar
 		 
 		 	$text_position = $group_settings['text_position'];
+		
 			$image = wp_get_attachment_image_src( $group_content['image']['id'], 'Side' );
+		
 			$img_col_classes = 'col-md-5 col-lg-6 mb-4 align-self-center';
 			
 			// Setup helper classes
 			if ( $text_position == 'Right' ) {
 		
 				$text_col_classes = 'col-md-7 col-lg-5 pl-lg-5 align-self-center order-2';
+				
 				$img_col_classes .= ' order-1';
 				
 			} else {
 				
-				$text_col_classes = 'col-md-8 col-lg-5 offset-lg-1 pr-5 align-self-center order-2 order-lg-1';
+				$text_col_classes = 'col-md-7 col-lg-5 offset-lg-1 pr-5 align-self-center order-2 order-lg-1';
+			
 				$img_col_classes .= ' order-1 order-md-2';
 				
 			}
@@ -116,7 +120,7 @@ if ( $group_settings['type'] == 'text-sidebar' ) {
 			
 			<div class="row justify-content-center">
 				
-				<div class="col-lg-10 text-center">
+				<div class="col-lg-10 col-xl-8 text-center">
 					
 					<?php if ( isset( $group_content['content_title'] ) ): ?>
 					
