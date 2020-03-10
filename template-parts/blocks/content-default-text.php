@@ -59,7 +59,7 @@ if ( $group_settings['type'] == 'text-sidebar' ) {
 				
 				<div class="<?php echo $text_col_classes; ?>">
 					
-					<?php if ( isset( $group_content['content_title'] ) ): ?>
+					<?php if ( $group_content['content_title'] != '' ): ?>
 					
 						<h2><?php echo $group_content['content_title']; ?></h2>
 					
@@ -94,7 +94,7 @@ if ( $group_settings['type'] == 'text-sidebar' ) {
 				
 				<div class="col-lg-9 col-xl-7">
 					
-					<?php if ( isset( $group_content['content_title'] ) ): ?>
+					<?php if ( $group_content['content_title'] != '' ): ?>
 					
 						<h2><?php echo $group_content['content_title']; ?></h2>
 					
@@ -122,7 +122,7 @@ if ( $group_settings['type'] == 'text-sidebar' ) {
 				
 				<div class="col-lg-10 col-xl-8 text-center">
 					
-					<?php if ( isset( $group_content['content_title'] ) ): ?>
+					<?php if ( $group_content['content_title'] != '' ): ?>
 					
 						<h1><?php echo $group_content['content_title']; ?></h1>
 					

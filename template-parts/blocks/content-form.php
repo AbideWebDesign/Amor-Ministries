@@ -66,7 +66,7 @@ if ( $group_content['small_form'] ) {
 				
 					<div class="d-flex justify-content-center mb-4 text-center bg-light p-3">
 											
-						<?php if ( isset($group_content['second_button_title']) ): ?>
+						<?php if ( $group_content['second_button_title'] != '' ): ?>
 							
 							<div class="align-self-center mr-3">
 							

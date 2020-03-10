@@ -26,13 +26,37 @@ if ( $banner_settings['banner_type'] == 'Default' ) {
 	
 }
 ?>
-<style>
-	@media only screen and (max-width: 1200px) {
-		.container-hero .hero-banner:after {
-			background-image: url( <?php echo $image_mobile[0]; ?> );
-		}	
-	}
-</style>
+<?php if ( $banner_content['title'] != '' ): ?>
+
+	<style>
+		
+		@media (max-width: 1199.98px) {
+			.container-hero .hero-banner-default, .container-hero .hero-banner-donation {
+				background-image: none !important;
+			}
+		}
+		 
+		@media only screen and (max-width: 1200px) {
+			.container-hero .hero-banner:after {
+				background-image: url( <?php echo $image_mobile[0]; ?> );
+			}	
+		}
+		
+	</style>
+
+<?php else: ?>
+	
+	<style>
+		
+		@media (max-width: 1199.98px) {
+			.container-hero .hero-banner-default, .container-hero .hero-banner-donation {
+				background-image: url( <?php echo $image_mobile[0]; ?> ) !important;
+			}	
+		}
+		
+	</style>
+	
+<?php endif; ?>
 
 <div class="container-hero">
 
@@ -46,7 +70,7 @@ if ( $banner_settings['banner_type'] == 'Default' ) {
 
 					<div class="hero-header <?php echo $banner_settings['text_color']; ?><?php echo ($banner_settings['banner_type'] == 'Donation-Image' ? ' text-center' : ''); ?>">
 
-						<?php if ( $banner_settings['banner_type'] != 'Donation-Image' ): ?>
+						<?php if ( $banner_settings['banner_type'] != 'Donation-Image' && isset($banner_content['title']) ): ?>
 						
 							<h1><?php echo $banner_content['title']; ?></h1>
 						
