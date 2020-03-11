@@ -15,11 +15,13 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
+global $post;
+
 ?>
 
 <div class="page-wrapper">
 
-	<?php if ( get_field('header_type') == 'White' && get_field('page_type') != 'Form' ): ?>
+	<?php if ( get_field('header_type') == 'White' && get_field('page_type') != 'Form' && !has_block('acf/hero-banner', $post)  ): ?>
 	
 		<div class="page-wrapper-pattern"></div>
 	

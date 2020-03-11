@@ -33,7 +33,7 @@
             "label": "Header Type",
             "name": "header_type",
             "type": "select",
-            "instructions": "Use \"White\" when not using hero banner.",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -106,5 +106,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1583263029
+    "modified": 1583969637
 }
