@@ -31,9 +31,9 @@
                         "id": ""
                     },
                     "choices": {
-                        "Default": "Text Only",
-                        "Donation": "Donation w\/Text",
-                        "Donation-Image": "Donation w\/Foreground Image"
+                        "Default": "Text",
+                        "Donation": "Text + Form",
+                        "Donation-Image": "Image + Form"
                     },
                     "default_value": [],
                     "allow_null": 1,
@@ -228,7 +228,7 @@
                     "name": "text",
                     "type": "textarea",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "100",
@@ -404,5 +404,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1583879504
+    "modified": 1583961563
 }

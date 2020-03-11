@@ -324,20 +324,22 @@ button, .btn {
 }
 /* Page Block: Hero Banner */
 .container-hero {
-	background-position: bottom;
-	background-color: #fff;
-	background-size: 100% auto;
+	background-position: center center;
+	background-color: #000;
+	background-size: cover;
 	background-repeat: no-repeat;
+	position: relative;
+	overflow: hidden;
 	
 	.hero-banner {
 		align-items: center;
-		background-position: 50%;
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-color: #000;
 		display: flex;
+		position: relative;
 		flex-direction: row;
-		min-height: calc(100vh - 374px);
+		min-height: calc(100vh - 274px);
+		margin-top: 110px;
+		padding: 4em 0;
+		z-index: 1;
 		
 		.justify-content-center, .justify-content-end {
 			text-align: center;
@@ -351,9 +353,11 @@ button, .btn {
 			}
 		}
 	}
-	.hero-banner-donation, .hero-banner-donation-image {
-		min-height: inherit;
-		height: 750px;
+	.hero-banner-donation, .hero-banner-donation-image {		
+		.gform_wrapper {
+			border-radius: $border-radius;
+			background-color: white;
+		}
 		
 		.gform_heading {
 			background-color: $blue;
@@ -377,14 +381,7 @@ button, .btn {
 		}
 		.gform_body {
 			padding: 20px;
-			background-color: white;
-			border: 1px solid #dfdfd7;
-			border-top: 0;
-			border-top-left-radius: 0px;
-			border-top-right-radius: 0px;
-			border-bottom-left-radius: 4px;
-			border-bottom-right-radius: 4px;
-			
+						
 			.ginput_amount {
 				font-weight: bold;
 			    color: $blue;
@@ -432,86 +429,68 @@ button, .btn {
 				color: $blue;
 			}
 		}
-	}
-}
-@include media-breakpoint-up(xl) {
-	.container-hero {
-		.hero-banner { 
-			.row {
-	    		padding: 200px 0;
-			}
-		}
-		.hero-banner-donation, .hero-banner-donation-image {
-			.row {
-				padding: 0;
-			}
+		.gform_footer {
+			padding: 0px 20px 20px 20px;
 		}
 	}
 }
+
 @include media-breakpoint-down(lg) {
 	.container-hero {
+		
+		
+		.hero-banner {
+			margin-top: 95px;
+			min-height: calc(100vh - 774px);
+		}
+	}	
+}
+
+@include media-breakpoint-down(md) {
+	.container-hero {
+		background-color: $primary;
+		background-image: none !important;
+		
 		.hero-banner {
 			display: block;
-			min-height: auto;
 			
-			&:after {
-				display: flex;
-			    background-position: top;
-			    background-repeat: no-repeat;
-			    background-size: cover;
-			    content: "";
-			    height: 300px;
-			    width: 100%;
-			}
 			.row {
 				text-align: center;
 				justify-content: center !important;
 			}
 		}
-		.hero-banner-default, .hero-banner-donation {
-			padding-top: 13em;
-		}
 		.hero-banner-donation, .hero-banner-donation-image {
-			height: auto;
-			
-			.row {
-				.hero-header, .gform_body {
-					text-align: left;
-				}
-			}
-		}
-		.hero-banner-donation-image {
-			padding: 4em 0;
-			
-			&:after {
-				display: none;
-			}
-		}
-	}
-}
-@include media-breakpoint-down(md) {
-	.container-hero {
-		.hero-banner-default, .hero-banner-donation {
-			padding-top: 9em;
-		}
-		.hero-banner-donation, .hero-banner-donation-image {
-			
 			.row {
 				.hero-header {
 					text-align: center;
 				}
+				.gform_body {
+					text-align: left;
+				}
+
 			}
+		}
+		.hero-banner-donation-image {
+			padding: 4em 0;	
+		}
+		.hero-banner-bg-mobile {
+			width: 100%;
+			min-height: 100%;
+			opacity: .3;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-repeat: no-repeat;
+			background-size: cover;
 		}
 	}
 }
 @include media-breakpoint-down(sm) {
 	.container-hero {
-		.hero-banner-donation, .hero-banner-donation-image {
-			h1 {
-				font-size: 35px;
-				margin-bottom: 20px;
-			}		
-		}
+		h1 {
+			font-size: 45px;
+			margin-bottom: 20px;
+		}				
 	}
 }
 /* Page Block: Pattern Hero */

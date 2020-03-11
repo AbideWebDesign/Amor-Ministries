@@ -25,65 +25,37 @@ if ( $banner_settings['banner_type'] == 'Default' ) {
 	$banner_classes = 'hero-banner-donation-image';
 	
 }
-?>
-<?php if ( $banner_content['title'] != '' ): ?>
+?>	
 
-	<style>
-		
-		@media (max-width: 1199.98px) {
-			.container-hero .hero-banner-default, .container-hero .hero-banner-donation {
-				background-image: none !important;
-			}
-		}
-		 
-		@media only screen and (max-width: 1200px) {
-			.container-hero .hero-banner:after {
-				background-image: url( <?php echo $image_mobile[0]; ?> );
-			}	
-		}
-		
-	</style>
+<div class="container-hero" style="background-image: url( <?php echo $image[0]; ?> )">
 
-<?php else: ?>
-	
-	<style>
-		
-		@media (max-width: 1199.98px) {
-			.container-hero .hero-banner-default, .container-hero .hero-banner-donation {
-				background-image: url( <?php echo $image_mobile[0]; ?> ) !important;
-			}	
-		}
-		
-	</style>
-	
-<?php endif; ?>
-
-<div class="container-hero">
-
-	<div class="hero-banner <?php echo $banner_classes; ?>" style="background-image: url( <?php echo $image[0]; ?> )">
+	<div class="hero-banner <?php echo $banner_classes; ?>">
 
 		<div class="container">
 
 			<div class="row <?php echo ($banner_settings['banner_type'] == 'Default' ? $banner_settings['text_position'] : 'justify-content-between'); ?>">
 
-				<div class="col-md-10 col-lg-7 col-xl-7 <?php echo ($banner_settings['banner_type'] == 'Donation' || $banner_settings['banner_type'] == 'Donation-Image' ? 'align-self-center ' . $banner_settings['text_position_donation'] : ''); ?>">
+				<div class="col-12 col-md-10 col-lg-8 col-xl-7 <?php echo ($banner_settings['banner_type'] == 'Donation' || $banner_settings['banner_type'] == 'Donation-Image' ? 'align-self-center ' . $banner_settings['text_position_donation'] : ''); ?>">
 
 					<div class="hero-header <?php echo $banner_settings['text_color']; ?><?php echo ($banner_settings['banner_type'] == 'Donation-Image' ? ' text-center' : ''); ?>">
 
-						<?php if ( $banner_settings['banner_type'] != 'Donation-Image' && isset($banner_content['title']) ): ?>
+						<?php if ( $banner_settings['banner_type'] != 'Donation-Image' && $banner_content['title'] != '' ): ?>
 						
-							<h1><?php echo $banner_content['title']; ?></h1>
-						
+							<h1 class="mb-0"><?php echo $banner_content['title']; ?></h1>
 						
 						<?php else: ?>
 						
 							<?php $foreground_img = wp_get_attachment_image_src( $banner_content['foreground_image']['id'], 'Hero Banner Foreground' ); ?>
 							
-							<img src="<?php echo $foreground_img[0]; ?>" class="img-fluid mb-3" />
+							<img src="<?php echo $foreground_img[0]; ?>" class="img-fluid" />
 							
 						<?php endif; ?>
 
-						<p class="lead mb-0"><?php echo $banner_content['text']; ?></p>
+						<?php if ( $banner_content['text'] != '' ): ?>
+						
+							<p class="lead mt-3 mb-0"><?php echo $banner_content['text']; ?></p>
+							
+						<?php endif; ?>
 						
 						<?php if ( $banner_content['include_button'] ): ?>
 						
@@ -103,7 +75,7 @@ if ( $banner_settings['banner_type'] == 'Default' ) {
 				
 					<?php $form_id = $banner_content['form']; ?>
 					
-					<div class="col-md-8 col-lg-5 col-xl-4 mt-4 mt-lg-0 align-self-center">
+					<div class="col-md-8 col-lg-4 col-xl-4 mt-4 mt-lg-0 align-self-center">
 						
 						<?php echo do_shortcode('[gravityform id="' . $form_id . '" title="true" description="false" ajax="true" tabindex="49"]'); ?>
 
@@ -116,5 +88,7 @@ if ( $banner_settings['banner_type'] == 'Default' ) {
 		</div>
 
 	</div>
+	
+	<div class="hero-banner-bg-mobile d-lg-none" style="background-image: url( <?php echo $image_mobile[0]; ?> )"></div>
 
 </div>

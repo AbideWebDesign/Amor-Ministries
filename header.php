@@ -12,9 +12,11 @@ defined( 'ABSPATH' ) || exit;
 
 // get logo field (array)
 $logo = get_field('logo', 'options');
+$logo_light = get_field('logo_light', 'options');
 $logo_scroll = get_field('logo_scroll', 'options');
 
 $logo_src = wp_get_attachment_image_src($logo['id'], 'full', false);
+$logo_light_src = wp_get_attachment_image_src($logo_light['id'], 'full', false);
 $logo_scroll_src = wp_get_attachment_image_src($logo_scroll['id'], 'full', false);
 
 // Get header type
@@ -74,7 +76,18 @@ if ( get_field('header_type') == 'Transparent' ) {
 	</script>
 </head>
 
-<body <?php body_class(); ?>>
+<?php global $post; ?>
+
+<?php if ( has_block('acf/hero-banner', $post) ): ?>
+
+	<body <?php body_class('has-hero-banner'); ?>>
+
+<?php else: ?>
+
+	<body <?php body_class(); ?>>
+
+<?php endif; ?>
+
 <div class="site" id="page">
 	
 	<div id="wrapper-navbar" class="<?php echo $header_class; ?>">
@@ -90,8 +103,10 @@ if ( get_field('header_type') == 'Transparent' ) {
 		
 			<div class="container">
 			
-				<a class="navbar-brand" href="<?php echo home_url(); ?>"><img id="header-logo" src="<?php echo $logo_src[0]; ?>" class="img-fluid logo" width="300" alt="Amor Ministries" /></a>
+				<a class="navbar-brand d-none d-lg-block" href="<?php echo home_url(); ?>"><img id="header-logo" src="<?php echo $logo_src[0]; ?>" class="img-fluid logo" width="300" alt="Amor Ministries" /></a>
 				
+				<a class="navbar-brand d-block d-lg-none" href="<?php echo home_url(); ?>"><img id="header-logo" src="<?php echo $logo_light_src[0]; ?>" class="img-fluid logo" width="300" alt="Amor Ministries" /></a>
+
 				<div class="d-flex">
 					
 					<?php if ( get_field('page_type') != 'Donation' ): ?>

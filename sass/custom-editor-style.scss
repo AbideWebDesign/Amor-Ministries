@@ -37,6 +37,13 @@
 		color: inherit;
 	}
 	
+	
+	.wp-core-ui {
+		.button.btn-primary {
+			@extend .btn;
+			@extend .btn-primary;
+		}
+	}
 	/* Structure --------------------------------- */
 	
 	.wp-block {
@@ -68,7 +75,7 @@
 		font-size: $font-size-base;
 		line-height: $line-height-base;
 	}
-	
+
 	.editor-styles-wrapper .lead, 
 	.editor-styles-wrapper .lead p {
 		@extend .lead;
@@ -193,4 +200,10 @@
 	}
 	.block-editor__container img.icon {
 		max-width: 120px;
+	}
+	
+	/* Gravity Forms */
+	.gform_fields {
+		margin-bottom: 0 !important;
+		padding: 0 !important;
 	}
