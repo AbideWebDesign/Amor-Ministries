@@ -25,7 +25,7 @@ $group_content = get_field('card_group_content');
 		<?php if ( $group_content['include_button'] ): ?>
 			
 			
-			<div class="card-group-button">
+			<div class="card-group-button text-center">
 			
 				<?php echo get_button( $group_content ); ?>
 				

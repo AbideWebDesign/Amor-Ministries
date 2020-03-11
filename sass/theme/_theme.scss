@@ -438,10 +438,13 @@ button, .btn {
 @include media-breakpoint-down(lg) {
 	.container-hero {
 		
-		
 		.hero-banner {
 			margin-top: 95px;
 			min-height: calc(100vh - 774px);
+			
+			.header-header, .text-body h1 {
+				color: white !important;
+			}
 		}
 	}	
 }
@@ -694,6 +697,10 @@ button, .btn {
 		position: relative;
 		margin: -30px auto 0;
 		z-index: 1;
+		
+		.btn {
+			max-width: 75%;
+		}
 	}
 }
 
