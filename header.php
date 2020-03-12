@@ -42,7 +42,6 @@ if ( get_field('header_type') == 'Transparent' ) {
 	<?php wp_head(); ?>
 
 	<script>
-		
 	( function($) {
 		
 		/**
@@ -51,11 +50,10 @@ if ( get_field('header_type') == 'Transparent' ) {
 		* Change image on scroll
 		*
 		*/
-		
-		$( window ).scroll( function() {
+		$(window).scroll(function() {
 				  
 			  /* affix after scrolling 100px */
-			  if ( $(document).scrollTop() > 100) {
+			  if ($(document).scrollTop() > 100) {
 				  
 			  	$('.navbar').addClass('affix');
 			  	$('#header-logo').hide();
@@ -72,10 +70,9 @@ if ( get_field('header_type') == 'Transparent' ) {
 			  	$('#header-logo').show();
 			  	
 			  }
-		} );	
+		});	
 		
 	})(jQuery);	
-	
 	</script>
 </head>
 
@@ -108,16 +105,14 @@ if ( get_field('header_type') == 'Transparent' ) {
 			
 				<a class="navbar-brand d-none d-lg-block" href="<?php echo home_url(); ?>"><img id="header-logo" src="<?php echo $logo_src[0]; ?>" class="img-fluid logo" width="300" alt="Amor Ministries" /></a>
 				
-				<a class="navbar-brand d-block d-lg-none" href="<?php echo home_url(); ?>"><img id="header-light-logo" src="<?php echo $logo_light_src[0]; ?>" class="img-fluid logo" width="300" alt="Amor Ministries" /></a>
+				<a class="navbar-brand d-block d-lg-none" href="<?php echo home_url(); ?>"><img id="header-logo" src="<?php echo $logo_light_src[0]; ?>" class="img-fluid logo" width="300" alt="Amor Ministries" /></a>
 
 				<div class="d-flex">
 					
 					<?php if ( get_field('page_type') != 'Donation' ): ?>
 							
 						<div class="d-lg-none mr-2">
-							
 							<a href="<?php echo home_url('/donate'); ?>" class="btn btn-sm btn-yellow">Donate</a>
-						
 						</div>		
 						
 					<?php endif; ?>

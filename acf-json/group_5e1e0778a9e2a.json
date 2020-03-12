@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_5e1e077d656a7",
-            "label": "Image Group Content",
+            "label": "Icon Group Content",
             "name": "icon_group_content",
             "type": "group",
             "instructions": "",
@@ -32,27 +32,6 @@
                     },
                     "clone": [
                         "group_5e6803880e152"
-                    ],
-                    "display": "seamless",
-                    "layout": "block",
-                    "prefix_label": 0,
-                    "prefix_name": 0
-                },
-                {
-                    "key": "field_5e6976c38696f",
-                    "label": "Alignment",
-                    "name": "alignment",
-                    "type": "clone",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "clone": [
-                        "group_5e697677592df"
                     ],
                     "display": "seamless",
                     "layout": "block",
@@ -153,7 +132,7 @@
                 },
                 {
                     "key": "field_5e1e07cd656ab",
-                    "label": "Image Group",
+                    "label": "Icon Group",
                     "name": "icon_group",
                     "type": "repeater",
                     "instructions": "",
@@ -168,36 +147,11 @@
                     "min": 0,
                     "max": 0,
                     "layout": "block",
-                    "button_label": "Add New",
+                    "button_label": "Add Icon",
                     "sub_fields": [
                         {
-                            "key": "field_5e6a7609eb10f",
-                            "label": "Type",
-                            "name": "type",
-                            "type": "select",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "Image": "Image",
-                                "Icon": "Icon"
-                            },
-                            "default_value": [],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 1,
-                            "ajax": 0,
-                            "return_format": "value",
-                            "placeholder": ""
-                        },
-                        {
                             "key": "field_5e1e07d8656ac",
-                            "label": "Image",
+                            "label": "Icon",
                             "name": "icon",
                             "type": "image",
                             "instructions": "",
@@ -242,7 +196,7 @@
                             "key": "field_5e1e0818656ae",
                             "label": "Text",
                             "name": "icon_text",
-                            "type": "wysiwyg",
+                            "type": "text",
                             "instructions": "",
                             "required": 1,
                             "conditional_logic": 0,
@@ -252,10 +206,10 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "basic",
-                            "media_upload": 0,
-                            "delay": 0
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         },
                         {
                             "key": "field_5e1e083d597f7",
@@ -352,5 +306,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1584035393
+    "modified": 1583875688
 }
