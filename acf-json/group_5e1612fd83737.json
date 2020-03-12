@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_5e16130299940",
-            "label": "Logo",
-            "name": "logo",
+            "label": "Logo Dark",
+            "name": "logo_dark",
             "type": "image",
             "instructions": "",
             "required": 1,
@@ -92,5 +92,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1583964777
+    "modified": 1584048891
 }

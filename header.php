@@ -11,11 +11,11 @@
 defined( 'ABSPATH' ) || exit;
 
 // get logo field (array)
-$logo = get_field('logo', 'options');
+$logo_dark = get_field('logo_dark', 'options');
 $logo_light = get_field('logo_light', 'options');
 $logo_scroll = get_field('logo_scroll', 'options');
 
-$logo_src = wp_get_attachment_image_src($logo['id'], 'full', false);
+$logo_dark_src = wp_get_attachment_image_src($logo_dark['id'], 'full', false);
 $logo_light_src = wp_get_attachment_image_src($logo_light['id'], 'full', false);
 $logo_scroll_src = wp_get_attachment_image_src($logo_scroll['id'], 'full', false);
 
@@ -42,6 +42,7 @@ if ( get_field('header_type') == 'Transparent' ) {
 	<?php wp_head(); ?>
 
 	<script>
+		
 	( function($) {
 		
 		/**
@@ -50,29 +51,33 @@ if ( get_field('header_type') == 'Transparent' ) {
 		* Change image on scroll
 		*
 		*/
-		$(window).scroll(function() {
+		
+		$( window ).scroll( function() {
 				  
-			  /* affix after scrolling 100px */
-			  if ($(document).scrollTop() > 100) {
+			  /* affix after scrolling 70px */
+			  if ( $(document).scrollTop() > 70 ) {
 				  
 			  	$('.navbar').addClass('affix');
-			  	$('#header-logo').hide();
-			  	$('#header-logo').attr('width', '200');
-			  	$('#header-logo').attr('src', '<?php echo $logo_scroll_src[0]; ?>');
-			  	$('#header-logo').show();
+			  	$('.logo').hide();
+			  	$('.logo').attr('width', '200');
+			  	$('#header-dark-logo').attr('src', '<?php echo $logo_scroll_src[0]; ?>');
+			  	$('#header-light-logo').attr('src', '<?php echo $logo_scroll_src[0]; ?>');
+			  	$('.logo').show();
 			  	
 			  } else {
 				  
 			  	$('.navbar').removeClass('affix');
-			  	$('#header-logo').hide();
-			  	$('#header-logo').attr('width', '300');
-			  	$('#header-logo').attr('src', '<?php echo $logo_src[0]; ?>');
-			  	$('#header-logo').show();
+			  	$('.logo').hide();
+			  	$('.logo').attr('width', '300');
+			  	$('#header-dark-logo').attr('src', '<?php echo $logo_dark_src[0]; ?>');
+			  	$('#header-light-logo').attr('src', '<?php echo $logo_light_src[0]; ?>');
+			  	$('.logo').show();
 			  	
 			  }
-		});	
+		} );	
 		
 	})(jQuery);	
+	
 	</script>
 </head>
 
@@ -103,16 +108,18 @@ if ( get_field('header_type') == 'Transparent' ) {
 		
 			<div class="container">
 			
-				<a class="navbar-brand d-none d-lg-block" href="<?php echo home_url(); ?>"><img id="header-logo" src="<?php echo $logo_src[0]; ?>" class="img-fluid logo" width="300" alt="Amor Ministries" /></a>
+				<a class="navbar-brand navbar-brand-light" href="<?php echo home_url(); ?>"><img id="header-light-logo" src="<?php echo $logo_light_src[0]; ?>" class="img-fluid logo" width="300" alt="Amor Ministries" /></a>
 				
-				<a class="navbar-brand d-block d-lg-none" href="<?php echo home_url(); ?>"><img id="header-logo" src="<?php echo $logo_light_src[0]; ?>" class="img-fluid logo" width="300" alt="Amor Ministries" /></a>
+				<a class="navbar-brand navbar-brand-dark" href="<?php echo home_url(); ?>"><img id="header-dark-logo" src="<?php echo $logo_dark_src[0]; ?>" class="img-fluid logo" width="300" alt="Amor Ministries" /></a>
 
 				<div class="d-flex">
 					
 					<?php if ( get_field('page_type') != 'Donation' ): ?>
 							
 						<div class="d-lg-none mr-2">
+							
 							<a href="<?php echo home_url('/donate'); ?>" class="btn btn-sm btn-yellow">Donate</a>
+						
 						</div>		
 						
 					<?php endif; ?>

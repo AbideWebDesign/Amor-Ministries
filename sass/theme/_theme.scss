@@ -145,15 +145,31 @@ button, .btn {
 			-o-transition:padding 0.2s linear;         
 			transition:padding 0.2s linear;
 			
-			.logo {
-				max-width: 100px;
+			.navbar-brand {
+				.logo {
+					max-width: 100px;
+				}
 			}
 			.nav-link {
 				color: $body-color;
 			}
 		}
-		.logo {
-			max-width: 70px;
+		.navbar-brand {
+			display: none;
+			
+			.logo {
+				max-width: 70px;
+			}
+		}
+		&.navbar-light {
+			.navbar-brand-light {
+				display: block;
+			}
+		}
+		&.navbar-dark {
+			.navbar-brand-dark {
+				display: block;
+			}
 		}
 		.menu-item {
 			padding: 0 2.5rem;
@@ -220,12 +236,11 @@ button, .btn {
 		.navbar, .navbar.affix {
 			background-color: white;
 		}
-		.navbar {
-			.navbar-brand {
-				padding-top: .75rem;
-				padding-bottom: .75rem;
-			}
+		.navbar-brand {
+			padding-top: .75rem;
+			padding-bottom: .75rem;
 		}
+		
 	}	
 	@include media-breakpoint-down(lg) {
 		.navbar {

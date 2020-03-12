@@ -50,11 +50,23 @@ $group_content = get_field('icon_group_content');
 				
 					<?php $icon = get_sub_field('icon'); ?>
 				
-					<div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-3 text-center mb-4">
+					<div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-3 mb-4">
 						
-						<?php echo wp_get_attachment_image( $icon['id'], 'Icon', false, array('class'=>'icon img-fluid mb-4') ); ?>
-						
-						<h3><?php the_sub_field('icon_title'); ?></h3>
+						<div class="text-center mb-4">
+							
+							<?php if ( get_sub_field('type') == 'Icon' ): ?>
+							
+								<?php echo wp_get_attachment_image( $icon['id'], 'Icon', false, array('class'=>'icon img-fluid') ); ?>
+								
+							<?php else: ?>
+							
+								<?php echo wp_get_attachment_image( $icon['id'], 'Card', false, array('class'=>'img-fluid') ); ?>
+							
+							<?php endif; ?>
+							
+						</div>
+
+						<h3 class="text-center"><?php the_sub_field('icon_title'); ?></h3>
 						
 						<p class="mb-3"><?php the_sub_field('icon_text'); ?></p>
 						
