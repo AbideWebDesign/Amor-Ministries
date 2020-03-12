@@ -556,7 +556,11 @@ button, .btn {
 .icon {
 	max-width: 120px;
 }
-
+.icon-group {
+	ul {
+		padding-left: 15px;
+	}
+}
 
 /* Page Block: List Group */
 .list-group {
