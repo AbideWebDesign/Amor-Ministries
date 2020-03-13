@@ -481,10 +481,6 @@ button, .btn {
 		.hero-banner {
 			margin-top: 95px;
 			min-height: calc(100vh - 774px);
-			
-			.hero-header, .text-body h1 {
-				color: white !important;
-			}
 		}
 	}	
 }
@@ -497,6 +493,9 @@ button, .btn {
 		.hero-banner {
 			display: block;
 			
+			.hero-header, .text-body h1 {
+				color: white !important;
+			}
 			.row {
 				text-align: center;
 				justify-content: center !important;
@@ -525,6 +524,7 @@ button, .btn {
 			left: 0;
 			background-repeat: no-repeat;
 			background-size: cover;
+			background-position: center center;
 		}
 	}
 }
