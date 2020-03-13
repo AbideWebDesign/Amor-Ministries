@@ -75,7 +75,7 @@ $group_content = get_field('card_group_content');
 									
 									<?php if ( get_sub_field('card_text') ): ?>
 									
-										<p class="mb-0"><?php the_sub_field('card_text'); ?></p>
+										<?php the_sub_field('card_text'); ?>
 										
 									<?php endif; ?>
 									

@@ -48,7 +48,7 @@ $group_content = get_field('icon_group_content');
 			
 				<?php while ( have_rows( 'icon_group' ) ): the_row(); ?>
 				
-					<?php $icon = get_sub_field('icon'); ?>
+					<?php $image = get_sub_field('icon'); ?>
 				
 					<div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-3 mb-4">
 						
@@ -56,11 +56,15 @@ $group_content = get_field('icon_group_content');
 							
 							<?php if ( get_sub_field('type') == 'Icon' ): ?>
 							
-								<?php echo wp_get_attachment_image( $icon['id'], 'Icon', false, array('class'=>'icon img-fluid') ); ?>
+								<?php echo wp_get_attachment_image( $image['id'], 'Icon', false, array('class'=>'icon img-fluid') ); ?>
 								
 							<?php else: ?>
 							
-								<?php echo wp_get_attachment_image( $icon['id'], 'Card', false, array('class'=>'img-fluid') ); ?>
+								<?php $image_classes = ( get_sub_field('style') == 'Rounded' ? 'img-fluid rounded-circle' : 'img-fluid rounded' ); ?>
+								
+								<?php $image_size = ( get_sub_field('style') == 'Rounded' ? 'Image Group Rounded' : 'Image Group' ); ?>
+							
+								<?php echo wp_get_attachment_image( $image['id'], $image_size, false, array( 'class' => $image_classes ) ); ?>
 							
 							<?php endif; ?>
 							
@@ -72,7 +76,11 @@ $group_content = get_field('icon_group_content');
 						
 						<?php if ( get_sub_field('include_link') ): ?>
 						
-							<a class="btn-text" href="<?php the_sub_field('icon_link'); ?>"><?php the_sub_field('icon_link_label'); ?></a>
+							<div class="text-center">
+								
+								<a class="btn-text" href="<?php the_sub_field('icon_link'); ?>"><?php the_sub_field('icon_link_label'); ?></a>
+							
+							</div>
 						
 						<?php endif; ?>
 						

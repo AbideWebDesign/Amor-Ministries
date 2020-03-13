@@ -248,6 +248,28 @@ button, .btn {
 		}
 	}
 }
+@include media-breakpoint-up(xl) {
+	.has-hero-banner {
+		#wrapper-navbar {
+			.navbar-light {
+				.navbar-brand-light {
+					display: block;	
+				}
+				.navbar-brand-dark {
+					display: none;	
+				}
+			}
+			.navbar-dark {
+				.navbar-brand-light {
+					display: block;	
+				}
+				.navbar-brand-dark {
+					display: none;
+				}
+			}
+		}
+	}
+}
 /* When logged in */
 .logged-in {
 	#wrapper-navbar .fixed-top {
@@ -689,6 +711,10 @@ button, .btn {
 
 	p {
 		line-height: $line-height-sm;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 }
 .card-has-img {

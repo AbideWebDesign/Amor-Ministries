@@ -67,6 +67,9 @@ add_image_size('Icon', 240, 240);
 add_image_size('Side', 1170, 846, true);
 add_image_size('Background', 3400, 2000, true);
 add_image_size('Card', 500, 348, true);
+add_image_size('Image Group', 595, 395, true);
+add_image_size('Image Group Rounded', 590, 590, true);
+
 
 add_filter( 'excerpt_more', 'amor_custom_excerpt_more' );
 
