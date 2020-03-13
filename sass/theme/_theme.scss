@@ -26,6 +26,9 @@ h2, h3, h4, h5 {
 p {
 	font-size: $font-size-base;
 }
+li:not(:last-child) {
+	margin-bottom: .5em;
+}
 .lead {
 	margin-bottom: 40px;
 }
@@ -709,12 +712,11 @@ button, .btn {
 .card-group-content {
 	border-radius: $border-radius;
 
-	p {
-		line-height: $line-height-sm;
-		
-		&:last-child {
-			margin-bottom: 0;
-		}
+	p:last-child {
+		margin-bottom: 0;
+	}
+	ul,ol {
+		margin-bottom: 0;
 	}
 }
 .card-has-img {

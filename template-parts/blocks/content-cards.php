@@ -65,11 +65,11 @@ $group_content = get_field('card_group_content');
 									
 								<?php endif; ?>
 							
-								<div class="p-4 text-center">
+								<div class="p-4">
 							
 									<?php if ( get_sub_field('card_title') ): ?>
 							
-										<h3 <?php echo ( get_sub_field('card_text') ? 'class="mb-2"' : 'class="mb-0"'); ?>><?php the_sub_field('card_title'); ?></h3>
+										<h3 <?php echo ( get_sub_field('card_text') ? 'class="mb-2 text-center"' : 'class="mb-0 text-center"'); ?>><?php the_sub_field('card_title'); ?></h3>
 										
 									<?php endif; ?>
 									
