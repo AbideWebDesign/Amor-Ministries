@@ -145,6 +145,25 @@
                     "ajax": 0,
                     "return_format": "value",
                     "placeholder": ""
+                },
+                {
+                    "key": "field_5e6e6b5115a8f",
+                    "label": "Include Overlay",
+                    "name": "include_overlay",
+                    "type": "true_false",
+                    "instructions": "Adds dark overlay to image.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
                 }
             ]
         },
@@ -404,5 +423,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1583961563
+    "modified": 1584294768
 }

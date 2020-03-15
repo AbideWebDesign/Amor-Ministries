@@ -90,5 +90,11 @@ if ( $banner_settings['banner_type'] == 'Default' ) {
 	</div>
 	
 	<div class="hero-banner-bg-mobile d-lg-none" style="background-image: url( <?php echo $image_mobile[0]; ?> )"></div>
+	
+	<?php if ( $banner_settings['include_overlay'] ): ?>
+	
+		<div class="bg-overlay"></div>
+	
+	<?php endif; ?>
 
 </div>
