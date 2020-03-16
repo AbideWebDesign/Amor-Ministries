@@ -299,3 +299,11 @@ function spinner_url( $image_src, $form ) {
     return  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // relative to you theme images folder
 
 }
+
+// Set default amount for Amor 365 Form
+add_filter( 'gform_field_value_amor365_amount', 'amor365_populate_function' );
+function amor365_populate_function( $value ) {
+	
+    return '15';
+
+}

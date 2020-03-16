@@ -211,11 +211,11 @@ button, .btn {
 			margin-top: 1rem;
 			min-width: 180px;
 			text-align: left;
-			background-color: rgba(255, 255, 255, .8);
+			background-color: $yellow;
 			border: none;
-			border-radius: 0;
 			
 			&:before {
+				z-index: -1;
 				content: '\f0d8';
 				font-family: "fontawesome";
 				font-style: normal;
@@ -223,11 +223,12 @@ button, .btn {
 				text-rendering: auto;
 				-webkit-font-smoothing: antialiased;
 				height: 15px;
-				color: rgba(255, 255, 255, .8);
+				color: $yellow;
 				position: absolute;
-				top: -23px;
+				top: -32px;
 				left: 50%;
-				font-size: 1.5rem;
+				font-size: 2rem;
+				border: none;
 			}			
 			.menu-item {
 				width: 100%;
@@ -237,6 +238,29 @@ button, .btn {
 				a {
 					text-transform: uppercase;
 					padding: 10px 12px;
+					color: $body-color;
+					
+					&:hover, &:active, &:visited, &:focus {
+						background-color: darken($yellow, 5); 
+						color: $body-color;
+						outline: none;
+					}
+				}
+				&:first-child {
+					a {
+						&:hover, &:active, &:visited, &:focus {
+							border-top-right-radius: $border-radius;
+							border-top-left-radius: $border-radius;
+						}
+					}
+				}
+				&:last-child {
+					a {
+						&:hover, &:active, &:visited, &:focus {
+							border-bottom-right-radius: $border-radius;
+							border-bottom-left-radius: $border-radius;
+						}
+					}
 				}
 			}
 		}
@@ -1023,6 +1047,9 @@ body {
 		100% {
 			transform: rotate(360deg);
 		}
+	}
+	.form-control::-webkit-input-placeholder {
+		color: #bbb;
 	}
 }
 .bg-light {
