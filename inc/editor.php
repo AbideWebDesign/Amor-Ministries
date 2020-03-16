@@ -307,3 +307,11 @@ function amor365_populate_function( $value ) {
     return '15';
 
 }
+
+// Set default amount for CHS Form
+add_filter( 'gform_field_value_chs_amount', 'chs_populate_function' );
+function chs_populate_function( $value ) {
+	
+    return '3780';
+
+}
