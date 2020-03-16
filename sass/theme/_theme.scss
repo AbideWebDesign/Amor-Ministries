@@ -400,6 +400,11 @@ button, .btn {
 						font-size: $font-size-base;
 						padding: 10px 25px;
 					}
+					ul.sub-menu {
+						li.menu-item > .shiftnav-target {
+							color: $body-color;
+						}
+					}
 				}
 			}
 			&:after {

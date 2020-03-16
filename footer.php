@@ -26,19 +26,19 @@ $social_links = get_field('social_section', 'options');
 	
 				<div class="col-auto col-md-6 col-lg-3 col-xl-3 order-1 order-md-0">
 					
-					<div class="mb-3">
+					<div class="mb-3 text-center text-md-left">
 						
 						<a href="<?php echo home_url(); ?>"><img src="<?php echo $footer_logo['url']; ?>" class="img-fluid" width="175" /></a>
 					
 					</div>
 					
-					<div class="mb-2">
+					<div class="mb-2 text-center text-md-left">
 					
 						<p class="mb-0"><?php the_field('footer_text', 'options'); ?></p>
 					
 					</div>
 					
-					<div class="mb-0">
+					<div class="mb-0 text-center text-md-left">
 					
 						<ul class="list-inline">
 							<li class="list-inline-item"><a href="<?php echo $social_links['facebook']; ?>"><i class="fa fa-facebook"></i></a></li>
