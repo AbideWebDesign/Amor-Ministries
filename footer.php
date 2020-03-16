@@ -16,7 +16,7 @@ $social_links = get_field('social_section', 'options');
 
 ?>
 
-<div class="wrapper" id="wrapper-footer">
+<div class="wrapper-sm" id="wrapper-footer">
 
 	<footer class="site-footer">
 		
