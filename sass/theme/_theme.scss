@@ -811,6 +811,12 @@ button, .btn {
 	}
 }
 
+/* Page Block - Block Quote */
+.wp-block-pullquote {
+	@extend .container;
+	border-top: 1px solid $gray-200;
+	border-bottom: 1px solid $gray-200;
+}
 /* Gravity Forms */
 body {
 	.gform_wrapper {
