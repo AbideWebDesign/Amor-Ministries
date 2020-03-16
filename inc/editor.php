@@ -304,7 +304,7 @@ function spinner_url( $image_src, $form ) {
 add_filter( 'gform_field_value_amor365_amount', 'amor365_populate_function' );
 function amor365_populate_function( $value ) {
 	
-    return '15';
+    return '15.00';
 
 }
 
@@ -312,6 +312,6 @@ function amor365_populate_function( $value ) {
 add_filter( 'gform_field_value_chs_amount', 'chs_populate_function' );
 function chs_populate_function( $value ) {
 	
-    return '3780';
+    return '3,780.00';
 
 }
