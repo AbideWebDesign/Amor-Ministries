@@ -128,12 +128,25 @@ function get_divider() {
 }
 
 /**
- * Gravity Forms Bootstrap Styles
- */
-add_filter("gform_field_content", "bootstrap_styles_for_gravityforms_fields", 10, 5);
+ * Gravity Forms
+*/
+ 
+// Script enqueues
+add_action( 'gform_enqueue_scripts', 'enqueue_custom_script', 10, 2 );
+
+function enqueue_custom_script( $form, $is_ajax ) {
+    
+    wp_enqueue_script( 'amor-gravity-scripts', get_template_directory_uri() . '/js/gravityform-min.js', array(), true );
+
+}
+
+// Bootstrap styles
+add_filter( 'gform_field_content', 'bootstrap_styles_for_gravityforms_fields', 10, 5 );
+
 function bootstrap_styles_for_gravityforms_fields($content, $field, $value, $lead_id, $form_id){
 
 	if ( !is_admin() ) {
+		
 		// Currently only applies to most common field types, but could be expanded.
 	
 		if ( $field["type"] != 'hidden' && $field["type"] != 'list' && $field["type"] != 'multiselect' && $field["type"] != 'checkbox' && $field["type"] != 'fileupload' && $field["type"] != 'date' && $field["type"] != 'html' && $field["type"] != 'address' ) {
@@ -158,7 +171,6 @@ function bootstrap_styles_for_gravityforms_fields($content, $field, $value, $lea
 			
 			$content = str_replace('li class=\'', 'li class=\'form-check ', $content);
 			$content = str_replace('<input ', '<input class="custom-control-input" style=\'margin-top:-2px\' ', $content);
-			//$content = str_replace('<label ', '<label class=\'custom-control-label\' ', $content);
 			
 		}
 	
@@ -193,10 +205,8 @@ function bootstrap_styles_for_gravityforms_fields($content, $field, $value, $lea
 
 } 
 
-/**
- * End bootstrap_styles_for_gravityforms_fields()
- */
-add_filter("gform_submit_button", "form_submit_button", 10, 2);
+// End bootstrap_styles_for_gravityforms_fields()
+add_filter( 'gform_submit_button', 'form_submit_button', 10, 2 );
 
 function form_submit_button($button, $form){
 
@@ -204,9 +214,7 @@ function form_submit_button($button, $form){
 
 }
 
-/**
- * Edit gravity form field containers
- */
+// Edit gravity form field containers
 add_filter( 'gform_field_container', 'add_bootstrap_container_class', 10, 6 );
 
 function add_bootstrap_container_class( $field_container, $field, $form, $css_class, $style, $field_content ) {
@@ -248,9 +256,7 @@ function add_bootstrap_container_class( $field_container, $field, $form, $css_cl
 	}
 }
 
-/**
- * Edit gravity form fee product label on payment form
- */
+// Edit gravity form fee product label on payment form
 add_filter( 'gform_product_price_2', 'set_price_label', 10, 2 );
 add_filter( 'gform_product_price_3', 'set_price_label', 10, 2 );
 add_filter( 'gform_product_price_7', 'set_cc_price_label', 10, 2 );
@@ -267,9 +273,7 @@ function set_cc_price_label( $sublabel, $form_id ) {
 	
 }
 
-/**
- * Change the stripe description
- */
+// Change the stripe description
 add_filter( 'gform_stripe_charge_description', 'change_stripe_description', 10, 3 );
 
 function change_stripe_description( $description, $strings, $entry ) {
@@ -302,16 +306,17 @@ function modify_currencies( $currencies ) {
 	return $currencies;
 }
 
-// Changes Gravity Forms Ajax Spinner (next, back, submit) to a transparent image
-// this allows you to target the css and create a pure css spinner like the one used below in the style.css file of this gist.
+// Change spinner
 add_filter( 'gform_ajax_spinner_url', 'spinner_url', 10, 2 );
+
 function spinner_url( $image_src, $form ) {
-    return  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // relative to you theme images folder
+    return  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
 }
 
 // Set default amount for Amor 365 Form
 add_filter( 'gform_field_value_amor365_amount', 'amor365_populate_function' );
+
 function amor365_populate_function( $value ) {
 	
     return '15.00';
@@ -320,6 +325,7 @@ function amor365_populate_function( $value ) {
 
 // Set default amount for CHS Form
 add_filter( 'gform_field_value_chs_amount', 'chs_populate_function' );
+
 function chs_populate_function( $value ) {
 	
     return '3,780.00';

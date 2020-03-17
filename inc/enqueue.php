@@ -25,7 +25,7 @@ if ( ! function_exists( 'amor_scripts' ) ) {
 		wp_enqueue_script( 'jquery' );
 
 		$js_version = $theme_version . '.' . filemtime( get_template_directory() . '/js/theme.min.js' );
-		wp_enqueue_script( 'amor-scripts', get_template_directory_uri() . '/js/theme.min.js', array(), $js_version, true );
+		wp_enqueue_script( 'theme-scripts', get_template_directory_uri() . '/js/theme.min.js', array(), $js_version, true );
 	}
 } // endif function_exists( 'amor_scripts' ).
 
