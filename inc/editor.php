@@ -136,7 +136,7 @@ add_action( 'gform_enqueue_scripts', 'enqueue_custom_script', 10, 2 );
 
 function enqueue_custom_script( $form, $is_ajax ) {
     
-    wp_enqueue_script( 'amor-gravity-scripts', get_template_directory_uri() . '/js/gravityform.js', array(), true );
+    wp_enqueue_script( 'amor-gravity-scripts', get_template_directory_uri() . '/js/gravityform-min.js', array(), true );
 
 }
 

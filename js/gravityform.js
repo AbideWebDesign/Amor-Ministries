@@ -2,7 +2,7 @@
 	
 	$( '.monthly input' ).click( function() {
 
-		if ( $( this ).is( ':checked ') ) {
+		if ( $( this ).is( ':checked ' ) ) {
 
 			$( '#post-amount' ).text( 'USD/Month' );
 				
@@ -12,6 +12,6 @@
 			
 		}
 	
-	} );
+	} ); 
 	
 } )( jQuery );
