@@ -1,1 +1,1 @@
-jQuery,gform.addAction("gform_input_change",(function(e,n,t){"2.1"==t&&(document.getElementById("choice_6_2_1").checked?document.getElementById("post-amount").innerHTML="USD/Month":document.getElementById("post-amount").innerHTML="USD")}),10,3);
+!function(t){t(".monthly input").click((function(){t(this).is(":checked ")?t("#post-amount").text("USD/Month"):t("#post-amount").text("USD")}))}(jQuery);

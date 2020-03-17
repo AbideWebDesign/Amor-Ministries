@@ -1,21 +1,17 @@
 ( function( $ ) {
 	
-	gform.addAction( 'gform_input_change', function( elem, formId, fieldId ) {
-	    
-		if ( fieldId == '2.1' ) {
-			
-			if ( document.getElementById('choice_6_2_1').checked ) {
+	$( '.monthly input' ).click( function() {
+
+		if ( $( this ).is( ':checked ') ) {
+
+			$( '#post-amount' ).text( 'USD/Month' );
 				
-				document.getElementById('post-amount').innerHTML = "USD/Month";
-				
-			} else {
+		} else {
 	
-				document.getElementById('post-amount').innerHTML = "USD";
-				
-			}
-		
+			$( '#post-amount' ).text( 'USD' );
+			
 		}
-		
-	}, 10, 3 );
+	
+	} );
 	
 } )( jQuery );
