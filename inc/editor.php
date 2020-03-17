@@ -228,7 +228,7 @@ function add_bootstrap_container_class( $field_container, $field, $form, $css_cl
 		if ( $field->type == 'product' && $field->inputType != 'calculation' && $field->inputType != 'singleproduct' ) {
 			
 			// Setup monthly post input for Amor 365
-			if ( $id == 20 ) {
+			if ( $form['id'] == 20 ) {
 				
 				return '<li id="' . $field_id . '" class="' . $css_class . '"><div id="' . $field_id . '" class="' . $css_class . ' input-group input-group-lg"><div class="input-group-prepend"><span class="input-group-text">$</span></div>{FIELD_CONTENT}<span id="post-amount" class="postinput">USD/MONTH</span></div></li>';
 
