@@ -482,11 +482,6 @@ button, .btn {
 		.gform_body {
 			padding: 20px;
 						
-			.ginput_amount {
-				font-weight: bold;
-			    color: $blue;
-			    font-size: 24px;
-			}
 			.button {
 				@extend .btn-accent;
 			}
@@ -930,6 +925,10 @@ body {
 				color: white;
 			}
 		}
+		input[type="text"].ginput_amount {
+		    color: $blue;
+		    font-size: 24px;
+		}
 		.ginput_container_creditcard {
 			.validation_message {
 				display: none;
@@ -1001,6 +1000,19 @@ body {
 				@extend .custom-select;
 				@extend .custom-select-lg;
 			}
+		}
+		.postinput {
+			position: absolute;
+			top: 54%;
+			right: 5%;
+			z-index: 2;
+			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+			color: $body-color;
+			font-size: 18px;
+			font-weight: normal;
+			text-transform: uppercase;
 		}
 	}
 	.gform_heading {
