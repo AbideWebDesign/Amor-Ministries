@@ -210,9 +210,29 @@
 	.block-editor__container img.icon {
 		max-width: 120px;
 	}
+	.select2-dropdown {
+		font-size: $font-size-sm;
+	}
+	/* Wordpress */
+	.howto {
+		font-size: $font-size-sm;
+	}
+	.has-text-field #wp-link .query-results {
+		top: 250px;
+	}
+	#wp-link {
+		font-size: $font-size-sm;
+		
+		#link-options {	
+			label {
+				display: inherit;
+			}
+		}
+	}
 	
 	/* Gravity Forms */
 	.gform_fields {
 		margin-bottom: 0 !important;
 		padding: 0 !important;
 	}
+	
