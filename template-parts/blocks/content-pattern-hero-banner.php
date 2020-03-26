@@ -9,44 +9,28 @@
 $banner_content = get_field('pattern_hero_banner_content');
 $type = $banner_content['type'];
 
-if ( $type == 'Form' ) {
-	
-	$row_class = 'row justify-content-center justify-content-lg-between';
-	$col_class = 'col-md-8 col-lg-7 col-xl-7 align-self-center';
-	
-} else {
-	
-	$row_class = 'row justify-content-center';
-	$col_class = 'col-md-8 col-lg-6 text-center';
-	
-}
 ?>
 
 <div class="container-pattern-hero">
+	
 	<div class="pattern-hero-banner">
+		
 		<div class="container">
-			<div class="<?php echo $row_class; ?>">				
-				<div class="<?php echo $col_class; ?>">
-					<div class="hero-header">
-						<h2 class="text-dark"><?php echo $banner_content['title']; ?></h2>
-						<p class="lead mb-3"><?php echo $banner_content['text']; ?></p>
+			
+			<?php if ( $type == 'Form' ): ?>
+			
+				<div class="row justify-content-center">
+					
+					<div class="col-md-8">
 						
-						<?php if ( $banner_content['include_button'] ): ?>
-						
-							<div class="mt-4">
+						<h2 class="text-dark text-center"><?php echo $banner_content['title']; ?></h2>
 							
-								<?php echo get_button( $banner_content ); ?>
-								
-							</div>
-						
-						<?php endif; ?>
-						
+						<p class="lead text-center mb-5"><?php echo $banner_content['text']; ?></p>
+					
 					</div>
-				</div>
-				
-				<?php if ( $type == 'Form' ): ?>
-				
-					<div class="col-md-8 col-lg-5 col-xl-4">
+					
+					<div class="col-md-11 col-lg-9 col-xl-7">
+								
 						<div class="bg-light p-4">
 							
 							<?php if ( $banner_content['form_title'] ): ?>
@@ -58,11 +42,42 @@ if ( $type == 'Form' ) {
 							<?php echo do_shortcode('[gravityform id=" ' . $banner_content['form'] . '" title="false" description="false" ajax="true"]'); ?>
 					
 						</div>
+						
 					</div>
-				
-				<?php endif; ?>
+					
+				</div>
+			
+			<?php else: ?>
+			
+				<div class="row justify-content-center">		
+							
+					<div class="col-md-8 col-lg-6 text-center">
+						
+						<div class="hero-header">
+							
+							<h2 class="text-dark"><?php echo $banner_content['title']; ?></h2>
+							
+							<p class="lead mb-3"><?php echo $banner_content['text']; ?></p>
+							
+							<?php if ( $banner_content['include_button'] ): ?>
+							
+								<div class="mt-4">
 								
-			</div>
+									<?php echo get_button( $banner_content ); ?>
+									
+								</div>
+							
+							<?php endif; ?>
+							
+						</div>
+					</div>
+									
+				</div>
+			
+			<?php endif; ?>
+			
 		</div>
+		
 	</div>
+	
 </div>
