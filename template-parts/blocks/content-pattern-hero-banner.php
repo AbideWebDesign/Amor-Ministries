@@ -23,7 +23,7 @@ $type = $banner_content['type'];
 					
 					<div class="col-md-8">
 						
-						<h2 class="text-dark text-center"><?php echo $banner_content['title']; ?></h2>
+						<h2 class="text-center"><?php echo $banner_content['title']; ?></h2>
 							
 						<p class="lead text-center mb-5"><?php echo $banner_content['text']; ?></p>
 					
@@ -55,7 +55,7 @@ $type = $banner_content['type'];
 						
 						<div class="hero-header">
 							
-							<h2 class="text-dark"><?php echo $banner_content['title']; ?></h2>
+							<h2><?php echo $banner_content['title']; ?></h2>
 							
 							<p class="lead mb-3"><?php echo $banner_content['text']; ?></p>
 							
