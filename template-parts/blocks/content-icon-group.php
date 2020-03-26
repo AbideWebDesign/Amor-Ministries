@@ -50,9 +50,9 @@ $group_content = get_field('icon_group_content');
 				
 					<?php $image = get_sub_field('icon'); ?>
 				
-					<div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-3 mb-4">
+					<div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-4">
 						
-						<div class="text-center mb-4">
+						<div class="text-center mb-4 px-5">
 							
 							<?php if ( get_sub_field('type') == 'Icon' ): ?>
 							
