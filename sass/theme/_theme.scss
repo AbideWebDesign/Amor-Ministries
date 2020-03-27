@@ -135,7 +135,7 @@ button, .btn {
 /* Global Header */
 #alert {
 	font-size: $font-size-lg;
-	padding: .75rem 0;
+	height: 60px;
 	
 	p {
 		margin-bottom: 0;
@@ -153,7 +153,7 @@ button, .btn {
 			top: 32px;	
 		}
 		.fixed-top.has-alert {
-			top: 83px; 
+			top: 106px; 
 		}
 		.fixed-top.has-alert.affix {
 			top: 32px;
@@ -175,7 +175,7 @@ button, .btn {
 		transition:padding 0.2s ease; 	
 		
 		&.has-alert {
-			top: 51px;
+			top: 60px;
 		}		
 		&.affix {
 			background-color: white;
@@ -360,7 +360,23 @@ button, .btn {
 		}
 	}
 }
-
+@include media-breakpoint-down(sm) {
+	#alert {
+		height: 80px;
+	}
+	#wrapper-navbar {
+		.fixed-top.has-alert {
+			top: 80px;
+		}
+	}
+	.logged-in {
+		#wrapper-navbar {
+			.fixed-top.has-alert {
+				top: 126px;
+			}
+		}
+	}	
+}
 /* Global Footer */
 #wrapper-footer {
 	background-color: white;

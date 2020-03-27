@@ -26,9 +26,9 @@ global $post;
 			
 			<div id="alert" class="bg-<?php echo $bg_color_class; ?> <?php echo $text_color_class; ?> text-center">
 	 
-				<div class="container">
+				<div class="container h-100">
 					 
-					<div class="row justify-content-center">
+					<div class="row justify-content-center h-100 align-content-center">
 						
 						<div class="col-12">
 				 

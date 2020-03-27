@@ -55,7 +55,7 @@ if ( get_field('header_type') == 'Transparent' ) {
 		$( window ).scroll( function() {
 				  
 			  /* affix after scrolling 70px */
-			  if ( $(document).scrollTop() > 70 ) {
+			  if ( $(document).scrollTop() > 50 ) {
 				  
 			  	$('.navbar').addClass('affix');
 			  	$('.logo').hide();
