@@ -44,7 +44,7 @@ $social_links = get_field('social_section', 'options');
 							<li class="list-inline-item"><a href="<?php echo $social_links['facebook']; ?>"><i class="fa fa-facebook"></i></a></li>
 							<li class="list-inline-item"><a href="<?php echo $social_links['twitter']; ?>"><i class="fa fa-twitter"></i></a></li>
 							<li class="list-inline-item"><a href="<?php echo $social_links['instagram']; ?>"><i class="fa fa-instagram"></i></a></li>
-							<li class="list-inline-item"><a href="<?php echo $social_links['blog']; ?>"><i class="fa fa-rss"></i></a></li>
+<!-- 							<li class="list-inline-item"><a href="<?php echo $social_links['blog']; ?>"><i class="fa fa-rss"></i></a></li> -->
 						</ul>
 					
 					</div>
