@@ -93,18 +93,21 @@ if ( get_field('header_type') == 'Transparent' ) {
 
 <?php endif; ?>
 
+<?php get_template_part('template-parts/blocks/content', 'alert'); ?>
+
 <div class="site" id="page">
 	
 	<div id="wrapper-navbar" class="<?php echo $header_class; ?>">
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'amor' ); ?></a>
 
-		<nav id="main-nav" class="navbar navbar-expand-lg fixed-top <?php echo $navbar_color; ?>" aria-labelledby="main-nav-label">
+		<nav id="main-nav" class="navbar navbar-expand-lg fixed-top <?php echo $navbar_color; ?> <?php echo ( has_alert() ? 'has-alert' : ''); ?>" aria-labelledby="main-nav-label">
 
 			<h2 id="main-nav-label" class="sr-only">
+				
 				<?php esc_html_e( 'Main Navigation', 'amor' ); ?>
+			
 			</h2>
-
 		
 			<div class="container">
 			

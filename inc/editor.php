@@ -127,6 +127,35 @@ function get_divider() {
 	
 }
 
+function has_alert() {
+	
+	global $post;
+	
+	if ( have_rows( 'alerts', 'options' ) ) {
+						
+		while ( have_rows( 'alerts', 'options' ) ) {
+			
+			the_row();
+			
+			if ( get_sub_field('active') ) {
+				
+				$pages = get_sub_field('pages');
+				
+				if ( in_array( $post->ID, $pages ) ) {
+				
+					return true;
+				
+				}
+			
+			}
+			
+		}
+	
+	}
+	
+	return false;
+}
+
 /**
  * Gravity Forms
 */

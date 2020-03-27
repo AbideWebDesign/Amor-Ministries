@@ -116,6 +116,15 @@ if ( ! function_exists( 'amor_all_excerpts_get_more_link' ) ) {
  *
  */
 if ( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Alerts',
+		'menu_title'	=> 'Alerts',
+		'menu_slug' 	=> 'alerts',
+		'icon_url' 		=> 'dashicons-megaphone',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
 	
 	acf_add_options_page(array(
 		'page_title' 	=> 'Theme General Settings',
