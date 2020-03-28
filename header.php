@@ -79,6 +79,16 @@ if ( get_field('header_type') == 'Transparent' ) {
 	})(jQuery);	
 	
 	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162055320-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-162055320-1');
+	</script>
+
 </head>
 
 <?php global $post; ?>
