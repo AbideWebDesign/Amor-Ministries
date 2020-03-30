@@ -8,11 +8,18 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+require WP_CONTENT_DIR . '/plugins/plugin-update-checker-master/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/AbideWebDesign/Amor-Ministries/',
+	__FILE__,
+	'Amor-Ministries'
+);
+
 $amor_includes = array(
-	'/setup.php',                           // Theme setup and custom theme supports.
+	'/setup.php',							// Theme setup and custom theme supports.
 	'/enqueue.php',                         // Enqueue scripts and styles.
 	'/pagination.php',                      // Custom pagination for this theme.
-	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker. Trying to get deeper navigation? Check out: https://github.com/amor/amor/issues/567
+	'/class-wp-bootstrap-navwalker.php',   
 	'/editor.php',                          // Load Editor functions.
 	'/page-blocks.php',						// Load ACF page blocks.
 );
