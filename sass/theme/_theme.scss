@@ -495,7 +495,9 @@ button, .btn {
 			}
 		}
 	}
-	.hero-banner-donation, .hero-banner-donation-image {		
+	.hero-banner-donation, .hero-banner-donation-image {	
+		min-height: calc(100vh - 200px);
+		
 		.gform_wrapper {
 			border-radius: $border-radius;
 			background-color: white;
@@ -570,8 +572,7 @@ button, .btn {
 			padding: 0px 20px 20px 20px;
 		}
 	}
-}
-
+}	
 @include media-breakpoint-down(lg) {
 	.container-hero {
 		
@@ -579,7 +580,7 @@ button, .btn {
 			margin-top: 95px;
 			min-height: calc(100vh - 774px);
 		}
-	}	
+	}
 }
 
 @include media-breakpoint-down(md) {

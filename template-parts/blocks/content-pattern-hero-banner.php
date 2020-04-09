@@ -8,6 +8,7 @@
 // get group field (array)
 $banner_content = get_field('pattern_hero_banner_content');
 $type = $banner_content['type'];
+$form_id = $banner_content['form'];
 
 ?>
 
@@ -39,7 +40,7 @@ $type = $banner_content['type'];
 								
 							<?php endif; ?>
 							
-							<?php echo do_shortcode('[gravityform id=" ' . $banner_content['form'] . '" title="false" description="false" ajax="true"]'); ?>
+							<?php echo do_shortcode('[gravityform id="' . $form_id . '" title="false" description="false" ajax="true"]'); ?>
 					
 						</div>
 						

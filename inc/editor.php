@@ -306,7 +306,7 @@ function set_cc_price_label( $sublabel, $form_id ) {
 add_filter( 'gform_stripe_charge_description', 'change_stripe_description', 10, 3 );
 
 function change_stripe_description( $description, $strings, $entry ) {
-    
+
     $form_id = rgar( $entry, 'form_id' );
 	$form = GFAPI::get_form( $form_id );
 	$description = $form['title'];
