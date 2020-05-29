@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 $footer_logo = get_field('footer_logo', 'options'); 
 $links_section = get_field('links_section', 'options');
 $social_links = get_field('social_section', 'options');
-
+$contact_section = get_field('contact_section', 'options');
 ?>
 
 <div class="wrapper-sm" id="wrapper-footer">
@@ -38,7 +38,7 @@ $social_links = get_field('social_section', 'options');
 					
 					</div>
 					
-					<div class="mb-0 text-center text-md-left">
+					<div class="text-center text-md-left">
 					
 						<ul class="list-inline">
 							<li class="list-inline-item"><a href="<?php echo $social_links['facebook']; ?>"><i class="fa fa-facebook"></i></a></li>
@@ -48,6 +48,12 @@ $social_links = get_field('social_section', 'options');
 						</ul>
 					
 					</div>
+											
+					<?php echo $contact_section['phone']; ?><br>
+						
+					<a href="mailto:<?php echo $contact_section['email']; ?>" target="_blank"><?php echo $contact_section['email']; ?></a><br>
+											
+					<?php echo $contact_section['address']; ?>
 	
 				</div><!--col-lg-6 end -->
 				

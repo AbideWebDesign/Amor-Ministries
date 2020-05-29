@@ -1155,24 +1155,6 @@ body {
 		@extend .btn-lg;
 		@extend .btn-block;
 	}
-	.login-remember {
-		@extend .form-check;
-		
-		label {
-			@extend .custom-control-label;
-			font-weight: bold;
-			font-size: .9em;
-			line-height: 1.375;
-			
-			&:before {
-				top: 0;
-				left: -1.2rem;
-			}
-		}
-	}
-	#rememberme {
-		@extend .custom-control-input;
-	}
 }
 #forgot-password {
 	label {
