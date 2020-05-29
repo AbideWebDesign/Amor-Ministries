@@ -40,20 +40,29 @@ $contact_section = get_field('contact_section', 'options');
 					
 					<div class="text-center text-md-left">
 					
-						<ul class="list-inline">
+						<ul class="list-inline mb-0">
+							
 							<li class="list-inline-item"><a href="<?php echo $social_links['facebook']; ?>"><i class="fa fa-facebook"></i></a></li>
+							
 							<li class="list-inline-item"><a href="<?php echo $social_links['twitter']; ?>"><i class="fa fa-twitter"></i></a></li>
+							
 							<li class="list-inline-item"><a href="<?php echo $social_links['instagram']; ?>"><i class="fa fa-instagram"></i></a></li>
-<!-- 							<li class="list-inline-item"><a href="<?php echo $social_links['blog']; ?>"><i class="fa fa-rss"></i></a></li> -->
+
+<!-- 						<li class="list-inline-item"><a href="<?php echo $social_links['blog']; ?>"><i class="fa fa-rss"></i></a></li> -->
+						
 						</ul>
 					
 					</div>
-											
-					<?php echo $contact_section['phone']; ?><br>
+					
+					<p class="mb-0">				
+					
+						<?php echo $contact_section['phone']; ?><br>
 						
-					<a href="mailto:<?php echo $contact_section['email']; ?>" target="_blank"><?php echo $contact_section['email']; ?></a><br>
+						<a href="mailto:<?php echo $contact_section['email']; ?>" target="_blank"><?php echo $contact_section['email']; ?></a><br>
 											
-					<?php echo $contact_section['address']; ?>
+						<?php echo $contact_section['address']; ?>
+					
+					</p>
 	
 				</div><!--col-lg-6 end -->
 				
