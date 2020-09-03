@@ -61,6 +61,8 @@ if ( ! function_exists( 'amor_setup' ) ) {
 
 // Disable Wordpress Scalling Feature
 add_filter( 'big_image_size_threshold', '__return_false' );
+add_filter( 'auto_plugin_update_send_email', '__return_false' );
+add_filter( 'auto_theme_update_send_email', '__return_false' );
 
 add_image_size('Hero Banner', 2880, 800, true);
 add_image_size('Hero Banner Mobile', 1280, 491, true);

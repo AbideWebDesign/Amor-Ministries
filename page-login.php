@@ -81,7 +81,7 @@ get_header(); ?>
 			
 			<div class="col col-lg-4 col-xl-3 offset-xl-1 align-self-center mb-4 mb-lg-0">
 
-				<?php the_field('login_assistsance_message', 'options'); ?>
+				<?php the_field('login_assistance_message', 'options'); ?>
 
 			</div>
 			
