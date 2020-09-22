@@ -395,6 +395,54 @@
                     "return_format": "id",
                     "allow_null": 0,
                     "multiple": 0
+                },
+                {
+                    "key": "field_5f6a29b9dbb3c",
+                    "label": "Include Progress Bar",
+                    "name": "include_progress_bar",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_5f6a29ebdbb3d",
+                    "label": "Fundraiser Goal",
+                    "name": "fundraiser_goal",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5f6a29b9dbb3c",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
                 }
             ]
         }
@@ -421,7 +469,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1584294768
+    "modified": 1600793091
 }

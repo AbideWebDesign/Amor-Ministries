@@ -98,3 +98,5 @@ if ( $banner_settings['banner_type'] == 'Default' ) {
 	<?php endif; ?>
 
 </div>
+
+<?php echo get_template_part('template-parts/blocks/content', 'progress-bar', array( 'banner_settings'=> $banner_content ) ); ?>

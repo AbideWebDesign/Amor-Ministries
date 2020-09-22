@@ -1,9 +1,9 @@
-<?php if ( get_field('include_progress_bar') ): ?>
+<?php $banner_content = get_field('hero_banner_content'); ?>
 
-	<?php $goal = get_field('fundraiser_goal'); ?>
-	
-	<?php $banner_content = get_field('hero_banner_content'); ?>
-	
+<?php if ( $banner_content['include_progress_bar'] ): ?>
+
+	<?php $goal = $banner_content['fundraiser_goal']; ?>
+		
 	<?php $progress = get_fundraiser_total( $goal, $banner_content['form'] ); ?>
 	
 	<div class="bg-light py-3">
