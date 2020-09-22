@@ -1,7 +1,55 @@
 {
     "key": "group_5e5d534919d1f",
-    "title": "Fundraiser Block - Default Text",
+    "title": "Fundraiser Fields",
     "fields": [
+        {
+            "key": "field_5f6a19e1c1cd2",
+            "label": "Include Progress Bar",
+            "name": "include_progress_bar",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5f6a1940dd960",
+            "label": "Fundraiser Goal",
+            "name": "fundraiser_goal",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f6a19e1c1cd2",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
         {
             "key": "field_5e5d57741c898",
             "label": "Fields",
@@ -29,7 +77,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "fundraiser"
+                "value": "post"
             }
         ],
         [
@@ -46,7 +94,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1583176899
+    "modified": 1600788981
 }

@@ -22,6 +22,7 @@ $amor_includes = array(
 	'/class-wp-bootstrap-navwalker.php',   
 	'/editor.php',                          // Load Editor functions.
 	'/page-blocks.php',						// Load ACF page blocks.
+	'/fundraiser.php',
 );
 
 foreach ( $amor_includes as $file ) {
