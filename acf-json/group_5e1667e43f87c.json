@@ -397,13 +397,28 @@
                     "multiple": 0
                 },
                 {
-                    "key": "field_5f6a29b9dbb3c",
-                    "label": "Include Progress Bar",
-                    "name": "include_progress_bar",
+                    "key": "field_5fe0e8574d449",
+                    "label": "Monthly Donation Only",
+                    "name": "monthly_donation_only",
                     "type": "true_false",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e55680448ae7",
+                                "operator": "==",
+                                "value": "Donation"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5e55680448ae7",
+                                "operator": "==",
+                                "value": "Donation-Image"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -411,7 +426,41 @@
                     },
                     "message": "",
                     "default_value": 0,
-                    "ui": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_5f6a29b9dbb3c",
+                    "label": "Include Progress Bar",
+                    "name": "include_progress_bar",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e55680448ae7",
+                                "operator": "==",
+                                "value": "Donation"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5e55680448ae7",
+                                "operator": "==",
+                                "value": "Donation-Image"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
                     "ui_on_text": "",
                     "ui_off_text": ""
                 },
@@ -471,5 +520,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1600793091
+    "modified": 1608575094
 }

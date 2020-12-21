@@ -247,7 +247,7 @@ function form_submit_button($button, $form){
 add_filter( 'gform_field_container', 'add_bootstrap_container_class', 10, 6 );
 
 function add_bootstrap_container_class( $field_container, $field, $form, $css_class, $style, $field_content ) {
-	
+
 	$id = $field->id;
 	
 	$field_id = is_admin() || empty( $form ) ? "field_{$id}" : 'field_' . $form['id'] . "_$id";
@@ -256,8 +256,7 @@ function add_bootstrap_container_class( $field_container, $field, $form, $css_cl
 
 		if ( $field->type == 'product' && $field->inputType != 'calculation' && $field->inputType != 'singleproduct' ) {
 			
-			// Setup monthly post input for Amor 365
-			if ( $form['id'] == 20 ) {
+			if ( $form['id'] == 20 || is_page('donate-monthly') ) { // Setup monthly post input for Amor 365 and when monthly only is checked on main donation form
 				
 				return '<li id="' . $field_id . '" class="' . $css_class . '"><div id="' . $field_id . '" class="' . $css_class . ' input-group input-group-lg"><div class="input-group-prepend"><span class="input-group-text">$</span></div>{FIELD_CONTENT}<span id="post-amount" class="postinput">USD/MONTH</span></div></li>';
 
