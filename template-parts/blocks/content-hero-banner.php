@@ -77,7 +77,7 @@ if ( $banner_settings['banner_type'] == 'Default' ) {
 					
 					<div class="col-md-8 col-lg-4 col-xl-4 mt-4 mt-lg-0 align-self-center">
 						
-						<?php if ( $banner_settings['monthly_donation_only'] ): ?>
+						<?php if ( $banner_content['monthly_donation_only'] ): ?>
 						
 							<?php echo do_shortcode('[gravityform id="' . $form_id . '" title="true" description="false" ajax="true" tabindex="49" field_values="monthly=Make this a monthly gift"]'); ?>
 							
