@@ -83,10 +83,9 @@ if ( $banner_settings['banner_type'] == 'Default' ) {
 							
 						<?php else: ?>
 						
-							<?php echo do_shortcode('[gravityform id="' . $form_id . '" title="true" description="false" ajax="true" tabindex="49"'); ?>
+							<?php echo do_shortcode('[gravityform id="' . $form_id . '" title="true" description="false" ajax="true" tabindex="49"]'); ?>
 						
 						<?php endif; ?>
-
 					</div>
 				
 				<?php endif; ?>
