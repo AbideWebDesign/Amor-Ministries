@@ -1,5 +1,12 @@
 <?php 
 	
+add_action( 'after_setup_theme', 'amor_remove_patterns' );
+
+function amor_remove_patterns() {
+	
+	remove_theme_support( 'core-block-patterns' );
+
+}
 
 add_action('acf/init', 'amor_acf_init');
 
@@ -119,4 +126,24 @@ function amor_acf_block_render_callback( $block ) {
 		include( get_theme_file_path("/template-parts/blocks/content-{$slug}.php") );
 	
 	}
+}
+
+add_filter( 'allowed_block_types', 'amor_allowed_block_types', 10, 2 );
+ 
+function amor_allowed_block_types( $allowed_blocks ) {
+
+	return array(
+		'acf/default-text',
+		'acf/hero-banner',
+		'acf/hero-banner',
+		'acf/pattern-hero-banner',
+		'acf/image-feature',
+		'acf/icon-group',
+		'acf/divider',
+		'acf/divider-alt',
+		'acf/cards',
+		'acf/form',
+		'acf/list-group'
+	);
+ 
 }

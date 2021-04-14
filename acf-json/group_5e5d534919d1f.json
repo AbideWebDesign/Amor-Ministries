@@ -75,13 +75,6 @@
     "location": [
         [
             {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
                 "param": "user_role",
                 "operator": "==",
                 "value": "fundraiser"
@@ -96,5 +89,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1600788981
+    "modified": 1618431012
 }
