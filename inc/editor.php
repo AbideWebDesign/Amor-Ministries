@@ -115,6 +115,29 @@ function get_button( $group_content ) {
 }
 
 /** 
+ * Generate button code
+ * 
+ * @param array $group_content.
+ *
+ * @return string $button_html
+*/
+function get_button_alt( $b ) {
+
+		
+	$button = array (
+		'link' 			=> $b['button_link'],
+		'class_size' 	=> $b['button_size'],
+		'class_color' 	=> get_color_class( $b['button_color'] ),
+		'label' 		=> $b['button_label'],	
+	);
+	
+	$button_html = '<a class="btn ' . $button['class_size'] . ' btn-' . $button['class_color'] . '" href="' . $button['link']['url'] . '" target="' . $button['link']['target'] . '">' . $button['label'] . '</a>';
+
+	return $button_html;
+	
+}
+
+/** 
  * Generate divider code
  *
  * @return string $divider_html

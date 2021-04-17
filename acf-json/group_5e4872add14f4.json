@@ -71,15 +71,32 @@
                     "delay": 0
                 },
                 {
-                    "key": "field_5e67ca6b608be",
-                    "label": "Include Second Button",
-                    "name": "include_second_button",
+                    "key": "field_5e4872dbec4dc",
+                    "label": "Form",
+                    "name": "form",
+                    "type": "forms",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "allow_null": 0,
+                    "multiple": 0
+                },
+                {
+                    "key": "field_6079f88fcc20f",
+                    "label": "Include Primary Button",
+                    "name": "include_button",
                     "type": "true_false",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "33",
                         "class": "",
                         "id": ""
                     },
@@ -90,9 +107,103 @@
                     "ui_off_text": ""
                 },
                 {
-                    "key": "field_5e67cb1a50dcf",
-                    "label": "Title",
-                    "name": "second_button_title",
+                    "key": "field_5e67ca6b608be",
+                    "label": "Include Second Button",
+                    "name": "include_second_button",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_5e4c6e3c88458",
+                    "label": "Use Small Form Design",
+                    "name": "small_form",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_6079f8d2c9b8c",
+                    "label": "Primary Button Title",
+                    "name": "primary_button_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6079f88fcc20f",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_6079c9ddac08b",
+                    "label": "Primary Button",
+                    "name": "primary",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6079f88fcc20f",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_5dfd1e7d17a8a"
+                    ],
+                    "display": "group",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 1
+                },
+                {
+                    "key": "field_6079f8ddc9b8d",
+                    "label": "Secondary Button Title",
+                    "name": "secondary_button_title",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -118,8 +229,8 @@
                 },
                 {
                     "key": "field_5e67caa5608bf",
-                    "label": "Secondary Button",
-                    "name": "button",
+                    "label": "Second Button",
+                    "name": "secondary",
                     "type": "clone",
                     "instructions": "",
                     "required": 1,
@@ -143,43 +254,7 @@
                     "display": "group",
                     "layout": "block",
                     "prefix_label": 0,
-                    "prefix_name": 0
-                },
-                {
-                    "key": "field_5e4c6e3c88458",
-                    "label": "Small Form",
-                    "name": "small_form",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "",
-                    "default_value": 0,
-                    "ui": 1,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
-                },
-                {
-                    "key": "field_5e4872dbec4dc",
-                    "label": "Form",
-                    "name": "form",
-                    "type": "forms",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "id",
-                    "allow_null": 0,
-                    "multiple": 0
+                    "prefix_name": 1
                 }
             ]
         }
@@ -199,7 +274,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1583860977
+    "modified": 1618680742
 }

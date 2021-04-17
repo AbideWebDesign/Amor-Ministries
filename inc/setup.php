@@ -75,6 +75,14 @@ add_image_size('Card', 500, 348, true);
 add_image_size('Image Group', 595, 395, true);
 add_image_size('Image Group Rounded', 405, 405, true);
 
+/* Remove Featured Image Box from Pages */
+add_action( 'after_setup_theme', function() {
+
+    remove_theme_support( 'post-thumbnails' );
+
+    add_theme_support( 'post-thumbnails', array( 'post' ) ); 
+
+}, 11 );
 
 add_filter( 'excerpt_more', 'amor_custom_excerpt_more' );
 
