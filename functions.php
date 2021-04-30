@@ -16,12 +16,12 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 );
 
 $amor_includes = array(
-	'/setup.php',							// Theme setup and custom theme supports.
+	'/setup.php',														// Theme setup and custom theme supports.
 	'/enqueue.php',                         // Enqueue scripts and styles.
 	'/pagination.php',                      // Custom pagination for this theme.
 	'/class-wp-bootstrap-navwalker.php',   
 	'/editor.php',                          // Load Editor functions.
-	'/page-blocks.php',						// Load ACF page blocks.
+	'/page-blocks.php',											// Load ACF page blocks.
 	'/fundraiser.php',
 );
 
