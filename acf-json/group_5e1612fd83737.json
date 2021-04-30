@@ -73,6 +73,30 @@
             "max_height": 120,
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_608c67a0b1107",
+            "label": "Logo Blog",
+            "name": "logo_blog",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -90,7 +114,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1584048891
+    "modified": 1619814421
 }

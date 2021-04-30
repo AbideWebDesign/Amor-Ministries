@@ -11,7 +11,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // get logo field (array)
-$logo_scroll = get_field('logo_scroll', 'options');
+$logo_scroll = get_field('logo_blog', 'options');
 $logo_scroll_src = wp_get_attachment_image_src($logo_scroll['id'], 'full', false);
 
 ?>
