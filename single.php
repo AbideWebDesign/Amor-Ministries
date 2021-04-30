@@ -30,7 +30,7 @@ get_header( 'blog' );
 					
 					<div class="m-auto">
 						
-						<div class="button share-button facebook-share-button">share</div> <div class="button share-button twitter-share-button">tweet</div>
+						<div class="sharethis-inline-share-buttons"></div>
 						
 					</div>
 					
