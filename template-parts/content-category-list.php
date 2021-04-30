@@ -12,7 +12,7 @@
 				
 				<?php foreach ( $categories as $category ): ?>
 				
-					<?php  printf( '<a class="btn btn-primary mr-1 mb-2" href="%1$s"><span class="text-muted">#</span> %2$s</a><br />', esc_url( get_category_link( $category->term_id ) ), esc_html( $category->name ) ); ?>
+					<?php  printf( '<a class="btn btn-primary mr-1 mb-2" href="%1$s"><span class="text-muted">#</span> %2$s</a>', esc_url( get_category_link( $category->term_id ) ), esc_html( $category->name ) ); ?>
 				
 				<?php endforeach; ?>
 				
