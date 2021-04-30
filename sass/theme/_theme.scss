@@ -26,6 +26,9 @@ h2, h3, h4, h5 {
 p {
 	font-size: $font-size-base;
 }
+.text-sm {
+	font-size: $font-size-sm;
+}
 li:not(:last-child) {
 	margin-bottom: .5em;
 }
@@ -101,6 +104,9 @@ button, .btn {
 }
 .wrapper {
 	padding: 100px 0 !important;
+}
+.wrapper-xs {
+	padding: 25px 0 !important;
 }
 .wrapper-sm {
 	padding: 50px 0 !important;

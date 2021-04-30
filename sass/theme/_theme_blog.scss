@@ -1,0 +1,25 @@
+.single-post {
+	#wrapper-navbar.header-dark .navbar {
+		background-color: $primary;
+		
+		a {
+			color: white;
+		}
+		.btn {
+			border-radius: 0;
+		}
+		&.affix {
+			padding: 0 !important;
+			border: none;
+		}
+	}
+	blockquote {
+		margin: 3em 0;
+		p {
+			font-size: $h2-font-size-sm;
+			color: $primary;
+			text-align: center;
+			font-style: italic;
+		}
+	}
+}

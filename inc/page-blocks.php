@@ -106,11 +106,20 @@ function amor_acf_init() {
 		// register a list group block
 		acf_register_block(array(
 			'name'				=> 'list-group',
-			'title'				=> __('List Group block'),
+			'title'				=> __('List Group'),
 			'description'		=> __(''),
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'menu',
+		));	
+		// register a single image block
+		acf_register_block(array(
+			'name'				=> 'single-image',
+			'title'				=> __('Single Image'),
+			'description'		=> __(''),
+			'render_callback'	=> 'amor_acf_block_render_callback',
+			'category'			=> 'layout',
+			'icon'				=> 'format-image',
 		));	
 	}
 }
@@ -143,7 +152,8 @@ function amor_allowed_block_types( $allowed_blocks ) {
 		'acf/divider-alt',
 		'acf/cards',
 		'acf/form',
-		'acf/list-group'
+		'acf/list-group',
+		'acf/single-image',
 	);
  
 }

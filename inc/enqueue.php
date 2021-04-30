@@ -26,6 +26,12 @@ if ( ! function_exists( 'amor_scripts' ) ) {
 
 		$js_version = $theme_version . '.' . filemtime( get_template_directory() . '/js/theme.min.js' );
 		wp_enqueue_script( 'theme-scripts', get_template_directory_uri() . '/js/theme.min.js', array(), $js_version, true );
+		
+		if ( is_single() && 'post' == get_post_type() ) {
+			
+			wp_enqueue_script( 'sharethis', 'https://platform-api.sharethis.com/js/sharethis.js#property=608c4c4a3a051200125df93d&&product=custom-share-buttons', array(), $js_version, true );
+			
+		}
 	}
 } // endif function_exists( 'amor_scripts' ).
 
