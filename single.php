@@ -76,7 +76,7 @@ get_header( 'blog' );
 				        
 				        <a href="<?php echo $permalink; ?>"><h4 class="mb-0"><?php echo $title; ?></h4></a>
 				        
-				        <div class="text-sm text-secondary"><?php echo get_the_date( 'F j, Y', $p ); ?></div>
+				        <div class="text-sm text-muted"><?php echo get_the_date( 'F j, Y', $p ); ?></div>
 				        
 				        <div class="mt-3"><?php echo get_the_excerpt( $p ); ?></div>
 				        
@@ -95,5 +95,7 @@ get_header( 'blog' );
 	</div>
 		
 <?php endif; ?>
+
+<?php get_template_part('template-parts/content-post', 'categories'); ?>
 
 <?php get_footer();

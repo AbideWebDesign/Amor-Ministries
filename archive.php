@@ -10,57 +10,58 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-get_header();
+get_header( 'blog' );
 
 ?>
 
-<div class="wrapper" id="archive-wrapper">
+<div id="archive-wrapper" class="wrapper-sm-bottom">
 
 	<div class="container" id="content" tabindex="-1">
 
 		<div class="row">
+	
+			<div class="col-12 text-center">
+				
+				<h1 class="mb-4">
+					
+					<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+						
+					<?php the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
+						
+				</h1>
+				
+			</div>
+			
+		</div>
+				
+		<?php if ( have_posts() ) : ?>
 
-			<main class="site-main" id="main">
+			<div class="row">
+					
+				<?php while ( have_posts() ) : the_post(); ?>
+					
+					<div class="col-md-6 col-lg-4 mb-3">
+						
+						<?php get_template_part( 'loop-templates/content', 'single'); ?>
+						
+					</div>
 
-				<?php if ( have_posts() ) : ?>
+				<?php endwhile; ?>
+				
+			</div>
 
-					<header class="page-header">
-						<?php
-						the_archive_title( '<h1 class="page-title">', '</h1>' );
-						the_archive_description( '<div class="taxonomy-description">', '</div>' );
-						?>
-					</header><!-- .page-header -->
+		<?php else : ?>
 
-					<?php /* Start the Loop */ ?>
-					<?php while ( have_posts() ) : the_post(); ?>
+			<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
-						<?php
+		<?php endif; ?>
 
-						/*
-						 * Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'loop-templates/content', get_post_format() );
-						?>
-
-					<?php endwhile; ?>
-
-				<?php else : ?>
-
-					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
-
-				<?php endif; ?>
-
-			</main><!-- #main -->
-
-			<!-- The pagination component -->
-			<?php amor_pagination(); ?>
-
-		</div> <!-- .row -->
+		<?php amor_pagination(); ?>
 
 	</div><!-- #content -->
 
-	</div><!-- #archive-wrapper -->
+</div><!-- #archive-wrapper -->
+	
+<?php get_template_part('template-parts/content-category', 'list'); ?>
 
 <?php get_footer();

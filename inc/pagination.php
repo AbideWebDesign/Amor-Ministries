@@ -59,19 +59,20 @@ if ( ! function_exists( 'amor_pagination' ) ) {
 		);
 
 		$links = paginate_links( $args );
+		
 		if ( ! $links ) {
 			return;
 		}
 
 		?>
 
-		<nav aria-labelledby="posts-nav-label">
+		<nav class="pt-4 w-100" aria-labelledby="posts-nav-label">
 
 			<h2 id="posts-nav-label" class="sr-only">
 				<?php echo esc_html( $args['screen_reader_text'] ); ?>
 			</h2>
 
-			<ul class="<?php echo esc_attr( $class ); ?>">
+			<ul class="justify-content-center <?php echo esc_attr( $class ); ?>">
 
 				<?php
 				foreach ( $links as $key => $link ) {
