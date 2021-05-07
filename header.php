@@ -44,7 +44,8 @@ if ( get_field('header_type') == 'Transparent' ) {
 	<script>
 		
 	( function($) {
-		
+
+
 		/**
 		* Header sticky navbar
 		*

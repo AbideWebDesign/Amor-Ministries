@@ -33,9 +33,10 @@
                     "choices": {
                         "text": "Text",
                         "lead": "Page Lead",
+                        "blog-lead": "Blog Lead",
                         "text-sidebar": "Text & Sidebar"
                     },
-                    "default_value": [],
+                    "default_value": false,
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 1,
@@ -293,7 +294,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1583875642
+    "modified": 1620410433
 }

@@ -21,7 +21,6 @@ if ( $group_settings['type'] == 'text-sidebar' ) {
  
 }
 
-
 ?>
 
 <div class="<?php echo $group_settings['padding_type']; ?> wrapper-default-text">
@@ -116,7 +115,7 @@ if ( $group_settings['type'] == 'text-sidebar' ) {
 				
 			</div>
 
-	<?php elseif ( $group_settings['type'] == 'lead' ): ?>	
+	<?php elseif ( $group_settings['type'] == 'lead' || $group_settings['type'] == 'blog-lead' ): ?>	
 			
 			<div class="row justify-content-center">
 				
@@ -124,11 +123,17 @@ if ( $group_settings['type'] == 'text-sidebar' ) {
 					
 					<?php if ( $group_content['content_title'] != '' ): ?>
 					
-						<h1><?php echo $group_content['content_title']; ?></h1>
+						<h1 class="mb-2"><?php echo $group_content['content_title']; ?></h1>
+						
+						<?php if ( $group_settings['type'] == 'blog-lead' ): ?>
+						
+							<div class="text-center"><?php the_date(); ?></div>
+						
+						<?php endif; ?>
 					
 					<?php endif; ?>
 				
-					<div class="lead mb-0">
+					<div class="lead mt-3 mb-0">
 						
 						<?php echo $group_content['content']; ?>
 						
