@@ -154,7 +154,7 @@ function has_alert() {
 	
 	global $post;
 	
-	if ( have_rows( 'alerts', 'options' ) ) {
+	if ( have_rows( 'alerts', 'options' ) && $post ) {
 						
 		while ( have_rows( 'alerts', 'options' ) ) {
 			

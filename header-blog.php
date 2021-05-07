@@ -69,11 +69,11 @@ $logo_scroll_src = wp_get_attachment_image_src($logo_scroll['id'], 'full', false
 
 <div class="site" id="page">
 	
-	<div id="wrapper-navbar" class="header-dark">
+	<div id="wrapper-navbar" class="fixed-top">
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'amor' ); ?></a>
 
-		<nav id="main-nav" class="navbar navbar-expand-lg fixed-top navbar-dark <?php echo ( has_alert() ? 'has-alert' : ''); ?>" aria-labelledby="main-nav-label">
+		<nav id="main-nav" class="navbar navbar-expand-lg  navbar-dark <?php echo ( has_alert() ? 'has-alert' : ''); ?>" aria-labelledby="main-nav-label">
 
 			<h2 id="main-nav-label" class="sr-only">
 				
@@ -122,5 +122,53 @@ $logo_scroll_src = wp_get_attachment_image_src($logo_scroll['id'], 'full', false
 			</div><!-- .container -->
 
 		</nav><!-- .site-navigation -->
+		
+		<?php if ( is_single() || is_category() ): ?>
+	
+			<div class="bg-light py-3">
+				
+				<div class="container">
+					
+					<div class="row">
+						
+						<div class="col-auto">
+							
+							<a href="<?php echo home_url('/stories'); ?>" class="btn-text"><?php _e('Recent Stories'); ?></a>
+							
+						</div>
+						
+						<div class="col-auto">
+							
+							<div class="dropdown">
+							
+								<a href="#" class="btn-text" role="button" id="cats-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php _e('Categories'); ?> <i class="fa fa-chevron-down"></i></a>
+									
+								<div class="dropdown-menu" aria-labelledby="cats-dropdown">
+									
+									<?php $categories = get_categories( array( 'orderby' => 'name', 'order' => 'ASC' ) ); ?>
+									
+									<?php foreach ( $categories as $cat ): ?>
+									
+										<div class="border-bottom py-1">
+											
+											<a class="dropdown-item" href="<?php echo get_category_link( $cat->term_id ); ?>"><?php echo $cat->name; ?></a>
+											
+										</div>
+									
+									<?php endforeach; ?>
+									
+								</div>
+								
+							</div>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+		
+		<?php endif; ?>
 
 	</div><!-- #wrapper-navbar end -->

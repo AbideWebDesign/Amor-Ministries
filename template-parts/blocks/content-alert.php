@@ -6,9 +6,10 @@
  */
 
 global $post;
+
 ?>
 
-<?php if ( have_rows( 'alerts', 'options' ) ): ?>
+<?php if ( have_rows( 'alerts', 'options' ) && $post ): ?>
 						
 	<?php while ( have_rows( 'alerts', 'options' ) ): the_row(); ?>
 		
@@ -47,4 +48,3 @@ global $post;
 	<?php endwhile; ?>
 	
 <?php endif; ?>
- 

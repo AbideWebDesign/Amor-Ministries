@@ -1,16 +1,24 @@
 .blog, .single-post, .archive {
-	#wrapper-navbar.header-dark .navbar {
-		background-color: $primary;
+	#wrapper-navbar {
+		position: fixed;
 		
-		a {
-			color: white;
-		}
-		.btn {
-			border-radius: 0;
-		}
-		&.affix {
-			padding: 0 !important;
-			border: none;
+		.navbar {
+			background-color: $primary;
+			
+			a {
+				color: white;
+			}
+			.btn {
+				border-radius: 0;
+			}
+			&.affix {
+				border: none;
+				padding-top: 0 !important;
+				padding-bottom: 0 !important;
+				.nav-link:not(.dropdown-toggle) {
+					color: white;
+				}
+			}
 		}
 	}
 	blockquote {
@@ -32,5 +40,34 @@
 	}
 	.text-muted {
 		color: lighten( $primary, 20 ) !important;
+	}
+	.btn-text:hover {
+		text-decoration: none;
+	}
+	.dropdown-menu {
+		background-color: $light;
+		border: none;
+		left: -22px !important;
+		
+		a:hover {
+			background-color: transparent;
+		}
+		.border-bottom:last-child {
+			border-bottom: none !important;
+			padding-bottom: 0 !important;
+		}
+	}
+	#single-wrapper {
+		@include media-breakpoint-down(lg) {
+			margin-top: 50px;
+		}
+		@include media-breakpoint-down(md) {
+			margin-top: 120px;
+		}
+	}
+}
+.admin-bar {
+	#wrapper-navbar.fixed-top {
+		top: 32px;
 	}
 }

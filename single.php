@@ -24,7 +24,7 @@ get_header( 'blog' );
 
 					<?php get_template_part( 'loop-templates/content', 'page' ); ?>
 
-				<?php endwhile; // end of the loop. ?>
+				<?php endwhile; ?>
 				
 				<div class="my-1">
 					

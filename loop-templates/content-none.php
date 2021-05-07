@@ -19,11 +19,4 @@ defined( 'ABSPATH' ) || exit;
 
 	</header><!-- .page-header -->
 
-	<div class="page-content">
-	
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'amor' ); ?></p>
-			<?php get_search_form(); ?>
-			
-	</div><!-- .page-content -->
-
 </section><!-- .no-results -->

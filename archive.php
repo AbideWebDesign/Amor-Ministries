@@ -20,7 +20,7 @@ get_header( 'blog' );
 
 		<div class="row">
 	
-			<div class="col-12 text-center">
+			<div class="col-12 wrapper-sm text-center">
 				
 				<h1 class="mb-4">
 					
