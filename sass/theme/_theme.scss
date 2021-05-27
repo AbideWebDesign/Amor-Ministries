@@ -35,6 +35,11 @@ li:not(:last-child) {
 .lead {
 	margin-bottom: 40px;
 }
+.text-center .lead, .text-center {
+	ol, ul {
+		text-align: left;
+	}	
+}
 .lead p {
 	@extend .lead;
 }

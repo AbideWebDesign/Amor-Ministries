@@ -24,13 +24,13 @@ if ( $group_content['small_form'] ) {
 
 <?php if ( $group_content['title'] ): ?>
 	
-<div class="wrapper-sm pb-0 text-center">
+<div class="wrapper-sm pb-0">
 	
 	<div class="container">
 		
 		<div class="row justify-content-center">
 			
-			<div class="col-md-10 col-lg-8">			
+			<div class="col-md-10 col-lg-8 text-center">			
 	
 				<h1><?php echo $group_content['title']; ?></h1>
 				
