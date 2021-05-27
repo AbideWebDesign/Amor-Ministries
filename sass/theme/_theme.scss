@@ -873,7 +873,15 @@ button, .btn {
 body {
 	.gform_wrapper {
 		margin: 0;
-		
+		gform_validation_errors {
+			margin-bottom: 2em;
+		}
+		.gform_submission_error {
+			font-size: 20px;
+		    text-align: center;
+		    margin: 0;
+		    color: #721c24;
+		}
 		form {
 			margin-bottom: 0;
 		}
