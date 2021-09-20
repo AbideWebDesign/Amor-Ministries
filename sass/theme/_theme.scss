@@ -873,6 +873,9 @@ button, .btn {
 body {
 	.gform_wrapper {
 		margin: 0;
+		.gfield_hidden_product {
+			display: none !important;
+		}
 		.gform_validation_errors {
 			margin-bottom: 2em;
 		}
@@ -1142,6 +1145,92 @@ body {
 	}
 	.form-control::-webkit-input-placeholder {
 		color: #bbb;
+	}
+}
+/* House Sponsorship */
+.sponsorship {
+	margin: 0;
+	
+	.gform_footer {
+		padding: 1em 0 0 0;
+		margin: 0;
+	}
+	.gform_button {
+		margin: 0 !important;
+		width: 100% !important;
+	}
+	.radio-buttons {
+		padding: 0 !important;
+		
+		.gfield_label {
+			color: black;
+			font-weight: normal;
+			margin-bottom: 0;
+		}
+		.gfield_radio {
+			width: 100% !important;	
+			
+			li {
+				margin: .5em 0;
+				height: 60px;
+				width: 100%;
+				position: relative;
+				background-color: white;
+				overflow: hidden;
+			}
+			label, input {
+				transition: all .3s ease-in-out;
+			}
+			input[type="radio"]:checked + label {
+				background-color: #EAF0F6;
+				border-color: $primary;
+				color: $primary;
+				font-weight: 600;
+			}
+			.gchoice {
+				display: flex;
+				
+				input {
+					align-self: center;
+					margin-right: .5em;
+				}
+			}
+			label {
+				font-weight: 600;
+				font-size: 15px;
+				line-height: 1.2em;
+				color: $primary;
+				padding: 0px;
+				border: 1px solid $gray-400; 
+				border-radius: $border-radius;
+				cursor: pointer;
+			    z-index: 90;
+			    height: 100%;
+			    display: flex;
+			    justify-content: start;
+			    align-items: center;
+			    text-align: left;
+			    width: 100%;
+			    max-width: 100%;
+			    margin: 0;
+			    padding-left: 1em;
+			    
+			   				}
+			label:hover {
+				border-color: $primary;
+				color: $primary;
+			}
+		}
+		.gfield:not(&.gfield_radio) {
+			width: 100%;
+			padding-right: 0;
+			
+			input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+				padding: 10px 12px;
+				height: auto;
+				background-color: $gray-100;
+			}
+		}
 	}
 }
 .bg-light {
