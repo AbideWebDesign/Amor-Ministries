@@ -1147,6 +1147,11 @@ body {
 		color: #bbb;
 	}
 }
+.gform_legacy_markup_wrapper .gfield_visibility_hidden {
+    visibility: hidden;
+    position: absolute;
+    left: -9999px;
+}
 /* House Sponsorship */
 .sponsorship {
 	margin: 0;
