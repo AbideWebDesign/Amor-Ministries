@@ -23,6 +23,7 @@ function amor_acf_init() {
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'text',
+			'mode'				=> 'edit',
 		));
 		
 		// register a hero banner block
@@ -33,6 +34,7 @@ function amor_acf_init() {
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'format-image',
+			'mode'				=> 'edit',
 		));
 		
 		// register a pattern hero banner block
@@ -43,6 +45,7 @@ function amor_acf_init() {
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'format-image',
+			'mode'				=> 'edit',
 		));
 		
 		// register a image feature block
@@ -53,6 +56,7 @@ function amor_acf_init() {
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'align-left',
+			'mode'				=> 'edit',
 		));
 		
 		// register a icon group block
@@ -63,6 +67,7 @@ function amor_acf_init() {
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'megaphone',
+			'mode'				=> 'edit',
 		));
 		
 		// register a divider block
@@ -73,6 +78,7 @@ function amor_acf_init() {
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'editor-insertmore',
+			'mode'				=> 'edit',
 		));
 		
 		// register a divider block
@@ -83,6 +89,7 @@ function amor_acf_init() {
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'editor-insertmore',
+			'mode'				=> 'edit',
 		));
 		
 		// register a card block
@@ -93,7 +100,9 @@ function amor_acf_init() {
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'excerpt-view',
+			'mode'				=> 'edit',
 		));		
+		
 		// register a form block
 		acf_register_block(array(
 			'name'				=> 'form',
@@ -102,7 +111,9 @@ function amor_acf_init() {
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'welcome-write-blog',
+			'mode'				=> 'edit',
 		));	
+		
 		// register a list group block
 		acf_register_block(array(
 			'name'				=> 'list-group',
@@ -111,7 +122,9 @@ function amor_acf_init() {
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'menu',
+			'mode'				=> 'edit',
 		));	
+		
 		// register a single image block
 		acf_register_block(array(
 			'name'				=> 'single-image',
@@ -120,40 +133,62 @@ function amor_acf_init() {
 			'render_callback'	=> 'amor_acf_block_render_callback',
 			'category'			=> 'layout',
 			'icon'				=> 'format-image',
+			'mode'				=> 'edit',
+		));	
+		// register vimeo block
+		acf_register_block(array(
+			'name'				=> 'vimeo',
+			'title'				=> __('Vimeo Video'),
+			'description'		=> __(''),
+			'render_callback'	=> 'amor_acf_block_render_callback',
+			'category'			=> 'layout',
+			'icon'				=> 'format-video',
+			'mode'				=> 'edit',
 		));	
 	}
 }
 
 function amor_acf_block_render_callback( $block ) {
 	
-	// convert name ("acf/testimonial") into path friendly slug ("testimonial")
-	$slug = str_replace('acf/', '', $block['name']);
+	$slug = str_replace( 'acf/', '', $block['name'] );
 	
-	// include a template part from within the "template-parts/blocks" folder
-	if( file_exists( get_theme_file_path("/template-parts/blocks/content-{$slug}.php") ) ) {
+	if ( file_exists( get_theme_file_path( "/template-parts/blocks/content-{$slug}.php" ) ) ) {
 		
-		include( get_theme_file_path("/template-parts/blocks/content-{$slug}.php") );
+		include( get_theme_file_path( "/template-parts/blocks/content-{$slug}.php" ) );
 	
 	}
 }
 
-add_filter( 'allowed_block_types', 'amor_allowed_block_types', 10, 2 );
+add_filter( 'allowed_block_types_all', 'amor_allowed_block_types', 10, 2 );
  
 function amor_allowed_block_types( $allowed_blocks ) {
 
-	return array(
-		'acf/default-text',
-		'acf/hero-banner',
-		'acf/hero-banner',
-		'acf/pattern-hero-banner',
-		'acf/image-feature',
-		'acf/icon-group',
-		'acf/divider',
-		'acf/divider-alt',
-		'acf/cards',
-		'acf/form',
-		'acf/list-group',
-		'acf/single-image',
-	);
- 
+	global $post;
+	
+	if ( $post->post_type == 'post' ) {
+		
+		return array(
+			'acf/default-text',
+			'acf/single-image',
+			'acf/vimeo',
+		);
+		
+	} else {
+		
+		return array(
+			'acf/default-text',
+			'acf/hero-banner',
+			'acf/pattern-hero-banner',
+			'acf/image-feature',
+			'acf/icon-group',
+			'acf/divider',
+			'acf/divider-alt',
+			'acf/cards',
+			'acf/form',
+			'acf/list-group',
+			'acf/single-image',
+		);
+		
+	} 
+
 }
