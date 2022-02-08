@@ -46,7 +46,14 @@
 		color: inherit;
 	}
 	
-	
+	.components-toolbar-group {
+		.block-editor-block-toolbar__slot {
+			button[aria-label='Align'] {
+				display: none !important; 
+			}
+		}
+	}
+
 	.wp-core-ui {
 		.button.btn-primary {
 			@extend .btn;
