@@ -273,9 +273,9 @@ function add_bootstrap_container_class( $field_container, $field, $form, $css_cl
 
 	$id = $field->id;
 	
-	$field_id = is_admin() || empty( $form ) ? "field_{$id}" : 'field_' . $form['id'] . "_$id";
+	$field_id = 'field_' . $form['id'] . "_$id";
 	
-	if ( !is_admin() ) {
+	if ( ! is_admin() ) {
 
 		if ( $field->type == 'product' && $field->inputType != 'calculation' && $field->inputType != 'singleproduct' ) {
 			
@@ -300,11 +300,10 @@ function add_bootstrap_container_class( $field_container, $field, $form, $css_cl
 			
 		}
 		
-	} else {
-		
-		return '<li id="' . $field_id . '" class="' . $css_class . ' form-group">{FIELD_CONTENT}</li>';
-		
-	}
+	} 
+	
+	return $field_container;
+	
 }
 
 // Edit gravity form fee product label on payment form
