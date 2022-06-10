@@ -257,7 +257,7 @@ function bootstrap_styles_for_gravityforms_fields($content, $field, $value, $lea
 
 } 
 
-// End bootstrap_styles_for_gravityforms_fields()
+// End bootstrap_styles_for_gravityforms_fields
 add_filter( 'gform_submit_button', 'form_submit_button', 10, 2 );
 
 function form_submit_button($button, $form){
@@ -375,6 +375,7 @@ function amor365_populate_function( $value ) {
 
 }
 
+
 // Set default amount for CHS Form
 add_filter( 'gform_field_value_chs_amount', 'chs_populate_function' );
 
@@ -382,4 +383,19 @@ function chs_populate_function( $value ) {
 	
     return '3,780.00';
 
+}
+
+// Custom early bird calculations
+add_filter( 'gform_field_value_now', 'pre_load_timestamp' );
+
+function pre_load_timestamp( $value ) {
+	
+	$tz = new DateTimeZone( 'America/Los_Angeles' );
+	
+	$date_now = new DateTime();
+	
+	$date_now->setTimezone( $tz );
+
+	return $date_now->getTimestamp();
+	
 }
