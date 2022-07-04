@@ -277,7 +277,7 @@ function add_bootstrap_container_class( $field_container, $field, $form, $css_cl
 	
 	if ( ! is_admin() ) {
 
-		if ( $field->type == 'product' && $field->inputType != 'calculation' && $field->inputType != 'singleproduct' ) {
+		if ( $field->type == 'product' && $field->inputType != 'calculation' && $field->inputType != 'singleproduct' && $field->inputType != 'radio' ) {
 			
 			if ( $form['id'] == 20 || is_page( 'donate-monthly' ) ) { // Setup monthly post input for Amor 365 and when monthly only is checked on main donation form
 				

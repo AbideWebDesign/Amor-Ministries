@@ -1152,6 +1152,13 @@ body {
     position: absolute;
     left: -9999px;
 }
+body .gform_legacy_markup_wrapper .top_label div.ginput_container,body .gform_legacy_markup_wrapper ul li.field_description_below div.ginput_container_checkbox, body .gform_legacy_markup_wrapper ul li.field_description_below div.ginput_container_radio {
+	margin-top: 0 !important;
+}
+.ginput_container_total {
+	font-size: $font-size-lg;
+	font-weight: bold;
+}
 /* House Sponsorship */
 .sponsorship {
 	margin: 0;

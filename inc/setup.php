@@ -321,7 +321,6 @@ function check_user_role($roles, $user_id = null) {
 }
 
 // Custom Login functions
-
 function redirect_login_page() {
 	
 	global $page_id;
@@ -391,5 +390,6 @@ add_filter( 'authenticate', 'verify_username_password', 1, 3);
 function user_registration_autologin( $user_id, $config, $entry, $password ) {
 
 	wp_set_auth_cookie( $user_id, false, '' );
+	
 }
 add_action( 'gform_user_registered','user_registration_autologin', 10, 4 );
