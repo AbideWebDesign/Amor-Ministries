@@ -897,6 +897,9 @@ body {
 				&:first-child {
 					margin-top: 0;
 				}
+				&.gchoice {
+					margin-bottom: 0;
+				}
 			}
 		}
 		.gform_title {
