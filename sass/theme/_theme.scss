@@ -1042,6 +1042,7 @@ body {
 		.custom-select {
 			-webkit-appearance: none;
 			-moz-appearance: none;
+			
 			&:focus {
 				box-shadow: none;
 				border-color: $gray-400;
