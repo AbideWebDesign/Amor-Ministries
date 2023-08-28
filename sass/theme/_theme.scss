@@ -947,6 +947,9 @@ body {
 			@extend .form-control-lg;
 			width: 100%;
 		}
+		.StripeElement {
+			height: auto !important;
+		}
 		.ginput_container_name {
 			@extend .row;
 			
