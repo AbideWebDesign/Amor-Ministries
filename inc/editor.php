@@ -314,7 +314,7 @@ add_filter( 'gform_product_price_7', 'set_cc_price_label', 10, 2 );
 add_filter( 'gform_product_price_9', 'set_price_label', 10, 2 );
 add_filter( 'gform_product_price_11', 'set_price_label', 10, 2 );
 add_filter( 'gform_product_price_13', 'set_price_label', 10, 2 );
-add_filter( 'gform_product_price_24', 'set_cc_price_label', 10, 2 );
+add_filter( 'gform_product_price_24', 'set_price_label', 10, 2 );
 add_filter( 'gform_product_price_25', 'set_cc_price_label', 10, 2 );
 add_filter( 'gform_product_price_46', 'set_cc_price_label', 10, 2 );
 
