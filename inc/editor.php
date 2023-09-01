@@ -308,8 +308,10 @@ function add_bootstrap_container_class( $field_container, $field, $form, $css_cl
 
 // Edit gravity form fee product label on payment form
 add_filter( 'gform_product_price_2', 'set_cc_price_label', 10, 2 );
+add_filter( 'gform_product_price_6', 'set_cc_price_label', 10, 2 );
 add_filter( 'gform_product_price_3', 'set_price_label', 10, 2 );
 add_filter( 'gform_product_price_7', 'set_cc_price_label', 10, 2 );
+add_filter( 'gform_product_price_9', 'set_cc_price_label', 10, 2 );
 add_filter( 'gform_product_price_25', 'set_cc_price_label', 10, 2 );
 add_filter( 'gform_product_price_46', 'set_cc_price_label', 10, 2 );
 
