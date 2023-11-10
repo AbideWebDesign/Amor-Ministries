@@ -12,6 +12,20 @@
 			
 		}
 	
-	} ); 
+	} );
+	
+	$( '#input_42_14' ).change( function() {
+
+        if ( $( this ).val() === 'Amor YP Sponsorship' ) {
+
+            $( '#choice_42_15_1').prop( 'checked', true );
+            
+        } else {
+
+            $( '#choice_42_15_1' ).prop( 'checked', false );
+            
+        }
+        
+    } );
 	
 } )( jQuery );

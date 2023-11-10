@@ -1,1 +1,1 @@
-!function(t){t(".monthly input").click((function(){t(this).is(":checked ")?t("#post-amount").text("USD/Month"):t("#post-amount").text("USD")}))}(jQuery);
+!function($){$(".monthly input").click((function(){$(this).is(":checked ")?$("#post-amount").text("USD/Month"):$("#post-amount").text("USD")})),$("#input_42_14").change((function(){"Amor YP Sponsorship"===$(this).val()?$("#choice_42_15_1").prop("checked",!0):$("#choice_42_15_1").prop("checked",!1)}))}(jQuery);
