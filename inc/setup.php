@@ -253,6 +253,9 @@ function admin_bar_style_override() {
 			#your-profile h2 {
 				display: none;
 			}
+			.acf-escaped-html-notice {
+				display: none;
+			}
 	<?php
 		
 		if ( check_user_role ( array( 'fundraiser' ) ) ) {
