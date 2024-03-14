@@ -396,3 +396,14 @@ function user_registration_autologin( $user_id, $config, $entry, $password ) {
 	
 }
 add_action( 'gform_user_registered','user_registration_autologin', 10, 4 );
+
+/* 
+ * ACF
+ */
+add_filter( 'acf/the_field/allow_unsafe_html', function( $allowed, $selector ) {
+    
+    return true;
+    
+    return $allowed;
+    
+}, 10, 2);
