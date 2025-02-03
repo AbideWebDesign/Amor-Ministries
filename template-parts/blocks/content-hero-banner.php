@@ -43,8 +43,8 @@ if ( $banner_settings['banner_type'] == 'Default' ) {
 						
 							<h1 class="mb-0"><?php echo $banner_content['title']; ?></h1>
 						
-						<?php else: ?>
-						
+						<?php elseif ( isset( $banner_content['foreground_image']['id'] ) ): ?>
+							
 							<?php $foreground_img = wp_get_attachment_image_src( $banner_content['foreground_image']['id'], 'Hero Banner Foreground' ); ?>
 							
 							<img src="<?php echo $foreground_img[0]; ?>" class="img-fluid" />
