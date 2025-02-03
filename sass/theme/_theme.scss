@@ -942,6 +942,14 @@ body {
 			 margin-bottom: 0;
 			}
 		}
+		select {
+			padding: 10px 12px;
+			border-radius: .3rem;
+			border-color: #ced4da;
+			background-color: #F8F9FA;
+			font-size: 1.15rem;
+			color: #495057;
+		}
 		.StripeElement, input[type="email"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="week"], input[type="url"], textarea {
 			@extend .form-control;
 			@extend .form-control-lg;
