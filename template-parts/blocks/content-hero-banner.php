@@ -10,7 +10,12 @@ $banner_settings = get_field('hero_banner_settings');
 $banner_content = get_field('hero_banner_content');
 
 $image = wp_get_attachment_image_src( $banner_content['image']['id'], 'Hero Banner' );
-$image_mobile = wp_get_attachment_image_src( $banner_content['image_mobile']['id'], 'Hero Banner Mobile' );
+
+if ( $banner_content['image_mobile']['id'] ) {
+	
+	$image_mobile = wp_get_attachment_image_src( $banner_content['image_mobile']['id'], 'Hero Banner Mobile' );
+
+}
 
 if ( $banner_settings['banner_type'] == 'Default' ) {
 
@@ -96,7 +101,11 @@ if ( $banner_settings['banner_type'] == 'Default' ) {
 
 	</div>
 	
-	<div class="hero-banner-bg-mobile d-lg-none" style="background-image: url( <?php echo $image_mobile[0]; ?> )"></div>
+	<?php if ( isset( $image_mobile ) ): ?>
+	
+		<div class="hero-banner-bg-mobile d-lg-none" style="background-image: url( <?php echo $image_mobile[0]; ?> )"></div>
+		
+	<?php endif; ?>
 	
 	<?php if ( $banner_settings['include_overlay'] ): ?>
 	
