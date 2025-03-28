@@ -257,6 +257,45 @@ function spinner_url( $image_src, $form ) {
 
 }
 
+// Edit gravity form field containers
+add_filter( 'gform_field_container_20_1', 'add_bootstrap_container_class_month', 10, 6 );
+
+function add_bootstrap_container_class_month( $field_container, $field, $form, $css_class, $style, $field_content ) {
+
+	$id = $field->id;
+	
+	$field_id = 'field_' . $form['id'] . "_$id";
+	
+	if ( ! is_admin() ) {
+
+		return '<li id="' . $field_id . '" class="' . $css_class . '"><div id="' . $field_id . '" class="' . $css_class . ' input-group input-group-lg"><div class="input-group-prepend"><span class="input-group-text">$</span></div>{FIELD_CONTENT}<div id="post-amount" class="postinput align-self-center pl-1">/MON</div></div></li>';
+				
+	} 
+	
+	return $field_container;
+	
+}
+
+add_filter( 'gform_field_container_7_1', 'add_bootstrap_container_class', 10, 6 );
+add_filter( 'gform_field_container_19_1', 'add_bootstrap_container_class', 10, 6 );
+add_filter( 'gform_field_container_2_1', 'add_bootstrap_container_class', 10, 6 );
+
+function add_bootstrap_container_class( $field_container, $field, $form, $css_class, $style, $field_content ) {
+
+	$id = $field->id;
+	
+	$field_id = 'field_' . $form['id'] . "_$id";
+	
+	if ( ! is_admin() ) {
+
+		return '<li id="' . $field_id . '" class="' . $css_class . '"><div id="' . $field_id . '" class="' . $css_class . ' input-group input-group-lg"><div class="input-group-prepend"><span class="input-group-text">$</span></div>{FIELD_CONTENT}</div></li>';
+				
+	} 
+	
+	return $field_container;
+	
+}
+
 // Set default amount for Amor 365 Form
 add_filter( 'gform_field_value_amor365_amount', 'amor365_populate_function' );
 

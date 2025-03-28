@@ -949,6 +949,7 @@ body {
 			background-color: #F8F9FA;
 			font-size: 1.15rem;
 			color: #495057;
+			width: 100%;
 		}
 		.StripeElement, input[type="email"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="week"], input[type="url"], textarea {
 			@extend .form-control;
@@ -1059,6 +1060,9 @@ body {
 				border-color: $gray-400;
 			}
 		}
+		.ginput_container_product_price {
+			@extend .flex-grow-1;
+		}
 		.form-check {
 			margin-bottom: .3em;
 			
@@ -1089,15 +1093,9 @@ body {
 			}
 		}
 		.postinput {
-			position: absolute;
-			top: 54%;
-			right: 5%;
 			z-index: 2;
-			-webkit-transform: translateY(-50%);
-			-ms-transform: translateY(-50%);
-			transform: translateY(-50%);
 			color: $body-color;
-			font-size: 18px;
+			font-size: 14px;
 			font-weight: normal;
 			text-transform: uppercase;
 		}
