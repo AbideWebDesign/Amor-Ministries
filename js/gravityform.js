@@ -16,16 +16,31 @@
 	
 	$( '#input_42_14' ).change( function() {
 
-        if ( $( this ).val() === 'Amor YP Sponsorship' ) {
+        var $priceInput = $( '#input_42_1' );
+        var $monthlyCheckbox = $( '#choice_42_15_1' );
 
-            $( '#choice_42_15_1').prop( 'checked', true );
-            
+        if ( $( this ).val() === 'Amor YP Champion' ) {
+
+            $priceInput.val( '$30.00' ).prop( 'disabled', true );
+
+            if ( ! $priceInput.next( '.ginput_amount_suffix' ).length ) {
+
+                $priceInput.after( '<span class="ginput_amount_suffix">/month</span>' );
+
+            }
+
+            $monthlyCheckbox.prop( 'checked', true ).prop( 'disabled', true );
+
         } else {
 
-            $( '#choice_42_15_1' ).prop( 'checked', false );
-            
+            $priceInput.val( '' ).prop( 'disabled', false );
+
+            $priceInput.next( '.ginput_amount_suffix' ).remove();
+
+            $monthlyCheckbox.prop( 'checked', false ).prop( 'disabled', false );
+
         }
-        
+
     } );
 	
 } )( jQuery );

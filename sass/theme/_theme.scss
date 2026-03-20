@@ -942,6 +942,11 @@ body {
 			 margin-bottom: 0;
 			}
 		}
+		.gform-page-footer {
+			.gform_previous_button, .gform_next_button {
+				margin-bottom: 1em;
+			}
+		}
 		select {
 			padding: 10px 12px;
 			border-radius: .3rem;
