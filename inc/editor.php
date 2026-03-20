@@ -184,11 +184,11 @@ function has_alert() {
 */
  
 // Script enqueues
-add_action( 'gform_enqueue_scripts', 'enqueue_custom_script', 10, 2 );
+add_action( 'wp_enqueue_scripts', 'enqueue_custom_script' );
 
-function enqueue_custom_script( $form, $is_ajax ) {
-    
-    wp_enqueue_script( 'amor-gravity-scripts', get_template_directory_uri() . '/js/gravityform-min.js', array(), true );
+function enqueue_custom_script() {
+
+	wp_enqueue_script( 'amor-gravity-scripts', get_template_directory_uri() . '/js/gravityform-min.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/gravityform-min.js' ), true );
 
 }
 
