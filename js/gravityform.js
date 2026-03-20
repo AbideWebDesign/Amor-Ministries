@@ -21,7 +21,7 @@
 
         if ( $( this ).val() === 'Amor YP Champion' ) {
 
-            $priceInput.val( '$30.00/month' ).prop( 'disabled', true );
+            $priceInput.val( '$30.00' ).prop( 'disabled', true );
 
             $monthlyCheckbox.prop( 'checked', true ).prop( 'disabled', true );
 
