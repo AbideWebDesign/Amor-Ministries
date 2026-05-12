@@ -38,10 +38,15 @@
 	$( '#input_7_3' ).change( function() {
 
         var $priceInput = $( '#input_7_1' );
+        var val = $( this ).val();
 
-        if ( $( this ).val() === 'Complete House Sponsorship' ) {
+        if ( val === 'Complete House Sponsorship' ) {
 
             $priceInput.val( '5000' ).prop( 'readonly', true );
+
+        } else if ( val === 'Amor 365' ) {
+
+            $priceInput.val( '15' ).prop( 'readonly', false );
 
         } else {
 
