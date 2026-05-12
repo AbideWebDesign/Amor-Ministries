@@ -35,4 +35,20 @@
 
     } );
 	
+	$( '#input_7_3' ).change( function() {
+
+        var $priceInput = $( '#input_7_1' );
+
+        if ( $( this ).val() === 'Complete House Sponsorship' ) {
+
+            $priceInput.val( '5000' ).prop( 'readonly', true );
+
+        } else {
+
+            $priceInput.val( '' ).prop( 'readonly', false );
+
+        }
+
+    } );
+
 } )( jQuery );
