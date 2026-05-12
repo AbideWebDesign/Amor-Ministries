@@ -1062,6 +1062,16 @@ body {
 		}
 		.ginput_container_product_price {
 			@extend .flex-grow-1;
+			position: relative;
+			.gf-price-suffix {
+				position: absolute;
+				right: 12px;
+				top: 50%;
+				transform: translateY(-50%);
+				pointer-events: none;
+				color: $gray-600;
+				font-size: 1rem;
+			}
 		}
 		.form-check {
 			margin-bottom: .3em;

@@ -40,6 +40,8 @@
         var $priceInput = $( '#input_7_1' );
         var val = $( this ).val();
 
+        $priceInput.next( '.gf-price-suffix' ).remove();
+
         if ( val === 'Complete House Sponsorship' ) {
 
             $priceInput.val( '5000' ).prop( 'readonly', true );
@@ -47,6 +49,8 @@
         } else if ( val === 'Amor 365' ) {
 
             $priceInput.val( '15' ).prop( 'readonly', false );
+
+            $priceInput.after( '<span class="gf-price-suffix">/month</span>' );
 
         } else {
 
