@@ -183,6 +183,9 @@ function has_alert() {
  * Gravity Forms
 */
  
+// Render every form with Gravity Forms 2.5+ markup. Legacy markup is removed in Gravity Forms 4.0.
+add_filter( 'gform_enable_legacy_markup', '__return_false', 99 );
+
 // Script enqueues
 add_action( 'wp_enqueue_scripts', 'enqueue_custom_script' );
 
@@ -258,9 +261,11 @@ function add_bootstrap_container_class_month( $field_container, $field, $form, $
 	
 	$field_id = 'field_' . $form['id'] . "_$id";
 	
+	$tag = GFCommon::is_legacy_markup_enabled( $form ) ? 'li' : 'div';
+	
 	if ( ! is_admin() ) {
 
-		return '<li id="' . $field_id . '" class="' . $css_class . '"><div id="' . $field_id . '" class="' . $css_class . ' input-group input-group-lg"><div class="input-group-prepend"><span class="input-group-text">$</span></div>{FIELD_CONTENT}<div id="post-amount" class="postinput align-self-center pl-1">/MON</div></div></li>';
+		return '<' . $tag . ' id="' . $field_id . '" class="' . $css_class . '"><div class="input-group input-group-lg"><div class="input-group-prepend"><span class="input-group-text">$</span></div>{FIELD_CONTENT}<div id="post-amount" class="postinput align-self-center pl-1">/MON</div></div></' . $tag . '>';
 				
 	} 
 	
@@ -278,9 +283,11 @@ function add_bootstrap_container_class( $field_container, $field, $form, $css_cl
 	
 	$field_id = 'field_' . $form['id'] . "_$id";
 	
+	$tag = GFCommon::is_legacy_markup_enabled( $form ) ? 'li' : 'div';
+	
 	if ( ! is_admin() ) {
 
-		return '<li id="' . $field_id . '" class="' . $css_class . '"><div id="' . $field_id . '" class="' . $css_class . ' input-group input-group-lg"><div class="input-group-prepend"><span class="input-group-text">$</span></div>{FIELD_CONTENT}</div></li>';
+		return '<' . $tag . ' id="' . $field_id . '" class="' . $css_class . '"><div class="input-group input-group-lg"><div class="input-group-prepend"><span class="input-group-text">$</span></div>{FIELD_CONTENT}</div></' . $tag . '>';
 				
 	} 
 	
