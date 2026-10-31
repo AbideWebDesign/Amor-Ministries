@@ -25,8 +25,8 @@ function get_fundraiser_total( $goal, $form_id ) {
 	$total = 0;
 	
 	foreach( $entries as $entry ) {
-		
-		$total += $entry['payment_amount'];
+
+		$total += $entry[1];
 		
 	}
 	
