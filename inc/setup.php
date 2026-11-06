@@ -407,3 +407,24 @@ add_filter( 'acf/the_field/allow_unsafe_html', function( $allowed, $selector ) {
     return $allowed;
     
 }, 10, 2);
+
+/*
+ * Lazy-load content images on pages that open with a hero banner
+ *
+ * WordPress leaves the first 3 content images eager in case one is the largest paint. A hero banner is a CSS
+ * background, so on those pages every content image sits below it. LiteSpeed Cache's lazy loader covered this
+ * until it was retired behind Cloudflare.
+ */
+add_filter( 'wp_omit_loading_attr_threshold', 'amor_lazy_load_threshold' );
+
+function amor_lazy_load_threshold( $threshold ) {
+
+	if ( is_singular() && ( has_block( 'acf/hero-banner' ) || has_block( 'acf/pattern-hero-banner' ) ) ) {
+
+		return 0;
+
+	}
+
+	return $threshold;
+
+}

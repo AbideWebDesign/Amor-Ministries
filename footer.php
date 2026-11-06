@@ -28,7 +28,7 @@ $contact_section = get_field('contact_section', 'options');
 					
 					<div class="mb-3 text-center text-md-left">
 						
-						<a href="<?php echo home_url(); ?>"><img src="<?php echo $footer_logo['url']; ?>" class="img-fluid" width="175" /></a>
+						<a href="<?php echo home_url(); ?>"><img src="<?php echo $footer_logo['url']; ?>" class="img-fluid" width="175" loading="lazy" /></a>
 					
 					</div>
 					
