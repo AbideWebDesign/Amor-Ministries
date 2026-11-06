@@ -428,3 +428,20 @@ function amor_lazy_load_threshold( $threshold ) {
 	return $threshold;
 
 }
+
+/*
+ * Remove the emoji detection script and styles
+ *
+ * LiteSpeed Cache removed them (optm-emoji_rm); Yoast's crawl cleanup does not on this site.
+ */
+add_action( 'init', 'amor_remove_emoji' );
+
+function amor_remove_emoji() {
+
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+
+	remove_action( 'wp_enqueue_scripts', 'wp_enqueue_emoji_styles' );
+
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+}
