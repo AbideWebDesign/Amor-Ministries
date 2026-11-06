@@ -80,7 +80,7 @@ if ( $group_settings['type'] == 'text-sidebar' ) {
 				
 				<div class="<?php echo $img_col_classes; ?>">
 					
-					<img src="<?php echo $image[0]; ?>" alt="<?php $image[1]; ?>" class="img-fluid" />
+					<img src="<?php echo $image[0]; ?>" alt="<?php $image[1]; ?>" class="img-fluid" width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>" />
 					
 				</div>
 				
