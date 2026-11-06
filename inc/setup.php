@@ -445,3 +445,125 @@ function amor_remove_emoji() {
 	remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
 }
+
+/*
+ * Serve the WebP copies LiteSpeed Cache made of uploaded images
+ *
+ * LiteSpeed swapped image URLs for their .webp copy only when the request that built the page accepted WebP, and
+ * Cloudflare then cached that one copy for everyone. This swaps them for every visitor (every supported browser
+ * reads WebP), but only where the .webp still matches the original (amor_webp_matches), so an image replaced in
+ * place (WP Media Folder, Regenerate Thumbnails) keeps its own file. It stands down while LiteSpeed Cache is active.
+ */
+add_filter( 'wp_get_attachment_image_src', 'amor_webp_image_src' );
+
+add_filter( 'wp_calculate_image_srcset', 'amor_webp_image_srcset' );
+
+add_filter( 'wp_content_img_tag', 'amor_webp_content_img_tag' );
+
+function amor_webp_url( $url ) {
+
+	static $swapped = array();
+
+	if ( defined( 'LSCWP_V' ) || is_admin() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
+
+		return $url;
+
+	}
+
+	if ( isset( $swapped[ $url ] ) ) {
+
+		return $swapped[ $url ];
+
+	}
+
+	$swapped[ $url ] = $url;
+
+	$uploads = wp_get_upload_dir();
+
+	if ( 0 === strpos( $url, $uploads['baseurl'] . '/' ) && preg_match( '/\.(jpe?g|png)$/i', $url ) ) {
+
+		$file = $uploads['basedir'] . substr( $url, strlen( $uploads['baseurl'] ) );
+
+		if ( is_file( $file ) && is_file( $file . '.webp' ) && amor_webp_matches( $file ) ) {
+
+			$swapped[ $url ] = $url . '.webp';
+
+		}
+
+	}
+
+	return $swapped[ $url ];
+
+}
+
+/*
+ * The .webp copy still shows the original image
+ *
+ * LiteSpeed wrote some optimized originals a day after their .webp (the March 2020 batch), so a slightly newer
+ * original with the same dimensions is the same picture. Anything newer than that was replaced after conversion.
+ */
+function amor_webp_matches( $file ) {
+
+	$original_time = filemtime( $file );
+
+	$webp_time = filemtime( $file . '.webp' );
+
+	if ( $webp_time >= $original_time ) {
+
+		return true;
+
+	}
+
+	if ( $original_time - $webp_time > 2 * DAY_IN_SECONDS ) {
+
+		return false;
+
+	}
+
+	$original_size = getimagesize( $file );
+
+	$webp_size = getimagesize( $file . '.webp' );
+
+	return $original_size && $webp_size && $original_size[0] === $webp_size[0] && $original_size[1] === $webp_size[1];
+
+}
+
+function amor_webp_image_src( $image ) {
+
+	if ( is_array( $image ) && ! empty( $image[0] ) ) {
+
+		$image[0] = amor_webp_url( $image[0] );
+
+	}
+
+	return $image;
+
+}
+
+function amor_webp_image_srcset( $sources ) {
+
+	if ( is_array( $sources ) ) {
+
+		foreach ( $sources as $width => $source ) {
+
+			$sources[ $width ]['url'] = amor_webp_url( $source['url'] );
+
+		}
+
+	}
+
+	return $sources;
+
+}
+
+function amor_webp_content_img_tag( $tag ) {
+
+	return preg_replace_callback( '/https?:\/\/[^\s"\',]+\.(?:jpe?g|png)(?=[\s"\',])/i', 'amor_webp_content_match', $tag );
+
+}
+
+function amor_webp_content_match( $match ) {
+
+	return amor_webp_url( $match[0] );
+
+}
