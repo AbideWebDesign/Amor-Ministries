@@ -326,5 +326,34 @@ function pre_load_timestamp( $value ) {
 	$date_now->setTimezone( $tz );
 
 	return $date_now->getTimestamp();
-	
+
+}
+
+// Limit the date field years on the Classic trip registration form
+add_filter( 'gform_date_min_year', 'classic_trip_date_min_year', 10, 3 );
+
+function classic_trip_date_min_year( $min_year, $form, $field ) {
+
+	if ( 10 == rgar( $form, 'id' ) ) {
+
+		return 2027;
+
+	}
+
+	return $min_year;
+
+}
+
+add_filter( 'gform_date_max_year', 'classic_trip_date_max_year', 10, 3 );
+
+function classic_trip_date_max_year( $max_year, $form, $field ) {
+
+	if ( 10 == rgar( $form, 'id' ) ) {
+
+		return 2028;
+
+	}
+
+	return $max_year;
+
 }
