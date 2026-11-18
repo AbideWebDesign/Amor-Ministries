@@ -329,12 +329,12 @@ function pre_load_timestamp( $value ) {
 
 }
 
-// Limit the date field years on the Classic trip registration form
-add_filter( 'gform_date_min_year', 'classic_trip_date_min_year', 10, 3 );
+// Limit the date field years on the Impact (9) and Classic (10) trip registration forms
+add_filter( 'gform_date_min_year', 'trip_registration_date_min_year', 10, 3 );
 
-function classic_trip_date_min_year( $min_year, $form, $field ) {
+function trip_registration_date_min_year( $min_year, $form, $field ) {
 
-	if ( 10 == rgar( $form, 'id' ) ) {
+	if ( in_array( rgar( $form, 'id' ), array( 9, 10 ) ) ) {
 
 		return 2027;
 
@@ -344,11 +344,11 @@ function classic_trip_date_min_year( $min_year, $form, $field ) {
 
 }
 
-add_filter( 'gform_date_max_year', 'classic_trip_date_max_year', 10, 3 );
+add_filter( 'gform_date_max_year', 'trip_registration_date_max_year', 10, 3 );
 
-function classic_trip_date_max_year( $max_year, $form, $field ) {
+function trip_registration_date_max_year( $max_year, $form, $field ) {
 
-	if ( 10 == rgar( $form, 'id' ) ) {
+	if ( in_array( rgar( $form, 'id' ), array( 9, 10 ) ) ) {
 
 		return 2028;
 
